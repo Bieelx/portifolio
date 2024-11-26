@@ -1,0 +1,98 @@
+@import 'App.css';
+
+.curriculo_conteudo {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 2vh;
+    width: 100%;
+    margin-left: 20vh;
+    gap: 2vw;
+}
+
+aside {
+    flex: 1;
+    max-width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
+    gap: 2vh;
+}
+
+aside ul {
+    margin-bottom: 3vh;
+}
+
+.curriculo_box {
+    max-width: 60%;
+    border-radius: 30px;
+    background: #212121;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+                -15px -15px 30px rgb(60, 60, 60);
+    color: var(--cor-texto-branco);
+    padding: 2vh;
+    margin: 1vh;
+    font-size: medium;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.curriculo_box-container {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    gap: 2vh;
+}
+
+.curriculo_box ul {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5vh;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.soft ul {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.curriculo_box h2 {
+    margin-bottom: 2vh;
+    text-align: center;
+}
+
+.curriculo_box li {
+    margin-bottom: 1vh;
+}
+
+.single-column ul {
+    display: block;
+}
+
+.single-column li {
+    margin-bottom: 1vh;
+}
+
+
+@media (max-width: 768px) {
+        .curriculo_conteudo {
+            flex-direction: column;
+            margin-left: 0;
+            
+        }
+        aside {
+            max-width: 100%;
+            
+        }
+        .curriculo_box {
+            max-width: 100%;
+            font-size: small;
+        }
+        .curriculo_box.hard > ul {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+    }
