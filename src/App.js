@@ -8,6 +8,9 @@ import Typewriter from './modulos/maquinaescrever';
 import Popups from './modulos/popups';
 import Curriculo from './modulos/curriculo';
 import Reconhecimentos from './modulos/reconhecimentos';
+import git from './img/git.png';
+import linkedin from './img/linkedin.png';
+import instagram from './img/instagram.png';
 
 function App() {
 
@@ -55,6 +58,23 @@ function App() {
           </div>
           <div className='Tech'>
             <img src={tech} alt="Tech" />
+          </div>
+          <div className='contato'>
+            <div className='box_contato github'>
+              <a href="https://github.com/Bieelx" target="_blank" rel="noopener noreferrer">
+                <img src={git} alt="GitHub" />
+              </a>
+            </div>
+            <div className='box_contato linkedin'>
+              <a href="https://www.linkedin.com/in/gabriel-deoliveira-araujo/" target="_blank" rel="noopener noreferrer">
+                <img src={linkedin} alt="LinkedIn" />
+              </a>
+            </div>
+            <div className='box_contato instagram'>
+              <a href="https://www.instagram.com/ibieelx/" target="_blank" rel="noopener noreferrer">
+                <img src={instagram} alt="Instagram" />
+              </a>
+            </div>
           </div>
         </main>
       </section>

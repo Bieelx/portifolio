@@ -119,6 +119,24 @@ li {
   justify-self: center;
 }
 
+.contato{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem;
+  opacity: 0.7;
+}
+
+.box_contato>a:hover{
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-out;
+
+}
+
+
 
 /* SOBRE MIM */
 .sobre_mim_conteudo {
@@ -208,6 +226,12 @@ li {
 
   .Tech img {
     width: 70%;
+  }
+
+  .contato{
+    gap: 1rem;
+    margin: 5rem auto;
+
   }
 
 
