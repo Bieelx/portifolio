@@ -21,7 +21,7 @@ function Curriculo() {
             </ul>
         </aside>
         <div className='curriculo_box-container'>
-            <div className='curriculo_box formacao single-column'> 
+            <div className='curriculo_box idiomas single-column'> 
             <h2>Formação</h2>
             <ul>
                 <li>FIAP - Cursando Sistemas de Informação</li>
