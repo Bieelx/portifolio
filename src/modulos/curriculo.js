@@ -9,20 +9,15 @@ function Curriculo() {
         <aside className='curriculo_box formacao single-column'> 
             <h2>Cursos</h2>
             <ul>
-            <li><strong>ChatGPT</strong> e <strong>JavaScript</strong>: construa o jogo Pong</li>
-            <li><strong>HTML</strong> e <strong>CSS</strong>: ambientes de desenvolvimento, estrutura de arquivos e tags</li>
-            <li><strong>HTML</strong> e <strong>CSS</strong>: cabeçalho, footer e variáveis CSS</li>
-            <li><strong>HTML</strong> e <strong>CSS</strong>: Classes, posicionamento e Flexbox</li>
-            <li><strong>HTML</strong> e <strong>CSS</strong>: praticando HTML/CSS</li>
-            <li><strong>HTML</strong> e <strong>CSS</strong>: responsividade com mobile-first</li>
-            <li><strong>HTML</strong> e <strong>CSS</strong>: trabalhando com responsividade e publicação de projetos</li>
-            <li><strong>JavaScript</strong> e <strong>HTML</strong>: desenvolva um jogo e pratique lógica de programação</li>
-            <li><strong>JavaScript</strong> para Web: Crie páginas dinâmicas</li>
-            <li><strong>JavaScript</strong>: manipulando elementos no DOM</li>
-            <li><strong>Python</strong>: aplicando a Orientação a Objetos</li>
-            <li><strong>Python</strong>: crie a sua primeira aplicação</li>
-            <li><strong>SQLite</strong> online: conhecendo instruções SQL</li>
-            <li><strong>SQLite</strong> Online: executando consultas SQL</li>
+            <li><strong>Python - Básico ao Avançado </strong> | FIAP NANO</li>
+            <li><strong>UX</strong> e <strong>UI Design</strong>| FIAP NANO</li>
+            <li><strong>Python com orientação a objetos</strong>| Alura</li>
+            <li><strong>UiPath Avançado</strong>| Practia</li>
+            <li><strong>HTML e CSS para projetos web</strong>| Alura</li>
+            <li><strong>Scrum: Fundamentos </strong>| Youtube</li>
+            <li><strong>Excel Avançado</strong>| Universidade Corporativa</li>
+            <li><strong>PowerBI intermediário</strong>| Universidade Corporativa</li>
+            <li><strong>SQLite</strong> | Alura</li>
             </ul>
         </aside>
         <div className='curriculo_box-container'>
@@ -40,6 +35,7 @@ function Curriculo() {
                 <li>JavaScript</li>
                 <li>React</li>
                 <li>Python</li>
+                <li>Java</li>
                 <li>SQL</li>
                 <li>Git</li>
                 <li>GitHub</li>
