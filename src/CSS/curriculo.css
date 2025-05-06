@@ -39,6 +39,10 @@ aside ul {
     align-items: center;
 }
 
+.curriculo_box.formacao.single-column {
+    align-self: flex-start;
+}
+
 .curriculo_box-container {
     display: flex;
     flex-direction: column;
