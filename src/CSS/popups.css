@@ -186,20 +186,25 @@
 
 /*Imagens dos projetos*/
 
-
 .project1 {
+  background-image: url('../img/FuriaBot.png'); 
+  background-size: cover; 
+  background-position: center; 
+  }
+
+.project2 {
   background-image: url('../img/oceasense.png'); 
   background-size: cover; 
   background-position: center; 
   }
   
-.project2 {
+.project3 {
   background-image: url('../img/gtx.jpg');
   background-size: cover;
   background-position: center;
   }
   
-.project3 {
+.project4 {
   background-image: url('../img/Felipao.png');
   background-size: cover;
   background-position: center;
