@@ -49,20 +49,28 @@ function App() {
 
     // Efeito para seguir o mouse
     useEffect(() => {
-        const mouseLight = document.querySelector('.mouse-light');
+ const mouseLight = document.querySelector('.mouse-light');
 
-        const handleMouseMove = (e) => {
-            mouseLight.style.left = `${e.clientX - 5}px`; // Subtrai metade da largura
-            mouseLight.style.top = `${e.clientY - 5}px`; // Subtrai metade da altura
-        };
+ const handleEvent = (e) => {
+      const clientX = e.clientX || e.touches[0].clientX;
+      const clientY = e.clientY || e.touches[0].clientY;
 
-        window.addEventListener('mousemove', handleMouseMove);
+ mouseLight.style.left = `${clientX - 5}px`; // Subtrai metade da largura
+ mouseLight.style.top = `${clientY - 5}px`; // Subtrai metade da altura
+ };
+
+ window.addEventListener('mousemove', handleEvent);
+        window.addEventListener('touchmove', handleEvent);
+        window.addEventListener('touchstart', handleEvent);
 
         return () => {
-            window.removeEventListener('mousemove', handleMouseMove);
+ window.removeEventListener('mousemove', handleEvent);
+            window.removeEventListener('touchmove', handleEvent);
+            window.removeEventListener('touchstart', handleEvent);
         };
     }, []); // O array vazio garante que o efeito rode apenas uma vez ao montar
 
+    // Adicione um z-index maior para o popup no arquivo CSS (por exemplo, CSS/popups.css)
   return (
     <div className="App">
       <div className='mouse-light'></div>
