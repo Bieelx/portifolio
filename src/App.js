@@ -52,10 +52,12 @@ function App() {
  const mouseLight = document.querySelector('.mouse-light');
 
  const handleEvent = (e) => {
+      if (e.type.startsWith('touch')) {
+ e.preventDefault(); // Prevent default touch behaviors like scrolling
+      }
       const clientX = e.clientX || e.touches[0].clientX;
       const clientY = e.clientY || e.touches[0].clientY;
-
- mouseLight.style.left = `${clientX - 5}px`; // Subtrai metade da largura
+ mouseLight.style.left = `${clientX - 5}px`; // Subtract half the width
  mouseLight.style.top = `${clientY - 5}px`; // Subtrai metade da altura
  };
 
