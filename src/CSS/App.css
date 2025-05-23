@@ -1,281 +1,375 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
-  --cor-primaria: #111111;
-  --cor-texto-branco: #FBF7F5;
-  --cor-texto-preto: #000000;
-  --cor-hover: #f0f0f0;
-  --cor-box: #333333;
+    --cor-primaria: #111111;
+    --cor-texto-branco: #FBF7F5;
+    --cor-texto-preto: #000000;
+    --cor-hover: #f0f0f0;
+    --cor-box: #333333;
+    --cor-navbar-transparente: rgba(17, 17, 17, 0.6); /* Cor semi-transparente para a navbar */
+    --cor-sombra-clara: rgba(60, 60, 60, 0.1); /* Sombra clara para um efeito sutil */
+    --cor-sombra-escura: rgba(0, 0, 0, 0.4); /* Sombra escura para profundidade */
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-  scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--cor-primaria);
-  overflow-x: hidden;
+    background-color: var(--cor-primaria);
+    overflow-x: hidden;
+    cursor: none; /* Esconde o cursor padrão do mouse */
 }
 
 h1 {
-  font-size: 4vh;
-  font-weight: 600;
-  color: var(--cor-texto-branco);
-  text-align: center;
-  margin: 2rem 0;
+    font-size: 4vh;
+    font-weight: 600;
+    color: var(--cor-texto-branco);
+    text-align: center;
+    margin: 2rem 0;
 }
 
 .navbar_pai {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  transition: background-color 0.3s ease;
+    position: fixed;
+    top: 20px; /* Desgruda do topo */
+    width: calc(100% - 40px); /* Ajusta a largura para manter o espaçamento lateral */
+    left: 20px; /* Adiciona espaçamento à esquerda */
+    background-color: var(--cor-navbar-transparente); /* Fundo semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: background-color 0.3s ease, top 0.3s ease; /* Adiciona transição para o top */
+    border-radius: 10px; /* Bordas arredondadas para um visual mais suave */
+    backdrop-filter: blur(5px); /* Efeito de blur no fundo */
 }
 
 .navbar {
-  display: flex;
-  gap: 3rem;
+    display: flex;
+    gap: 2rem; /* Reduz o espaçamento entre os links */
+    padding: 1rem 2rem; /* Adiciona padding interno */
+    align-items: center; /* Centraliza verticalmente os itens */
 }
 
 .navbar_link {
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: var(--cor-texto-branco);
-  text-decoration: none;
-  transition: color 0.3s ease, border-color 0.3s ease;
+    font-size: 1.1rem; /* Reduz um pouco o tamanho da fonte */
+    font-weight: 500;
+    color: var(--cor-texto-branco);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease; /* Remove border-color, adiciona transform */
+    position: relative; /* Para o efeito underline */
+    padding-bottom: 5px; /* Espaço para o underline */
+    background-color: transparent; /* Garante que o fundo inicial seja transparente */
 }
+
+.navbar_link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--cor-texto-branco); /* Cor do underline */
+    transition: width 0.3s ease;
+}
+
 .navbar_link:hover {
-  border-color: var(--cor-primaria);
-  color: var(--cor-texto-branco);
-  background-position: bottom; 
-  transition: background-position 0.5s ease; 
+    color: var(--cor-texto-branco); /* Mantém a cor no hover */
+    transform: translateY(-2px); /* Efeito sutil ao passar o mouse */
 }
+
+.navbar_link:hover::after {
+    width: 100%; /* Expande o underline no hover */
+}
+
 
 .navbar.scrolled {
-  background-color: var(--cor-primaria);
-  opacity: 0.9;
-  border-radius: 0 0 20px 20px;
-}
-
-.navbar.scrolled:hover {
-  border-color: var(--cor-texto-branco);
-  background-position: bottom; 
-  border-color: var(--cor-primaria);
-  transition: background-position 0.5s ease; 
+    top: 0; /* Cola no topo ao scrollar */
+    width: 100%; /* Ocupa a largura total ao scrollar */
+    left: 0; /* Remove espaçamento à esquerda ao scrollar */
+    background-color: transparent; /* Fundo sólido ao scrollar */
+    opacity: 1; /* Opacidade total ao scrollar */
+    border-radius: 0; /* Remove bordas arredondadas ao scrollar */
+    backdrop-filter: none; /* Remove blur ao scrollar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra sutil ao scrollar */
 }
 
 .navbar.scrolled .navbar_link {
-  color: var(--cor-texto-branco); 
-  transition: color 0.3s ease, border-color 0.3s ease;
-  background: linear-gradient(to bottom, transparent 50%, var(--cor-primaria) 50%);
-  background-size: 100% 200%;
-  background-position: top;
+    color: var(--cor-texto-branco);
+    background-color: transparent; /* Garante que o fundo dos links seja transparente ao scrollar */
+    padding-bottom: 5px; /* Mantém o padding para o underline */
+}
+
+.navbar.scrolled .navbar_link::after {
+     background-color: var(--cor-texto-branco); /* Cor do underline ao scrollar */
 }
 
 
 li {
-  list-style: none;
+    list-style: none;
 }
 
 .bem_vindo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
-  background-image: url(../img/fundo_main.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-image: url(../img/fundo_main.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .bem_vindo_texto {
-  text-align: center;
-  color: var(--cor-texto-branco);
-  margin-bottom: 2rem;
+    text-align: center;
+    color: var(--cor-texto-branco);
+    margin-bottom: 2rem;
 }
 
 .bem_vindo_texto h1 {
-  font-size: 3rem;
+    font-size: 3rem;
 }
 
 .bem_vindo_texto h2 {
-  font-size: 1.5rem;
-  font-weight: 300;
+    font-size: 1.5rem;
+    font-weight: 300;
 }
 
-.Tech img {
-  width: 100%;
-  display: flex;
-  max-width: 300px;
-  opacity: 0.8;
-  justify-self: center;
+.contato {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem;
+    opacity: 0.7;
 }
 
-.contato{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  margin: 2rem;
-  opacity: 0.7;
-}
-
-.box_contato>a:hover{
-  opacity: 1;
-  transition: opacity 0.3s ease-in;
-  transition: opacity 0.3s ease-out;
+.box_contato > a:hover {
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+    transition: opacity 0.3s ease-out;
 
 }
-
-
 
 /* SOBRE MIM */
 .sobre_mim_conteudo {
-  background-color: var(--cor-primaria);
-  padding: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
+    background-color: var(--cor-primaria);
+    padding: 6vh 2vh; /* Ajuste no padding superior e inferior */
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo principal */
+    align-items: center;
 }
 
 /* Contêiner que organiza a imagem e o texto */
 .sobre_conteudo {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  max-width: 1200px;
-  width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza os itens quando há espaço extra */
+    gap: 5vw; /* Aumenta o espaçamento entre imagem e texto */
+    max-width: 1000px; /* Limita a largura máxima */
+    width: 100%;
+    padding: 0 20px; /* Adiciona padding horizontal */
 }
 
-/* Imagem do "Sobre mim" */
+/* Imagem do \"Sobre mim\" */
 .sobre_conteudo img {
-  width: 40%;
-  max-width: 300px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    width: 40%;
+    max-width: 350px; /* Aumenta ligeiramente o tamanho máximo da imagem */
+    border-radius: 15px; /* Bordas mais suaves */
+    box-shadow: 8px 8px 15px var(--cor-sombra-escura), /* Sombras mais harmônicas */
+                -8px -8px 15px var(--cor-sombra-clara);
+    transition: transform 0.3s ease; /* Transição para efeito hover */
 }
+
+.sobre_conteudo img:hover {
+    transform: scale(1.02); /* Efeito sutil de zoom no hover */
+}
+
 
 /* Texto ao lado da imagem */
 .sobre_conteudo > div {
-  flex: 1;
+    flex: 1;
+    max-width: 600px; /* Limita a largura do bloco de texto */
+    color: var(--cor-texto-branco);
 }
 
 .sobre_conteudo h1 {
-  font-size: 2.5rem;
-  color: var(--cor-texto-branco);
+    font-size: 2.8rem; /* Ajuste no tamanho do título */
+    margin-bottom: 2.5vh; /* Aumenta a margem inferior do título */
+    text-align: left; /* Alinha o título à esquerda */
+    border-bottom: 1px solid rgba(var(--cor-texto-branco), 0.2); /* Linha sutil abaixo do título */
+    padding-bottom: 1.5vh;
 }
 
 .sobre_conteudo h2 {
-  font-size: 1.3rem;
-  font-weight: 300;
-  color: var(--cor-texto-branco);
-  text-align: justify;
+    font-size: 1.1rem; /* Ajuste no tamanho do texto */
+    font-weight: 300;
+    color: rgba(var(--cor-texto-branco), 0.9); /* Cor do texto com leve transparência */
+    text-align: justify;
+    line-height: 1.6; /* Aumenta o espaçamento entre linhas para melhor leitura */
 }
 
 .projetos_conteudo {
-  padding: 2rem;
-  text-align: center;
+    padding: 2rem;
+    text-align: center;
 }
 
 .projetos_conteudo h1 {
-  font-size: 2.5rem;
-  color: var(--cor-texto-branco);
+    font-size: 2.5rem;
+    color: var(--cor-texto-branco);
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .navbar {
-  display: none;
-  }
+    .navbar_pai {
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-radius: 0;
+        background-color: var(--cor-primaria);
+        backdrop-filter: none;
+    }
 
-  .navbar_link {
-    font-size: 1rem;
-  }
+    .navbar {
+        display: none; /* Mantém display: none; */
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
 
-  .bem_vindo_texto h1 {
-    font-size: 2rem;
-  }
+    .navbar_link {
+        font-size: 1rem;
+        padding-bottom: 3px;
+    }
 
-  .bem_vindo_texto h2 {
-    font-size: 1rem;
-  }
-
-  .Tech img {
-    width: 70%;
-  }
-
-  .contato{
-    gap: 1rem;
-    margin: 5rem auto;
-
-  }
+    .navbar_link::after {
+        height: 1px;
+    }
 
 
-  .sobre_conteudo {
-    flex-direction: column; 
-    align-items: center;
-    gap: 1rem;
-    max-width: 100%;
+    .bem_vindo_texto h1 {
+        font-size: 2rem;
+    }
 
-  }
+    .bem_vindo_texto h2 {
+        font-size: 1rem;
+    }
 
-  .sobre_conteudo img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin: 0 auto; 
-    object-fit: cover;
-    box-shadow: 5px 5px 8px #1b1b1b,
-    -5px -5px 8px #272727;
+    /* New styles for tech icons container on smaller screens */
+    .tech-icons {
+        flex-direction: row; /* Keep row direction for icons on smaller screens */
+        justify-content: center; /* Center icons */
+        gap: 1rem; /* Adjust gap for smaller screens */
+        opacity: 0.5;
+    }
 
+    /* New styles for individual tech icons on smaller screens */
+    .tech-icons img {
+        width: 30px; 
+        height: 30px;
+        margin: 5rem auto; 
+        filter: brightness(1.5);
+    }
     
-  }
+    .contato {
+        gap: 1rem;
+        margin: 5rem auto;
 
-  .sobre_conteudo > div {
-    padding: 20px;
-    width: auto;
-    height: 30rem;
-    min-height: 370px;
-    border-radius: 20px;
-    background: #212121;
-    box-shadow: 5px 5px 8px #1b1b1b,
-               -5px -5px 8px #272727;
-    transition: 0.4s;
-  }
+    }
 
-  .sobre_conteudo h1 {
-    font-size: 2rem;
-  }
 
-  .sobre_conteudo h2 {
-    font-size: 1.2rem; 
-  }
-  .projetos_conteudo h1 {
-    font-size: 2rem;
-  }
+    .sobre_mim_conteudo {
+        padding: 4vh 1vh; /* Ajusta padding para telas menores */
+    }
+
+    .sobre_conteudo {
+        flex-direction: column;
+        align-items: center;
+        gap: 3vh; /* Ajusta o gap para telas menores */
+        max-width: 100%;
+        padding: 0 10px; /* Ajusta padding horizontal para telas menores */
+    }
+
+    .sobre_conteudo img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%; /* Mantém a borda redonda em telas menores */
+        margin: 0 auto;
+        object-fit: cover;
+        box-shadow: 5px 5px 8px var(--cor-sombra-escura), /* Sombras ajustadas */
+                   -5px -5px 8px var(--cor-sombra-clara);
+        transition: none; /* Remove transição no hover para telas menores se não for desejado */
+    }
+
+     .sobre_conteudo img:hover {
+        transform: none; /* Remove efeito de zoom no hover em telas menores */
+    }
+
+
+    .sobre_conteudo > div {
+        padding: 20px;
+        width: 100%; /* Ocupa a largura total */
+        height: auto; /* Altura automática */
+        min-height: unset; /* Remove min-height */
+        border-radius: 15px; /* Bordas ligeiramente menores */
+        background: #212121;
+        box-shadow: 5px 5px 8px var(--cor-sombra-escura), /* Sombras ajustadas */
+                   -5px -5px 8px var(--cor-sombra-clara);
+        transition: 0.4s;
+    }
+
+    .sobre_conteudo h1 {
+        font-size: 2rem;
+        margin-bottom: 2vh;
+        padding-bottom: 1vh;
+    }
+
+    .sobre_conteudo h2 {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .projetos_conteudo h1 {
+        font-size: 2rem;
+    }
+}
+
+/* New CSS Rules for Tech Icons */
+.tech-icons {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-wrap: wrap; /* Allow icons to wrap to the next line */
+    gap: 20px; /* Spacing between icons */
+    opacity: 0.7;
+    margin-top: 20px; /* Space above the icons */
+}
+
+.tech-icons img {
+    width: 40px; /* Fixed size for icons */
+    height: 40px;
+    margin: 5px; /* Add some margin around icons */
+    filter: brightness(1.5); /* Make the icons brighter to stand out on dark background */
+}
+
+.mouse-light {
+  position: fixed;
+  width: 50px; /* Tamanho inicial da luz */
+  height: 50px;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%); /* Gradiente para a luz */
+  pointer-events: none; /* Garante que a luz não interfira com cliques */
+  transform: translate(-50%, -50%); /* Centraliza a luz no cursor */
+  transition: width 0.2s ease, height 0.2s ease, background 0.2s ease; /* Transição suave para o estado ativo */
+  z-index: 9999; /* Garante que a luz fique acima de outros elementos */
+}
+
+.mouse-light.active {
+  width: 70px; /* Tamanho maior no estado ativo */
+  height: 70px;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 70%); /* Luz mais forte no estado ativo */
 }

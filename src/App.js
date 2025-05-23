@@ -1,9 +1,21 @@
 import React, { useEffect } from 'react';
 
-import tech from './img/Tech.png';
 import eu from './img/eu.jpg';
 import './CSS/App.css';
+
+// Importando ícones das tecnologias
+import csharpIcon from './img/tech/C#.png';
+import dotnetIcon from './img/tech/dotnet.png';
+import javascriptIcon from './img/tech/javascript.png';
+import powerbiIcon from './img/tech/powerbi.png';
+import pythonIcon from './img/tech/python.png';
+import reactIcon from './img/tech/react.png';
+import springbootIcon from './img/tech/springboot.png';
+import sqlIcon from './img/tech/sql.png';
+import tailwindIcon from './img/tech/tailwind.png';
+import uipathIcon from './img/tech/uipath.png';
 import './CSS/curriculo.css';
+
 import Typewriter from './modulos/maquinaescrever';
 import Popups from './modulos/popups';
 import Curriculo from './modulos/curriculo';
@@ -35,9 +47,25 @@ function App() {
       };
     }, []);
 
+    // Efeito para seguir o mouse
+    useEffect(() => {
+        const mouseLight = document.querySelector('.mouse-light');
+
+        const handleMouseMove = (e) => {
+            mouseLight.style.left = `${e.clientX - 5}px`; // Subtrai metade da largura
+            mouseLight.style.top = `${e.clientY - 5}px`; // Subtrai metade da altura
+        };
+
+        window.addEventListener('mousemove', handleMouseMove);
+
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
+        };
+    }, []); // O array vazio garante que o efeito rode apenas uma vez ao montar
 
   return (
     <div className="App">
+      <div className='mouse-light'></div>
       <header className='navbar_pai'>
           <nav>
             <ul className='navbar'>
@@ -60,8 +88,17 @@ function App() {
               Front-End | UI/UX Designer | Data Analytics
             </h2>
           </div>
-          <div className='Tech'>
-            <img src={tech} alt="Tech" />
+          <div className='tech-icons'>
+            <img src={reactIcon} alt='React' />
+            <img src={javascriptIcon} alt='JavaScript' />
+            <img src={tailwindIcon} alt='Tailwind' />
+            <img src={springbootIcon} alt='Spring Boot' />
+            <img src={sqlIcon} alt='SQL' />
+            <img src={pythonIcon} alt='Python' />
+            <img src={csharpIcon} alt='C#' />
+            <img src={dotnetIcon} alt='.NET' />
+            <img src={powerbiIcon} alt='Power BI' />
+            <img src={uipathIcon} alt='UiPath' />
           </div>
           <div className='contato'>
             <div className='box_contato github'>

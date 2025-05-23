@@ -2,41 +2,42 @@
 
 .curriculo_conteudo {
     display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    padding: 2vh;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 4vh 2vh;
     width: 100%;
-    margin-left: 20vh;
-    gap: 2vw;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 3vw;
 }
 
 aside {
     flex: 1;
-    max-width: 30%;
+    max-width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: auto;
-    gap: 2vh;
+    gap: 3vh;
 }
 
 aside ul {
-    margin-bottom: 3vh;
+    margin-bottom: 0;
 }
 
 .curriculo_box {
-    max-width: 60%;
-    border-radius: 30px;
+    width: 100%;
+    border-radius: 12px; /* Bordas ligeiramente mais suaves */
     background: #212121;
-    box-shadow: 15px 15px 30px rgb(25, 25, 25),
-                -15px -15px 30px rgb(60, 60, 60);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3), /* Sombras mais sutis e integradas */
+                -5px -5px 10px rgba(60, 60, 60, 0.15);
     color: var(--cor-texto-branco);
-    padding: 2vh;
-    margin: 1vh;
+    padding: 3vh 2.5vh;
+    margin: 0;
     font-size: medium;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    box-sizing: border-box;
 }
 
 .curriculo_box.formacao.single-column {
@@ -47,56 +48,125 @@ aside ul {
     display: flex;
     flex-direction: column;
     flex: 2;
-    gap: 2vh;
+    gap: 3vh;
 }
 
 .curriculo_box ul {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1.5vh;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Ajuste no min-width */
+    gap: 2.5vh 2vw; /* Ajuste no espaçamento do grid */
     list-style: none;
     padding: 0;
     margin: 0;
+    width: 100%;
 }
 
 .soft ul {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
 .curriculo_box h2 {
-    margin-bottom: 2vh;
-    text-align: center;
+    margin-top: 0;
+    margin-bottom: 2vh; /* Reduzida a margem inferior do título */
+    text-align: left;
+    width: 100%;
+    border-bottom: 1px solid rgba(60, 60, 60, 0.3); /* Linha sutil abaixo do título */
+    padding-bottom: 1vh;
+    font-size: 1.8rem; /* Ajuste no tamanho do título */
+    font-weight: 600; /* Peso da fonte do título */
+    color: var(--cor-texto-branco);
 }
 
 .curriculo_box li {
-    margin-bottom: 1vh;
+    margin-bottom: 0;
+    padding-left: 1.5vh;
+    position: relative;
+    font-size: 1rem; /* Tamanho da fonte dos itens da lista */
+    line-height: 1.5; /* Espaçamento entre linhas */
+    color: rgba(var(--cor-texto-branco), 0.9); /* Cor do texto com leve transparência */
 }
+
+.curriculo_box li::before {
+    content: '•';
+    color: var(--cor-texto-branco); /* Cor do marcador (pode ajustar se tiver uma cor de destaque) */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    opacity: 0.8; /* Opacidade no marcador */
+}
+
 
 .single-column ul {
     display: block;
 }
 
 .single-column li {
-    margin-bottom: 1vh;
+    margin-bottom: 1.5vh; /* Aumenta a margem inferior para itens de coluna única */
+    padding-left: 0;
+    border-bottom: 1px dashed rgba(60, 60, 60, 0.2); /* Linha tracejada sutil entre os itens */
+    padding-bottom: 1.5vh; /* Espaçamento abaixo da linha */
 }
 
+.single-column li:last-child {
+    border-bottom: none; /* Remove a borda do último item */
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
 
+.single-column li::before {
+    content: '';
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
-        .curriculo_conteudo {
-            flex-direction: column;
-            margin-left: 0;
-            
-        }
-        aside {
-            max-width: 100%;
-            
-        }
-        .curriculo_box {
-            max-width: 100%;
-            font-size: small;
-        }
-        .curriculo_box.hard > ul {
-            grid-template-columns: repeat(4, 1fr);
-        }
-
+    .curriculo_conteudo {
+        flex-direction: column;
+        margin-left: 0;
+        padding: 2vh;
+        gap: 2vh;
     }
+
+    aside {
+        max-width: 100%;
+        flex-direction: column;
+        gap: 2vh;
+    }
+
+    .curriculo_box {
+        max-width: 100%;
+        font-size: small;
+        padding: 2vh;
+    }
+
+     .curriculo_box h2 {
+        font-size: 1.5rem; /* Ajuste do tamanho do título em telas menores */
+        margin-bottom: 1.5vh;
+        padding-bottom: 0.8vh;
+    }
+
+    .curriculo_box ul {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* Ajusta o grid para telas menores */
+        gap: 2vh 1.5vw;
+    }
+
+    .soft ul {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .curriculo_box li {
+        font-size: 0.9rem; /* Tamanho da fonte dos itens em telas menores */
+        padding-left: 1vh;
+    }
+
+    .curriculo_box li::before {
+        width: 0.8em;
+        margin-left: -0.8em;
+    }
+
+
+    .single-column li {
+        margin-bottom: 1vh;
+        padding-bottom: 1vh;
+    }
+}
