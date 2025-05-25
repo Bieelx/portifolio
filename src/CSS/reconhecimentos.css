@@ -3,23 +3,24 @@
 .flip-card-container{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch; /* Ensure items stretch to the same height */
     flex-wrap: wrap;
-    gap: 5rem;
-    margin-top: 10vh;
-    margin-bottom: 10vh;
+    gap: 2rem; /* Reduzindo o gap para um visual mais clean */
+    margin-top: 5vh; /* Reduzindo a margem superior */
+    margin-bottom: 5vh; /* Reduzindo a margem inferior */
+    padding: 0 20px; /* Adicionando padding para evitar que encoste nas bordas no mobile */
 }
 
 .card {
     padding: 20px;
-    width: 24rem;
-    height: 30rem;
-    min-height: 370px;
-    border-radius: 20px;
+    width: 100%; /* Usando 100% da largura disponível */
+    max-width: 300px; /* Mantendo a largura máxima */
+    /* min-height: 370px; Keeping this might conflict with align-items: stretch */
+    border-radius: 10px; /* Bordas levemente arredondadas */
     background: #212121;
-    box-shadow: 5px 5px 8px #1b1b1b,
-               -5px -5px 8px #272727;
-    transition: 0.4s;
+    box-shadow: 3px 3px 5px #1b1b1b, /* Sombras mais suaves */
+               -3px -3px 5px #272727;
+    transition: 0.3s; /* Transição mais rápida */
   }
   
   .card:hover {
@@ -27,45 +28,62 @@
   }
   
   .card-title {
-    font-size: 18px;
+    font-size: 1.1rem; /* Ajustando tamanho da fonte */
     font-weight: 600;
     color: #028DB3;
-    margin: 15px 0 0 10px;
+    margin: 10px 0; /* Ajustando margens */
+    text-align: center; /* Centralizando o título */
   }
   
   .card-image {
     background-color: #313131;
-    border-radius: 15px;
+    border-radius: 8px; /* Bordas levemente arredondadas */
     background: #313131;
-    box-shadow: inset 5px 5px 3px #2f2f2f,
-              inset -5px -5px 3px #333333;
+    box-shadow: inset 3px 3px 3px #2f2f2f, /* Sombras internas mais suaves */
+              inset -3px -3px 3px #333333;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     position: relative;
+    height: 150px; /* Definindo uma altura fixa para a imagem */
 }
 
 .card-image img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    border-radius: 15px;
+    width: 100%; /* Imagem preenche a largura do contêiner */
+    height: 100%; /* Imagem preenche a altura do contêiner */
+    object-fit: cover; /* Imagem cobre o contêiner sem distorção */
+    border-radius: 8px; /* Bordas levemente arredondadas */
 }
   
   .card-body {
-    margin: 13px 0 0 10px;
+    margin: 10px 0; /* Ajustando margens */
     color: rgb(184, 184, 184);
-    font-size: 15px;
+    font-size: 0.9rem; /* Ajustando tamanho da fonte */
+    text-align: justify; /* Justificando o texto do corpo */
   }
   
   .footer {
     float: right;
-    margin: 28px 0 0 18px;
-    font-size: 13px;
+    margin: 10px 0; /* Ajustando margens */
+    font-size: 0.8rem; /* Ajustando tamanho da fonte */
     color: #b3b3b3;
   }
   
   .by-name {
     font-weight: 700;
   }
+
+/* Media query para telas menores */
+@media (max-width: 768px) {
+    .flip-card-container {
+        gap: 1rem; /* Reduzindo o gap em telas menores */
+        margin-top: 3vh; /* Reduzindo margens */
+        margin-bottom: 3vh;
+    }
+
+    .card {
+        padding: 15px; /* Reduzindo padding */
+        min-height: auto; /* Allow height to be determined by content in smaller screens */
+    }
+}

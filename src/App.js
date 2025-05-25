@@ -48,7 +48,7 @@ function App() {
     }, []);
 
     // Efeito para seguir o mouse
-    useEffect(() => {
+useEffect(() => {
  const mouseLight = document.querySelector('.mouse-light');
 
  const handleEvent = (e) => {
@@ -57,22 +57,40 @@ function App() {
       }
       const clientX = e.clientX || e.touches[0].clientX;
       const clientY = e.clientY || e.touches[0].clientY;
- mouseLight.style.left = `${clientX - 5}px`; // Subtract half the width
- mouseLight.style.top = `${clientY - 5}px`; // Subtrai metade da altura
+ mouseLight.style.left = `${clientX}px`;
+ mouseLight.style.top = `${clientY}px`;
  };
 
+        const handleMouseEnter = () => {
+            mouseLight.classList.add('active');
+        };
+
+        const handleMouseLeave = () => {
+            mouseLight.classList.remove('active');
+        };
+
  window.addEventListener('mousemove', handleEvent);
-        window.addEventListener('touchmove', handleEvent);
-        window.addEventListener('touchstart', handleEvent);
+ window.addEventListener('touchmove', handleEvent);
+ window.addEventListener('touchstart', handleEvent);
+
+        // Add event listeners to clickable elements
+        const clickableElements = document.querySelectorAll('.project-card, .social-links a');
+ clickableElements.forEach(element => {
+ element.addEventListener('mouseenter', handleMouseEnter);
+ element.addEventListener('mouseleave', handleMouseLeave);
+ });
 
         return () => {
  window.removeEventListener('mousemove', handleEvent);
-            window.removeEventListener('touchmove', handleEvent);
-            window.removeEventListener('touchstart', handleEvent);
-        };
-    }, []); // O array vazio garante que o efeito rode apenas uma vez ao montar
+ window.removeEventListener('touchmove', handleEvent);
+ window.removeEventListener('touchstart', handleEvent);
 
-    // Adicione um z-index maior para o popup no arquivo CSS (por exemplo, CSS/popups.css)
+            clickableElements.forEach(element => {
+ element.removeEventListener('mouseenter', handleMouseEnter);
+ element.removeEventListener('mouseleave', handleMouseLeave);
+ });
+        };
+    }, []);
   return (
     <div className="App">
       <div className='mouse-light'></div>

@@ -64,6 +64,7 @@ h1 {
     position: relative; /* Para o efeito underline */
     padding-bottom: 5px; /* Espaço para o underline */
     background-color: transparent; /* Garante que o fundo inicial seja transparente */
+    cursor: none !important
 }
 
 .navbar_link::after {
@@ -78,12 +79,14 @@ h1 {
 }
 
 .navbar_link:hover {
-    color: var(--cor-texto-branco); /* Mantém a cor no hover */
-    transform: translateY(-2px); /* Efeito sutil ao passar o mouse */
+    color: var(--cor-texto-branco); 
+    transform: translateY(-2px); 
+    
 }
 
 .navbar_link:hover::after {
-    width: 100%; /* Expande o underline no hover */
+    width: 100%; 
+    cursor: none !important
 }
 
 
@@ -100,12 +103,12 @@ h1 {
 
 .navbar.scrolled .navbar_link {
     color: var(--cor-texto-branco);
-    background-color: transparent; /* Garante que o fundo dos links seja transparente ao scrollar */
-    padding-bottom: 5px; /* Mantém o padding para o underline */
+    background-color: transparent; 
+    padding-bottom: 5px;
 }
 
 .navbar.scrolled .navbar_link::after {
-     background-color: var(--cor-texto-branco); /* Cor do underline ao scrollar */
+     background-color: var(--cor-texto-branco); 
 }
 
 
@@ -147,21 +150,50 @@ li {
     gap: 2rem;
     margin: 2rem;
     opacity: 0.7;
+    cursor: none !important
+}
+
+.contato a:hover {
+    transform: scale(1.2);              /* aumenta 20% */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    /* ou se quiser corzinha diferente:
+       box-shadow: 0 0 12px rgba(0, 180, 255, 0.7);
+    */
+    cursor: none !important;
+  }
+
+  .contato a:hover i,
+.contato a:hover png {
+  /* opcionalmente isola o glow só no ícone */
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.8));
 }
 
 .box_contato > a:hover {
     opacity: 1;
     transition: opacity 0.3s ease-in;
     transition: opacity 0.3s ease-out;
+    cursor: none !important
 
+
+}
+
+.project-card:hover,
+.social-links a:hover {
+  cursor: none; 
+}
+
+.mouse-light.active {
+    width: 40px; 
+    height: 40px;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%); /* Luz mais forte e focada */
 }
 
 /* SOBRE MIM */
 .sobre_mim_conteudo {
     background-color: var(--cor-primaria);
-    padding: 6vh 2vh; /* Ajuste no padding superior e inferior */
+    padding: 6vh 2vh; 
     display: flex;
-    justify-content: center; /* Centraliza o conteúdo principal */
+    justify-content: center;
     align-items: center;
 }
 
@@ -339,6 +371,10 @@ li {
     }
 }
 
+.social-links img:hover {
+  filter: drop-shadow(0 0 8px yellow); /* Brilho amarelo */
+}
+
 /* New CSS Rules for Tech Icons */
 .tech-icons {
     display: flex;
@@ -358,18 +394,10 @@ li {
 }
 
 .mouse-light {
-  position: fixed;
-  width: 50px; /* Tamanho inicial da luz */
-  height: 50px;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%); /* Gradiente para a luz */
-  pointer-events: none; /* Garante que a luz não interfira com cliques */
-  transform: translate(-50%, -50%); /* Centraliza a luz no cursor */
-  transition: width 0.2s ease, height 0.2s ease, background 0.2s ease; /* Transição suave para o estado ativo */
-  z-index: 9999; /* Garante que a luz fique acima de outros elementos */
-}
-
-.mouse-light.active {
-  width: 70px; /* Tamanho maior no estado ativo */
-  height: 70px;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 70%); /* Luz mais forte no estado ativo */
-}
+ position: fixed;
+ width: 30px; /* Tamanho inicial da luz */
+ height: 30px;
+ background: radial-gradient(circle at center, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%); /* Gradiente para a luz */
+ pointer-events: none; /* Garante que a luz não interfira com cliques */
+ transform: translate(-50%, -50%); /* Centraliza a luz no cursor */
+ transition: width 0.1s ease, height 0.1s ease, background 0.1s ease; /* Transição mais rápida */ z-index: 9999; /* Garante que a luz fique acima de outros elementos */ }
