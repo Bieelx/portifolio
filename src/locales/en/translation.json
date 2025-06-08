@@ -1,0 +1,92 @@
+{
+  "home_title": "Welcome to my portfolio",
+  "home_subtitle": "Front-End | UI/UX Designer | Data Analytics",
+  "about_title": "About me",
+  "about_text": "Hi! I'm Gabriel, an Information Systems student at FIAP and passionate about technology. I currently work with React, Python, JavaScript, SQL, and UiPath automations, always focused on building practical solutions with intuitive interfaces. My main skills include front-end development, smart automations, and data analysis.\n\nWhen I'm not coding, you’ll probably find me training at the gym, reading something interesting, or binge-watching horror series and movies. I'm that calm nerd who loves solving problems creatively, working in a team, and constantly learning.\n\nWith this chill but committed mindset, I aim to grow in the tech field, contributing ideas and skills to create truly innovative projects.",
+"projects": {
+  "1": {
+    "title": "Furia Bot",
+    "description": "The FURIA Fan Experience project is a web platform developed with React and Vite, created to offer an interactive and immersive experience to FURIA fans. The system displays the organization’s teams, upcoming matches, image gallery, and an integrated AI chatbot. With a design inspired by FURIA’s visual identity, the project stands out for its responsiveness, animations, and reusable component integration, showcasing skills in modern front-end, UI/UX, and scalable application development."
+  },
+  "2": {
+    "title": "OceanSense",
+    "description": "OceanSense is a project developed in React during the FIAP Global Solution competition, where my team was among the winners out of 30 groups. We created a tech solution to monitor and preserve the oceans, using sensors to collect data such as water temperature and pH, displayed in a responsive and interactive dashboard inspired by Material UI. The project highlighted our organization, teamwork, and focus on a modern, user-friendly interface."
+  },
+  "3": {
+    "title": "Management System",
+    "description": "The GTX project, created for FIAP Next, was a challenging experience developing a management system that optimizes information flow and simplifies business administration. I was responsible for creating an intuitive and efficient interface and integrating it with the database, ensuring fast storage and retrieval of information. This project allowed me to apply and improve my knowledge in front-end, backend, performance optimization, and responsiveness. Working on GTX was rewarding, both for the technical growth and the enriching team collaboration. This project earned our group the Top 1 spot in the NEXT competition."
+  },
+  "4": {
+    "title": "MentalAid",
+    "description": "My first major front-end project was developed for FIAP Next last year, aiming to create a website for elderly people with dementia. The goal was to build a platform that could provide cognitive support, reduce loneliness, and help with reminders for daily activities. The site included interactive games to stimulate memory and attention, an AI companion to chat with, and alerts to encourage physical activity. I also added an informational area to educate about dementia, making knowledge accessible in a clear and welcoming way."
+  },
+  "button": "Close",
+  "link": "Access our GitHub repository!!"
+},
+
+  "resume": {
+    "education_title": "Education",
+    "education": "FIAP – Studying Information Systems",
+
+    "courses_title": "Courses",
+    "courses": [
+      "Python – FIAP Nano: Syntax, control structures, functions, OOP, Flask, and Django.",
+      "UX Design — FIAP Nano: Usability, information architecture, design thinking, user research, Google Analytics, prototyping.",
+      "OOP Python – Alura: OOP, classes, objects, inheritance, polymorphism for structured solutions.",
+      "Advanced UiPath – Practia: UiPath mastery, RPA, process automation for optimization.",
+      "HTML and CSS for Web Projects – Alura: Web page construction, styling, responsive layouts.",
+      "Scrum Fundamentals: Scrum agile framework, roles, events, artifacts, project management, incremental deliveries.",
+      ".NET Developer Fundamentals (in progress) – Alura: .NET and C# concepts, APIs, MVC architecture, back-end OOP.",
+      "Excel (basic to intermediate): Key functions (VLOOKUP, HLOOKUP, XLOOKUP), data analysis and manipulation.",
+      "Intro to Sinacor System – B3 School: Sinacor operations, workflows, settlements, capital markets."
+    ],
+
+    "hardskills_title": "Hard Skills",
+    "hardskills": [
+      "Languages: Python, SQL, VBA, JavaScript, C# (actively learning)",
+      "Tools and Visualization: Excel (advanced), Power BI, Looker Studio",
+      "Automation and RPA: UiPath, Python scripts for operational tasks",
+      "Databases: MySQL, PostgreSQL",
+      "Development: React, Spring Boot, .NET (actively learning)"
+    ],
+
+    "softskills_title": "Soft Skills",
+    "softskills": [
+      "Teamwork", "Effective communication", "Problem-solving", "Organization",
+      "Planning", "Adaptability", "Proactivity", "Critical thinking",
+      "Leadership", "Creativity", "Time management", "Attention to detail",
+      "Results-oriented", "Collaboration"
+    ],
+
+    "languages_title": "Languages",
+    "languages": ["English – Advanced"]
+  },
+
+  "awards": {
+  "1": {
+    "title": "GlobalSolution 2024/1",
+    "description": "I won the GlobalSolution 2024/1 award with the Ocean Sense project, which focuses on creating innovative solutions for monitoring and protecting the oceans. This award recognized my contribution to environmental preservation by applying technology to solve global environmental challenges."
+  },
+  "2": {
+    "title": "FIAP Next 2024",
+    "description": "I achieved first place at FIAP Next 2024, receiving the Best Project award. My group was recognized for developing the Innovate IT project, a management solution for small businesses focused on usability and efficiency."
+  }
+},
+
+"navbar": {
+  "home": "Home",
+  "about": "About me",
+  "projects": "Projects",
+  "resume": "Resume",
+  "awards": "Awards"
+},
+"sections": {
+  "projects": "Projects",
+  "resume": "Resume",
+  "awards": "Awards"
+}
+
+
+
+
+}

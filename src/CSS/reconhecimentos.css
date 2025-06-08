@@ -3,24 +3,23 @@
 .flip-card-container{
     display: flex;
     justify-content: center;
-    align-items: stretch; /* Ensure items stretch to the same height */
+    align-items: stretch; 
     flex-wrap: wrap;
-    gap: 2rem; /* Reduzindo o gap para um visual mais clean */
-    margin-top: 5vh; /* Reduzindo a margem superior */
-    margin-bottom: 5vh; /* Reduzindo a margem inferior */
-    padding: 0 20px; /* Adicionando padding para evitar que encoste nas bordas no mobile */
+    gap: 2rem; 
+    margin-top: 5vh; 
+    margin-bottom: 5vh; 
+    padding: 0 20px; 
 }
 
 .card {
     padding: 20px;
-    width: 100%; /* Usando 100% da largura disponível */
-    max-width: 300px; /* Mantendo a largura máxima */
-    /* min-height: 370px; Keeping this might conflict with align-items: stretch */
-    border-radius: 10px; /* Bordas levemente arredondadas */
+    width: 100%; 
+    max-width: 300px; 
+    border-radius: 10px; 
     background: #212121;
-    box-shadow: 3px 3px 5px #1b1b1b, /* Sombras mais suaves */
+    box-shadow: 3px 3px 5px #1b1b1b, 
                -3px -3px 5px #272727;
-    transition: 0.3s; /* Transição mais rápida */
+    transition: 0.3s; 
   }
   
   .card:hover {
@@ -28,45 +27,45 @@
   }
   
   .card-title {
-    font-size: 1.1rem; /* Ajustando tamanho da fonte */
+    font-size: 1.1rem; 
     font-weight: 600;
     color: #028DB3;
-    margin: 10px 0; /* Ajustando margens */
-    text-align: center; /* Centralizando o título */
+    margin: 10px 0; 
+    text-align: center; 
   }
   
   .card-image {
     background-color: #313131;
-    border-radius: 8px; /* Bordas levemente arredondadas */
+    border-radius: 8px; 
     background: #313131;
-    box-shadow: inset 3px 3px 3px #2f2f2f, /* Sombras internas mais suaves */
+    box-shadow: inset 3px 3px 3px #2f2f2f, 
               inset -3px -3px 3px #333333;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     position: relative;
-    height: 150px; /* Definindo uma altura fixa para a imagem */
+    height: 150px; 
 }
 
 .card-image img {
-    width: 100%; /* Imagem preenche a largura do contêiner */
-    height: 100%; /* Imagem preenche a altura do contêiner */
-    object-fit: cover; /* Imagem cobre o contêiner sem distorção */
-    border-radius: 8px; /* Bordas levemente arredondadas */
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 8px; 
 }
   
   .card-body {
-    margin: 10px 0; /* Ajustando margens */
+    margin: 10px 0; 
     color: rgb(184, 184, 184);
-    font-size: 0.9rem; /* Ajustando tamanho da fonte */
-    text-align: justify; /* Justificando o texto do corpo */
+    font-size: 0.9rem; 
+    text-align: justify; 
   }
   
   .footer {
     float: right;
-    margin: 10px 0; /* Ajustando margens */
-    font-size: 0.8rem; /* Ajustando tamanho da fonte */
+    margin: 10px 0; 
+    font-size: 0.8rem; 
     color: #b3b3b3;
   }
   
@@ -74,16 +73,15 @@
     font-weight: 700;
   }
 
-/* Media query para telas menores */
 @media (max-width: 768px) {
     .flip-card-container {
-        gap: 1rem; /* Reduzindo o gap em telas menores */
-        margin-top: 3vh; /* Reduzindo margens */
+        gap: 1rem; 
+        margin-top: 3vh; 
         margin-bottom: 3vh;
     }
 
     .card {
-        padding: 15px; /* Reduzindo padding */
-        min-height: auto; /* Allow height to be determined by content in smaller screens */
+        padding: 15px; 
+        min-height: auto; 
     }
 }

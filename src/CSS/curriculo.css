@@ -26,9 +26,9 @@ aside ul {
 
 .curriculo_box {
     width: 100%;
-    border-radius: 12px; /* Bordas ligeiramente mais suaves */
+    border-radius: 12px;
     background: #212121;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3), /* Sombras mais sutis e integradas */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3),
                 -5px -5px 10px rgba(60, 60, 60, 0.15);
     color: var(--cor-texto-branco);
     padding: 3vh 2.5vh;
@@ -53,8 +53,8 @@ aside ul {
 
 .curriculo_box ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Ajuste no min-width */
-    gap: 2.5vh 2vw; /* Ajuste no espaçamento do grid */
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2.5vh 2vw;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -67,13 +67,13 @@ aside ul {
 
 .curriculo_box h2 {
     margin-top: 0;
-    margin-bottom: 2vh; /* Reduzida a margem inferior do título */
+    margin-bottom: 2vh;
     text-align: left;
     width: 100%;
-    border-bottom: 1px solid rgba(60, 60, 60, 0.3); /* Linha sutil abaixo do título */
+    border-bottom: 1px solid rgba(60, 60, 60, 0.3);
     padding-bottom: 1vh;
-    font-size: 1.8rem; /* Ajuste no tamanho do título */
-    font-weight: 600; /* Peso da fonte do título */
+    font-size: 1.8rem;
+    font-weight: 600;
     color: var(--cor-texto-branco);
 }
 
@@ -81,35 +81,34 @@ aside ul {
     margin-bottom: 0;
     padding-left: 1.5vh;
     position: relative;
-    font-size: 1rem; /* Tamanho da fonte dos itens da lista */
-    line-height: 1.5; /* Espaçamento entre linhas */
-    color: rgba(var(--cor-texto-branco), 0.9); /* Cor do texto com leve transparência */
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgba(var(--cor-texto-branco), 0.9);
 }
 
 .curriculo_box li::before {
     content: '•';
-    color: var(--cor-texto-branco); /* Cor do marcador (pode ajustar se tiver uma cor de destaque) */
+    color: var(--cor-texto-branco);
     font-weight: bold;
     display: inline-block;
     width: 1em;
     margin-left: -1em;
-    opacity: 0.8; /* Opacidade no marcador */
+    opacity: 0.8;
 }
-
 
 .single-column ul {
     display: block;
 }
 
 .single-column li {
-    margin-bottom: 1.5vh; /* Aumenta a margem inferior para itens de coluna única */
+    margin-bottom: 1.5vh;
     padding-left: 0;
-    border-bottom: 1px dashed rgba(60, 60, 60, 0.2); /* Linha tracejada sutil entre os itens */
-    padding-bottom: 1.5vh; /* Espaçamento abaixo da linha */
+    border-bottom: 1px dashed rgba(60, 60, 60, 0.2);
+    padding-bottom: 1.5vh;
 }
 
 .single-column li:last-child {
-    border-bottom: none; /* Remove a borda do último item */
+    border-bottom: none;
     padding-bottom: 0;
     margin-bottom: 0;
 }
@@ -118,7 +117,6 @@ aside ul {
     content: '';
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .curriculo_conteudo {
         flex-direction: column;
@@ -140,13 +138,13 @@ aside ul {
     }
 
      .curriculo_box h2 {
-        font-size: 1.5rem; /* Ajuste do tamanho do título em telas menores */
+        font-size: 1.5rem;
         margin-bottom: 1.5vh;
         padding-bottom: 0.8vh;
     }
 
     .curriculo_box ul {
-        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* Ajusta o grid para telas menores */
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
         gap: 2vh 1.5vw;
     }
 
@@ -155,7 +153,7 @@ aside ul {
     }
 
     .curriculo_box li {
-        font-size: 0.9rem; /* Tamanho da fonte dos itens em telas menores */
+        font-size: 0.9rem;
         padding-left: 1vh;
     }
 
@@ -164,9 +162,9 @@ aside ul {
         margin-left: -0.8em;
     }
 
-
     .single-column li {
         margin-bottom: 1vh;
         padding-bottom: 1vh;
     }
 }
+

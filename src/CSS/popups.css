@@ -1,45 +1,30 @@
 @import 'App.css';
 
 .popups-container {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: center; 
-    margin: 20px; 
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+}
+
 .popup-box {
-    width: 40vh;
-    height: 18vh;
-    border-radius: 15px; 
-    margin: 10px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    color: white; 
-    font-weight: bold; 
-    background-size: cover; 
-    cursor: pointer; 
-    transition: transform 0.3s; 
-  }
-  
+  width: 40vh;
+  height: 18vh;
+  border-radius: 15px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  background-size: cover;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
 .popup-box:hover {
-    transform: scale(1.05); 
-  }
-  
-.popup-overlay {
-    position: fixed; 
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7); 
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-  }
- .popup-overlay {z-index: 1050;}
-
-
+  transform: scale(1.05);
+}
 
 .popup-overlay {
   position: fixed;
@@ -57,192 +42,193 @@
 }
 
 .popup-content {
-background: rgba( 51, 51, 51, 0.45 ); /* Fundo com transparência para o efeito de vidro */
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); /* Sombra original */
-backdrop-filter: blur( 11px ); /* Efeito de desfoque */
--webkit-backdrop-filter: blur( 11px ); /* Prefixo para compatibilidade */
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 ); /* Borda original */
-color: var(--cor-texto-branco);
-display: flex;
-flex-direction: column;
-gap: 20px;
-margin: auto;
-padding: 30px;
-max-height: 90vh;
-max-width: 600px;
-width: 95%;
-text-align: center;
-position: relative;
-z-index: 1100;
-transform: scale(1);
-transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Adicionada transição para opacidade */
-overflow-y: auto;
+  background: rgba(51, 51, 51, 0.45);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(11px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--cor-texto-branco);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: auto;
+  padding: 30px;
+  max-height: 90vh;
+  max-width: 600px;
+  width: 95%;
+  text-align: center;
+  position: relative;
+  z-index: 1100;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  overflow-y: auto;
 }
 
 .popup-content.closing {
   transform: scale(0.9);
-  opacity: 0; 
+  opacity: 0;
 }
 
-.popup-titulo{
-font-size: 1.8rem;
-font-weight: 700;
-color: #bbbbbb;
-margin-top: 0;
-margin-bottom: 15px;
-text-shadow: none; /* Manter sem text-shadow para um visual mais clean */
-opacity: 1;
+.popup-titulo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #bbbbbb;
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 
-.popup-descricao{
-font-size: 1rem;
-line-height: 1.5;
-margin: 0 0 20px 0;
-text-align: left;
+.popup-descricao {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+  text-align: left;
 }
 
 .popup-image {
-width: 100%;
-height: 200px;
-background-size: cover;
-background-position: center;
-border-radius: 8px;
-margin-bottom: 20px;
-position: relative;
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  position: relative;
 }
 
 .popup-image::after {
-content: "";
-position: absolute;
-bottom: 0;
-left: 0;
-right: 0;
-height: 80px;
-background: linear-gradient(to top, rgba(51, 51, 51, 0.45), transparent); /* Gradiente ajustado para o efeito de vidro */
-border-bottom-left-radius: 8px;
-border-bottom-right-radius: 8px;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to top, rgba(51, 51, 51, 0.45), transparent);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
-.popup-link{
-text-decoration: none;
-color: #bbbbbb;
-padding: 10px 15px;
-border-radius: 5px;
-transition: all 0.3s ease-in-out;
-margin-top: 10px;
-display: inline-block;
+.popup-link {
+  text-decoration: none;
+  color: #bbbbbb;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  margin-top: 10px;
+  display: inline-block;
 }
 
-.popup-link:hover{
-background-color: #bbbbbb;
-color: #fff;
-box-shadow: none;
+.popup-link:hover {
+  background-color: #bbbbbb;
+  color: #fff;
+  box-shadow: none;
 }
 
 .button {
-height: 40px;
-width: 180px; 
-position: relative;
-background-color: transparent; 
-cursor: pointer;
-border: 2px solid #bbbbbb; /* Cor da borda ajustada */
-overflow: hidden;
-border-radius: 30px;
-color: #bbbbbb; /* Cor do texto do botão */
-transition: all 0.5s ease-in-out; /* Transição original */
-align-self: center;
-margin-top: 20px;
-font-size: 1rem;
-font-weight: 600;
-letter-spacing: 1px;
-text-transform: uppercase;
-z-index: 1; /* Garantir que o texto fique acima do pseudo-elemento */
+  height: 40px;
+  width: 180px;
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
+  border: 2px solid #bbbbbb;
+  overflow: hidden;
+  border-radius: 30px;
+  color: #bbbbbb;
+  transition: all 0.5s ease-in-out;
+  align-self: center;
+  margin-top: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 1;
 }
 
 .btn-txt {
-z-index: 1;
-font-weight: 600;
-letter-spacing: 1px;
+  z-index: 1;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .type1::after {
-content: "";
-position: absolute;
-left: 0;
-top: 0;
-transition: all 0.5s ease-in-out; 
-background-color: #bbbbbb; 
-border-radius: 30px;
-visibility: hidden;
-height: 10px; 
-width: 10px; 
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+  background-color: #bbbbbb;
+  border-radius: 30px;
+  visibility: hidden;
+  height: 10px;
+  width: 10px;
 }
 
 .button:hover {
-box-shadow: 1px 1px 200px #252525; /* Sombra original no hover */
-color: #25252525; /* Cor do texto no hover */
-border: none; /* Remover borda no hover */
+  box-shadow: 1px 1px 200px #252525;
+  color: #25252525;
+  border: none;
 }
 
 .type1:hover::after {
-visibility: visible;
-transform: scale(100) translateX(2px); /* Animação original */
+  visibility: visible;
+  transform: scale(100) translateX(2px);
 }
 
-
-/* Imagens dos projetos - Manter */
 .project1 {
-background-image: url('../img/FuriaBot.png');
-background-size: cover;
-background-position: center;
+  background-image: url('../img/FuriaBot.png');
+  background-size: cover;
+  background-position: center;
 }
 
 .project2 {
-background-image: url('../img/oceasense.png');
-background-size: cover;
-background-position: center;
+  background-image: url('../img/oceasense.png');
+  background-size: cover;
+  background-position: center;
 }
 
 .project3 {
-background-image: url('../img/gtx.jpg');
-background-size: cover;
-background-position: center;
+  background-image: url('../img/gtx.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 .project4 {
-background-image: url('../img/Felipao.png');
-background-size: cover;
-background-position: center;
+  background-image: url('../img/Felipao.png');
+  background-size: cover;
+  background-position: center;
 }
 
-/* Responsividade do popup aberto */
 @media (max-width: 768px) {
+  .popup-overlay {
+    overflow-y: auto;
+    padding: 20px;
+  }
+
   .popup-content {
-      padding: 20px;
-      gap: 15px;
+    padding: 20px;
+    gap: 15px;
+    max-height: 85vh;
+    width: 95%;
   }
 
   .popup-titulo {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
   }
 
   .popup-descricao {
-      font-size: 0.9rem;
+    font-size: 0.9rem;
   }
 
   .popup-image {
-      height: 150px;
+    height: 150px;
   }
 
   .popup-image::after {
-      height: 60px;
-      background: linear-gradient(to top, rgba(51, 51, 51, 0.7), transparent); /* Ajuste do gradiente para mobile */
+    height: 60px;
+    background: linear-gradient(to top, rgba(51, 51, 51, 0.7), transparent);
   }
 
   .button {
-      height: 35px;
-      width: 120px;
-      font-size: 0.9rem;
+    height: 35px;
+    width: 120px;
+    font-size: 0.9rem;
   }
 }
