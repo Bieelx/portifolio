@@ -54,51 +54,36 @@ function App() {
       };
     }, []);
 
-    // Efeito para seguir o mouse
+
 useEffect(() => {
- const mouseLight = document.querySelector('.mouse-light');
+  const mouseLight = document.querySelector('.mouse-light');
+  const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  if (isTouch) return;  // sai da função e não registra nada
 
- const handleEvent = (e) => {
-      if (e.type.startsWith('touch')) {
- e.preventDefault(); // Prevent default touch behaviors like scrolling
-      }
-      const clientX = e.clientX ?? (e.touches && e.touches[0]?.clientX);
-      const clientY = e.clientY ?? (e.touches && e.touches[0]?.clientY);
-      mouseLight.style.left = `${clientX}px`;
-      mouseLight.style.top = `${clientY}px`;
- };
+  const handleEvent = (e) => {
+    mouseLight.style.left = `${e.clientX}px`;
+    mouseLight.style.top = `${e.clientY}px`;
+  };
+  const handleMouseEnter = () => mouseLight.classList.add('active');
+  const handleMouseLeave = () => mouseLight.classList.remove('active');
 
-        const handleMouseEnter = () => {
-            mouseLight.classList.add('active');
-        };
+  window.addEventListener('mousemove', handleEvent);
+  const clickable = document.querySelectorAll('.project-card, .social-links a');
+  clickable.forEach(el => {
+    el.addEventListener('mouseenter', handleMouseEnter);
+    el.addEventListener('mouseleave', handleMouseLeave);
+  });
 
-        const handleMouseLeave = () => {
-            mouseLight.classList.remove('active');
-        };
-        
+  return () => {
+    window.removeEventListener('mousemove', handleEvent);
+    clickable.forEach(el => {
+      el.removeEventListener('mouseenter', handleMouseEnter);
+      el.removeEventListener('mouseleave', handleMouseLeave);
+    });
+  };
+}, []);
 
- window.addEventListener('mousemove', handleEvent);
- window.addEventListener('touchmove', handleEvent);
- window.addEventListener('touchstart', handleEvent);
 
-        // Add event listeners to clickable elements
-        const clickableElements = document.querySelectorAll('.project-card, .social-links a');
- clickableElements.forEach(element => {
- element.addEventListener('mouseenter', handleMouseEnter);
- element.addEventListener('mouseleave', handleMouseLeave);
- });
-
-        return () => {
- window.removeEventListener('mousemove', handleEvent);
- window.removeEventListener('touchmove', handleEvent);
- window.removeEventListener('touchstart', handleEvent);
-
-            clickableElements.forEach(element => {
- element.removeEventListener('mouseenter', handleMouseEnter);
- element.removeEventListener('mouseleave', handleMouseLeave);
- });
-        };
-    }, []);
   return (
     <div className="App">
       <div className='mouse-light'></div>
