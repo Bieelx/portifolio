@@ -1,0 +1,143 @@
+.hero-section {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem 1.5rem 0;
+    text-align: center;
+}
+
+.hero-title {
+    margin-bottom: 1.5rem;
+}
+
+.hero-welcome {
+    color: #9ca3af;
+    /* text-gray-400 */
+    font-size: 1.2rem;
+}
+
+.hero-name {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    display: block;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #d1d5db;
+    /* text-gray-300 */
+    margin-bottom: 3rem;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.tech-icon-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.tech-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #9ca3af;
+    transition: color 0.3s;
+}
+
+.tech-icon-wrapper:hover .tech-icon {
+    color: white;
+}
+
+.tech-name {
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+}
+
+.tech-icon-wrapper:hover .tech-name {
+    opacity: 1;
+}
+
+.social-links-hero {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.social-btn {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.social-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.scroll-indicator {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: #9ca3af;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.scroll-indicator:hover {
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .hero-name {
+        font-size: 4.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+}

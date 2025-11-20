@@ -1,0 +1,150 @@
+.awards-section {
+    min-height: 100vh;
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+    background-color: #09090b;
+    /* zinc-950 */
+}
+
+.awards-bg {
+    position: absolute;
+    inset: 0;
+    background-color: #09090b;
+    z-index: 0;
+}
+
+.awards-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.awards-title {
+    font-size: 2.25rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: white;
+    font-weight: bold;
+}
+
+.awards-subtitle {
+    text-align: center;
+    color: #9ca3af;
+    /* gray-400 */
+    max-width: 42rem;
+    margin: 0 auto 4rem;
+    font-size: 1rem;
+}
+
+.awards-grid {
+    display: grid;
+    gap: 2rem;
+    max-width: 64rem;
+    /* max-w-5xl */
+    margin: 0 auto;
+}
+
+.award-card-wrapper {
+    position: relative;
+}
+
+.award-card {
+    position: relative;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.award-card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-10px);
+}
+
+.award-icon-wrapper {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s;
+}
+
+.award-card:hover .award-icon-wrapper {
+    transform: scale(1.1);
+}
+
+.award-icon {
+    width: 2rem;
+    height: 2rem;
+    color: white;
+}
+
+.award-highlight {
+    margin-bottom: 1rem;
+    padding: 0.25rem 1rem;
+    font-size: 0.75rem;
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.award-title {
+    font-size: 1.25rem;
+    color: white;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.award-desc {
+    color: #9ca3af;
+    /* gray-400 */
+    font-size: 0.875rem;
+}
+
+.awards-footer {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.awards-footer-text {
+    color: #9ca3af;
+    margin-bottom: 1.5rem;
+}
+
+.awards-cta-btn {
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    background-color: white;
+    color: black;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.awards-cta-btn:hover {
+    background-color: #e5e7eb;
+}
+
+@media (min-width: 768px) {
+    .awards-title {
+        font-size: 3rem;
+    }
+
+    .awards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

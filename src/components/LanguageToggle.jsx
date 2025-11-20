@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import languageIcon from '../img/translate.svg'; // substitua pelo caminho real do seu ícone
+import languageIcon from '../img/translate.svg';
 
 const LanguageToggle = () => {
   const { i18n } = useTranslation();

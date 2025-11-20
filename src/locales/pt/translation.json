@@ -1,92 +1,218 @@
 {
   "home_title": "Bem-Vindo ao meu portfólio",
   "home_subtitle": "Front-End | UI/UX Designer | Data Analytics",
-  "about_title": "Sobre mim",
-  "about_text": "Oi! Sou o Gabriel, estudante de Sistemas de Informação na FIAP e apaixonado por tecnologia. Atualmente trabalho com React, Python, JavaScript, SQL e automações com UiPath, sempre focado em criar soluções práticas com interfaces intuitivas. Minhas principais habilidades incluem desenvolvimento front-end, automações inteligentes e análise de dados.\n\nQuando não estou codando, você provavelmente vai me encontrar treinando na academia, lendo algo interessante ou maratonando filmes e séries de terror. Sou aquele nerd tranquilo que gosta de resolver problemas com criatividade, trabalhar em equipe e sempre aprender algo novo.\n\nCom esse perfil descontraído, mas comprometido, busco evoluir cada vez mais na tecnologia, contribuindo com minhas ideias e habilidades para criar projetos realmente inovadores.",
-  
-    "projects": {
+  "about_title": "Quem sou eu",
+  "about_text": "Sou o Gabriel: futuro analista de sistemas pela FIAP, entusiasta de interfaces bonitas e, atualmente, mergulhado no mundo dos dados na Claro.\n\nMinha jornada começou com códigos e automações (React, Python, UiPath), mas hoje meu foco profissional está em Digital Analytics e AWS. Gosto de pensar que uno o melhor dos dois mundos: a precisão da análise de dados com o olhar estético de quem ama Front-end e Design.\n\nLifestyle: Sou aquele \"nerd tranquilo\" que não abre mão de uma vida ativa. Se não estou codando ou analisando métricas, com certeza estou com uma xícara de café na mão, treinando pesado na academia ou no tatame de Muay Thai. Valorizo o equilíbrio, seja maratonando algo interessante, lendo ou curtindo o tempo com a minha namorada.\n\nMeu objetivo? Criar soluções inovadoras sem perder a leveza e o compromisso com a evolução constante.",
+  "projects": {
     "1": {
-        "title": "Furia Bot",
-        "description": "O projeto FURIA Fan Experience é uma plataforma web desenvolvida com React e Vite, criada para oferecer uma experiência interativa e imersiva aos fãs da FURIA. O sistema apresenta os times da organização, próximos jogos, galeria de imagens e um chatbot integrado com IA. Com design inspirado na identidade visual da FURIA, o projeto destaca a responsividade, animações e integração de componentes reutilizáveis, demonstrando habilidades em front-end moderno, UI/UX e desenvolvimento de aplicações escaláveis."
+      "title": "Furia Bot",
+      "description": "Bot interativo desenvolvido com tecnologia de ponta para experiências imersivas. O projeto utiliza processamento de linguagem natural e automação avançada para interagir com usuários de forma inteligente e contextual.",
+      "features": [
+        "Processamento de linguagem natural",
+        "Respostas contextuais inteligentes",
+        "Integração com APIs de esports",
+        "Interface de chat interativa"
+      ]
     },
     "2": {
-        "title": "OceanSense",
-        "description": "O OceanSense é um projeto desenvolvido em React durante a competição Global Solution da FIAP, onde minha equipe ficou entre os vencedores entre 30 grupos. Criamos uma solução tecnológica para monitorar e preservar os oceanos, utilizando sensores para coletar dados como temperatura e pH da água, exibidos em um dashboard responsivo e interativo, inspirado no Material UI. O projeto destacou nossa organização, trabalho em equipe e foco em uma interface moderna e amigável."
+      "title": "OceanSense",
+      "description": "Plataforma de monitoramento oceânico com análise de dados em tempo real. Utilizando sensores IoT e análise de dados avançada, o sistema coleta e processa informações sobre temperatura, salinidade e poluição dos oceanos.",
+      "features": [
+        "Monitoramento em tempo real",
+        "Dashboards interativos com gráficos",
+        "Sistema de alertas automatizados",
+        "Histórico de dados e tendências",
+        "Integração com sensores IoT"
+      ]
     },
     "3": {
-        "title": "Sistema de gestão",
-        "description": "O projeto GTX, criado para o FIAP Next, foi uma experiência desafiadora de desenvolvimento de um sistema de gestão que otimiza o fluxo de informações e simplifica a administração empresarial. Fui responsável pela criação de uma interface intuitiva e eficiente e pela integração com o banco de dados, garantindo o armazenamento e a recuperação rápida de informações. Esse projeto me permitiu aplicar e aprimorar conhecimentos em front-end, backend, otimização de desempenho e responsividade. Trabalhar no GTX foi gratificante, tanto pelo crescimento técnico quanto pela colaboração enriquecedora da equipe. Esse projeto garantiu ao meu grupo o Top 1 na competição do NEXT."
+      "title": "Innovate IT",
+      "description": "Sistema completo de gestão com foco em sustentabilidade e energia renovável. A plataforma oferece controle de recursos, acompanhamento de métricas de sustentabilidade, gestão de equipes e relatórios automatizados.",
+      "features": [
+        "Gestão de projetos de energia renovável",
+        "Controle de recursos e custos",
+        "Métricas de sustentabilidade",
+        "Relatórios automatizados",
+        "Gestão de equipes e tarefas"
+      ]
     },
     "4": {
-        "title": "MentalAid",
-        "description": "Meu primeiro grande projeto em front-end foi desenvolvido para o FIAP Next do ano passado, com o objetivo de criar um site voltado a idosos com demência. A ideia era desenvolver uma plataforma que pudesse oferecer apoio cognitivo, reduzir a solidão e auxiliar com lembretes para atividades diárias. O site continha jogos interativos para estimular a memória e a atenção, uma IA projetada para que o usuário pudesse conversar e sentir companhia, além de alertas para incentivá-los a se levantar e se movimentar ao longo do dia. Também adicionei uma área informativa para educar sobre a demência, facilitando o acesso a informações de forma clara e acolhedora."
+      "title": "MentalAid",
+      "description": "Aplicação de suporte à saúde mental com recursos de acompanhamento e bem-estar. O sistema utiliza UI/UX cuidadosamente projetado para criar uma experiência acolhedora e terapêutica.",
+      "features": [
+        "Acompanhamento de humor diário",
+        "Meditações guiadas e exercícios de respiração",
+        "Diário pessoal com análise de sentimentos",
+        "Recursos de emergência e contatos de apoio",
+        "Estatísticas de progresso e bem-estar"
+      ]
+    },
+    "5": {
+      "title": "Nexus",
+      "description": "Ecossistema móvel unificado para ensino de tecnologia, combinando cursos, comunidade em tempo real e IA.",
+      "fullDescription": "O Nexus resolve a fragmentação das ferramentas de ensino técnico ao unificar aprendizado, colaboração e competição em um único aplicativo móvel. A plataforma integra um sistema de cursos dinâmicos (LMS), um fórum de Q&A em tempo real ideal para eventos como CTFs, e uma camada de gamificação competitiva. Além disso, conta com uma assistente de IA integrada para análise prática de cibersegurança, redefinindo a experiência do estudante.",
+      "features": [
+        "Plataforma de cursos com conteúdo dinâmico em Markdown",
+        "Fórum e chat em tempo real com múltiplos canais",
+        "Gamificação com Quiz inteligente e Ranking global competitivo",
+        "Acompanhamento visual de progresso na linha do tempo",
+        "Assistente de IA integrada (Gemini) para análise de cibersegurança"
+      ]
+    },
+    "6": {
+      "title": "MentalBalance",
+      "description": "App mobile B2B para monitoramento de saúde mental e prevenção de burnout",
+      "fullDescription": "Aplicativo mobile (React Native) focado em bem-estar corporativo e prevenção de burnout. Utiliza inteligência artificial e sensores do dispositivo para monitorar sinais de estresse, oferecendo check-ins multimodais (voz e texto), análises de sentimento via IA (Gemini), e exercícios de respiração guiada. Inclui dashboards anônimos para gestão de equipes, promovendo um ambiente de trabalho mais saudável.",
+      "features": [
+        "Check-in diário com análise de sentimento via IA (Gemini)",
+        "Sensor de agitação física em tempo real (Acelerômetro)",
+        "Exercícios de respiração guiada (Técnica 4-7-8)",
+        "Dashboard de equipe com dados anonimizados para gestores",
+        "Integração simulada com wearables (Apple Watch/Garmin)"
+      ]
     },
     "button": "Fechar",
-    "link": "Acesse nosso repositório no GitHub!!"
-},
-    "resume": {
+    "link": "Acesse nosso repositório no GitHub!!",
+    "view_project": "Ver projeto"
+  },
+  "resume": {
     "education_title": "Formação",
-    "education": "FIAP - Cursando Sistemas de Informação",
-
+    "education": [
+      {
+        "institution": "FIAP",
+        "degree": "Sistemas de Informação",
+        "period": "Cursando",
+        "description": "Graduação focada em desenvolvimento de sistemas e tecnologia"
+      }
+    ],
+    "experience_title": "Experiências",
+    "experiences": [
+      {
+        "company": "Claro",
+        "role": "Estagiário em Digital Analytics",
+        "period": "Ago 2025 - Atualmente",
+        "description": "Atualmente trabalho com AWS, Google Analytics e Tag Manager, mas durante esse meu estágio irei me aprofundar em diversas áreas como agilidade, CRO e design."
+      },
+      {
+        "company": "CSN",
+        "role": "Estagiário em Desenvolvimento RPA",
+        "period": "Fev 2025 - Jul 2025",
+        "description": "Trabalhei com automações via UiPath, tive muito contato com SAP e Excel no geral."
+      }
+    ],
     "courses_title": "Cursos",
     "courses": [
-        "Python – FIAP Nano: Sintaxe, estruturas de controle, funções, POO, Flask e Django.",
-        "UX Design — FIAP Nano: Usabilidade, arquitetura da informação, design thinking, pesquisas, Google Analytics, prototipação.",
-        "Python com orientação a objeto – Alura: POO, classes, objetos, herança, polimorfismo para soluções estruturadas.",
-        "UiPath Avançado – Practia: Domínio da ferramenta UiPath, RPA, automações para otimização de processos.",
-        "HTML e CSS para projeto web – Alura: Construção de páginas web, estilização, layouts responsivos.",
-        "Scrum Fundamentos: Framework ágil Scrum, papéis, eventos, artefatos, gestão de projetos, entregas incrementais.",
-        ".NET Developer Fundamentos (em andamento) - Alura: Conceitos .NET e C#, APIs, arquitetura MVC, back-end POO.",
-        "Excel (básico ao intermediário): Funções essenciais (PROCV, PROCH, PROCX), análise e manipulação de dados.",
-        "Introdução ao Sistema Sinacor – Escola B3: Funcionamento do Sinacor, rotinas operacionais, liquidação, mercado de capitais."
+      {
+        "title": "Python - FIAP Nano",
+        "description": "Sintaxe, estruturas de controle e dados"
+      },
+      {
+        "title": "JavaScript",
+        "description": "Programação web moderna e frameworks"
+      },
+      {
+        "title": "HTML & CSS",
+        "description": "Desenvolvimento front-end e design responsivo"
+      },
+      {
+        "title": "SQL",
+        "description": "Banco de dados e consultas"
+      },
+      {
+        "title": "Power BI",
+        "description": "Análise e visualização de dados"
+      },
+      {
+        "title": "UiPath",
+        "description": "Automação de processos robóticos (RPA)"
+      },
+      {
+        "title": "Google Analytics",
+        "description": "Análise de dados e métricas"
+      },
+      {
+        "title": "Amazon AWS",
+        "description": "Conceitos básicos da AWS, computação em nuvem e Lambda"
+      }
     ],
-
     "hardskills_title": "Hard Skills",
     "hardskills": [
-        "Linguagens: Python, SQL, VBA, JavaScript, C# (aprendizado ativo)",
-        "Ferramentas e Visualização: Excel (avançado), Power BI, Looker Studio",
-        "Automação e RPA: UiPath, scripts em Python para tarefas operacionais",
-        "Banco de Dados: MySQL, PostgreSQL",
-        "Desenvolvimento: React, Spring Boot, .NET (aprendizado ativo)"
+      "Linguagens: Python, SQL, VBA, JavaScript, C# (aprendizado ativo)",
+      "Ferramentas e Visualização: Excel (avançado), Power BI, Looker Studio",
+      "Automação e RPA: UiPath, scripts em Python para tarefas operacionais",
+      "Banco de Dados: MySQL, PostgreSQL",
+      "Desenvolvimento: React, Spring Boot, .NET (aprendizado ativo)"
     ],
-
     "softskills_title": "Soft Skills",
     "softskills": [
-        "Trabalho em equipe", "Comunicação eficaz", "Resolução de problemas", "Organização",
-        "Planejamento", "Adaptabilidade", "Proatividade", "Pensamento crítico",
-        "Liderança", "Criatividade", "Gestão de tempo", "Atenção aos detalhes",
-        "Foco em resultados", "Colaboração"
+      "Trabalho em equipe",
+      "Comunicação eficaz",
+      "Resolução de problemas",
+      "Organização",
+      "Planejamento",
+      "Adaptabilidade",
+      "Proatividade",
+      "Pensamento crítico",
+      "Liderança",
+      "Criatividade",
+      "Gestão de tempo",
+      "Atenção aos detalhes",
+      "Foco em resultados",
+      "Colaboração"
     ],
-
     "languages_title": "Idiomas",
-    "languages": ["Inglês - Avançado"]
-    },
-
-    "awards": {
-  "1": {
-    "title": "GlobalSolution 2024/1",
-    "description": "Ganhei o prêmio GlobalSolution 2024/1 com o projeto Ocean Sense, que foca na criação de soluções inovadoras para o monitoramento e proteção dos oceanos. Esse prêmio reconheceu minha contribuição para a preservação ambiental, aplicando tecnologia para resolver problemas globais relacionados ao meio ambiente."
+    "languages": [
+      "Inglês - Avançado"
+    ]
   },
-  "2": {
-    "title": "FIAP Next 2024",
-    "description": "Fiquei em primeiro lugar no FIAP Next 2024, com o prêmio de melhor trabalho. Meu grupo foi reconhecido pelo desenvolvimento do projeto Innovate IT, uma solução de gestão para micro e pequenas empresas, focada em usabilidade e eficiência."
+  "awards": {
+    "subtitle": "Conquistas e reconhecimentos ao longo da minha jornada na tecnologia",
+    "footer_text": "Interessado em trabalhar juntos?",
+    "cta_btn": "Entre em contato",
+    "1": {
+      "title": "GlobalSolution 2024/1",
+      "description": "Ganhei o prêmio GlobalSolution 2024/1 com o projeto Ocean Sense, que foca na criação de soluções inovadoras para o monitoramento e proteção dos oceanos. Esse prêmio reconheceu minha contribuição para a preservação ambiental, aplicando tecnologia para resolver problemas globais relacionados ao meio ambiente.",
+      "highlight": "Vencedor"
+    },
+    "2": {
+      "title": "FIAP Next 2024",
+      "description": "Fiquei em primeiro lugar no FIAP Next 2024, com o prêmio de melhor trabalho. Meu grupo foi reconhecido pelo desenvolvimento do projeto Innovate IT, uma solução de gestão para micro e pequenas empresas, focada em usabilidade e eficiência.",
+      "highlight": "Top 1"
+    },
+    "3": {
+      "title": "Nexus Project",
+      "description": "Top 3 do FIAP Next 2025",
+      "highlight": "Top 3"
+    }
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "Sobre mim",
+    "projects": "Projetos",
+    "resume": "Currículo",
+    "awards": "Reconhecimentos",
+    "contact": "Contato"
+  },
+  "hero": {
+    "explore": "Explore mais"
+  },
+  "sections": {
+    "projects": "Projetos",
+    "resume": "Currículo",
+    "awards": "Reconhecimentos"
+  },
+  "about_skills": {
+    "frontend": {
+      "title": "Desenvolvimento Front-End",
+      "desc": "React, Python, JavaScript, SQL e automações com UiPath"
+    },
+    "uiux": {
+      "title": "UI/UX Design",
+      "desc": "Criação de interfaces intuitivas e experiências memoráveis"
+    },
+    "data": {
+      "title": "Análise de Dados",
+      "desc": "Automações inteligentes e análise de dados"
+    }
   }
-},
-
-"navbar": {
-  "home": "Home",
-  "about": "Sobre mim",
-  "projects": "Projetos",
-  "resume": "Currículo",
-  "awards": "Reconhecimentos"
-},
-"sections": {
-  "projects": "Projetos",
-  "resume": "Currículo",
-  "awards": "Reconhecimentos"
-}
-
-
-
-
 }

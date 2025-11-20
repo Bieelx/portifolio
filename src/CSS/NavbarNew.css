@@ -1,0 +1,256 @@
+.navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+}
+
+.navbar-backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+}
+
+.navbar-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3.5rem;
+}
+
+/* Logo/Dot */
+.navbar-logo-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.logo-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.logo-dot-fade-1 {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.logo-dot-fade-2 {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.navbar-logo-btn:hover .logo-dot-fade-1,
+.navbar-logo-btn:hover .logo-dot-fade-2 {
+    background-color: white;
+}
+
+/* Desktop Navigation */
+.navbar-desktop-menu {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .navbar-desktop-menu {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.nav-item-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    padding: 0.5rem;
+}
+
+.nav-number {
+    font-size: 10px;
+    font-family: monospace;
+    transition: color 0.3s;
+}
+
+.nav-label {
+    font-size: 0.875rem;
+    transition: color 0.3s;
+}
+
+.nav-item-btn.active .nav-number,
+.nav-item-btn.active .nav-label {
+    color: white;
+}
+
+.nav-item-btn:not(.active) .nav-number {
+    color: #4b5563;
+    /* gray-600 */
+}
+
+.nav-item-btn:not(.active) .nav-label {
+    color: #9ca3af;
+    /* gray-400 */
+}
+
+.nav-item-btn:not(.active):hover .nav-number {
+    color: #9ca3af;
+    /* gray-400 */
+}
+
+.nav-item-btn:not(.active):hover .nav-label {
+    color: white;
+}
+
+.nav-indicator {
+    width: 0.25rem;
+    height: 0.25rem;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Contact CTA */
+.navbar-cta {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .navbar-cta {
+        display: block;
+        font-size: 0.75rem;
+        color: #9ca3af;
+        background: transparent;
+        padding: 0.5rem 1rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .navbar-cta:hover {
+        color: white;
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: block;
+    padding: 0.5rem;
+    color: white;
+    background: transparent;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+@media (min-width: 768px) {
+    .mobile-menu-btn {
+        display: none;
+    }
+}
+
+.mobile-menu-btn:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Mobile Navigation */
+.mobile-nav-container {
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .mobile-nav-container {
+        display: none;
+    }
+}
+
+.mobile-nav-list {
+    list-style: none;
+    padding: 1rem 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.mobile-nav-btn {
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.mobile-nav-btn.active {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.mobile-nav-btn:not(.active) {
+    color: #9ca3af;
+}
+
+.mobile-nav-btn:not(.active):hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Scroll Progress Bar */
+.scroll-progress-container {
+    position: fixed;
+    top: 3.5rem;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.05);
+    z-index: 50;
+}
+
+.scroll-progress-bar {
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.5), white);
+}

@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import '../CSS/App.css'; // Para estilos adicionais
+import '../CSS/App.css';
 
 const Typewriter = ({ text = '', speed = 100, pause = 2000 }) => {
   const [displayedText, setDisplayedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [index, setIndex] = useState(0);
 
-  // Monitorar mudanças no texto e reiniciar o efeito
   useEffect(() => {
-    setDisplayedText('');  // Limpar o texto exibido
-    setIndex(0);           // Resetar o índice
-    setIsDeleting(false);  // Resetar o estado de deleção
-  }, [text]); // Executa toda vez que o texto muda (como na tradução)
+    setDisplayedText('');
+    setIndex(0);
+    setIsDeleting(false);
+  }, [text]);
 
   useEffect(() => {
     let interval;

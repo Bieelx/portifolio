@@ -17,6 +17,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
+    cursor: none !important;
 }
 
 body {
@@ -161,7 +162,7 @@ li {
     filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
 }
 
-.box_contato > a:hover {
+.box_contato>a:hover {
     opacity: 1;
     transition: opacity 0.3s ease-in;
     transition: opacity 0.3s ease-out;
@@ -202,7 +203,7 @@ li {
     max-width: 350px;
     border-radius: 15px;
     box-shadow: 8px 8px 15px var(--cor-sombra-escura),
-                -8px -8px 15px var(--cor-sombra-clara);
+        -8px -8px 15px var(--cor-sombra-clara);
     transition: transform 0.3s ease;
 }
 
@@ -210,7 +211,7 @@ li {
     transform: scale(1.02);
 }
 
-.sobre_conteudo > div {
+.sobre_conteudo>div {
     flex: 1;
     max-width: 600px;
     color: var(--cor-texto-branco);
@@ -314,7 +315,7 @@ li {
         margin: 0 auto;
         object-fit: cover;
         box-shadow: 5px 5px 8px var(--cor-sombra-escura),
-                   -5px -5px 8px var(--cor-sombra-clara);
+            -5px -5px 8px var(--cor-sombra-clara);
         transition: none;
     }
 
@@ -322,7 +323,7 @@ li {
         transform: none;
     }
 
-    .sobre_conteudo > div {
+    .sobre_conteudo>div {
         padding: 20px;
         width: 100%;
         height: auto;
@@ -330,7 +331,7 @@ li {
         border-radius: 15px;
         background: #212121;
         box-shadow: 5px 5px 8px var(--cor-sombra-escura),
-                   -5px -5px 8px var(--cor-sombra-clara);
+            -5px -5px 8px var(--cor-sombra-clara);
         transition: 0.4s;
     }
 
@@ -382,24 +383,24 @@ li {
     z-index: 9999;
 }
 
- .language-toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  cursor: pointer;
-  z-index: 999;
-  width: 40px;
-  height: 40px;
+.language-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 999;
+    width: 40px;
+    height: 40px;
 }
 
 .language-toggle img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
-  transition: transform 0.2s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
+    transition: transform 0.2s ease;
 }
 
 .language-toggle:hover img {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
