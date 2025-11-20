@@ -32,7 +32,7 @@ const Resume = () => {
                     </h2>
 
                     <div className="resume-content">
-                        {/* Education */}
+                        {/* Educação */}
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -69,7 +69,7 @@ const Resume = () => {
                             </div>
                         </motion.div>
 
-                        {/* Experiences */}
+                        {/* Experiências */}
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -106,7 +106,7 @@ const Resume = () => {
                             </div>
                         </motion.div>
 
-                        {/* Courses */}
+                        {/* Cursos */}
                         <motion.div
                             initial={{ opacity: 0, x: 50 }}
                             animate={inView ? { opacity: 1, x: 0 } : {}}

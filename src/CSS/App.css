@@ -383,6 +383,12 @@ li {
     z-index: 9999;
 }
 
+@media (max-width: 768px) {
+    .mouse-light {
+        display: none;
+    }
+}
+
 .language-toggle {
     position: fixed;
     bottom: 20px;

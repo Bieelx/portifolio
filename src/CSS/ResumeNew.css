@@ -32,7 +32,6 @@
 
 .resume-content {
     max-width: 56rem;
-    /* max-w-4xl */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -102,7 +101,6 @@
 
 .resume-card-subtitle {
     color: #9ca3af;
-    /* gray-400 */
     font-size: 0.875rem;
 }
 
@@ -118,7 +116,6 @@
 
 .resume-card-desc {
     color: #9ca3af;
-    /* gray-400 */
     font-size: 0.875rem;
 }
 
@@ -148,7 +145,6 @@
 
 .course-desc {
     color: #9ca3af;
-    /* gray-400 */
     font-size: 0.875rem;
 }
 

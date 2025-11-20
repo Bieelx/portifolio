@@ -42,7 +42,7 @@ const Projects = () => {
         {
             title: t('projects.1.title'),
             description: t('projects.1.description'),
-            fullDescription: t('projects.1.description'), // Using description as fullDescription for now if not separate in JSON for old projects, or I should update JSON. The JSON has 'description' which is quite long.
+            fullDescription: t('projects.1.description'),
             image: require('../img/FuriaBot.png'),
             tags: ['React', 'AI', 'ChatBot'],
             link: "https://bieelxfuria.netlify.app/",
@@ -111,7 +111,7 @@ const Projects = () => {
                                 onClick={() => setSelectedProject(project)}
                                 className="project-card"
                             >
-                                {/* Project image */}
+                                {/* Imagem do Projeto */}
                                 <div className="project-image-container">
                                     <ImageWithFallback
                                         src={project.image}
@@ -120,7 +120,7 @@ const Projects = () => {
                                     />
                                     <div className="project-overlay" />
 
-                                    {/* Links overlay */}
+                                    {/* Sobreposição de Links */}
                                     <div className="project-links-overlay">
                                         <a
                                             href={project.github}
@@ -141,7 +141,7 @@ const Projects = () => {
                                     </div>
                                 </div>
 
-                                {/* Project info */}
+                                {/* Informações do Projeto */}
                                 <div className="project-info">
                                     <h3 className="project-card-title">{project.title}</h3>
                                     <p className="project-card-desc">{project.description}</p>
@@ -164,7 +164,7 @@ const Projects = () => {
                 </motion.div>
             </div>
 
-            {/* Project Modal */}
+            {/* Modal do Projeto */}
             {selectedProject && (
                 <ProjectModal
                     project={selectedProject}

@@ -14,7 +14,6 @@ import {
     SiGoogleanalytics,
 } from 'react-icons/si';
 import Typewriter from './Typewriter';
-import LanguageToggle from './LanguageToggle';
 import '../CSS/HeroNew.css';
 
 const Hero = () => {
@@ -44,7 +43,6 @@ const Hero = () => {
 
     return (
         <section className='bem_vindo hero-section' id='bem_vindo'>
-            {/* Overlay handled by CSS or existing class if needed, adding specific overlay here */}
             <div className="hero-overlay" />
 
             <div className="hero-container">
@@ -75,7 +73,7 @@ const Hero = () => {
                         {t('home_subtitle')}
                     </motion.h2>
 
-                    {/* Tech stack */}
+                    {/* Pilha de Tecnologias */}
                     <motion.div
                         className="tech-stack"
                         initial={{ opacity: 0, y: 20 }}
@@ -99,7 +97,7 @@ const Hero = () => {
                         ))}
                     </motion.div>
 
-                    {/* Social links */}
+                    {/* Links Sociais */}
                     <motion.div
                         className="social-links-hero"
                         initial={{ opacity: 0 }}
@@ -120,12 +118,9 @@ const Hero = () => {
                                 <Icon size={20} />
                             </motion.a>
                         ))}
-                        <div style={{ alignSelf: 'center' }}>
-                            <LanguageToggle />
-                        </div>
                     </motion.div>
 
-                    {/* Scroll indicator */}
+                    {/* Indicador de Rolagem */}
                     <motion.button
                         onClick={scrollToNext}
                         animate={{ y: [0, 10, 0] }}

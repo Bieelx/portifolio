@@ -47,7 +47,7 @@ const About = () => {
                     </h2>
 
                     <div className="about-content">
-                        {/* Profile image */}
+                        {/* Imagem de Perfil */}
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -56,7 +56,6 @@ const About = () => {
                         >
                             <div className="profile-image-container">
                                 <div className="profile-image-bg">
-                                    {/* Using the existing image if available, otherwise placeholder */}
                                     {eu ? (
                                         <img src={eu} alt="Gabriel Araujo" className="profile-img-real" />
                                     ) : (
@@ -66,7 +65,7 @@ const About = () => {
                             </div>
                         </motion.div>
 
-                        {/* About text */}
+                        {/* Texto Sobre Mim */}
                         <motion.div
                             initial={{ opacity: 0, x: 50 }}
                             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -74,7 +73,6 @@ const About = () => {
                             className="about-text-container"
                         >
                             <div className="about-text">
-                                {/* Rendering text from translation, assuming it might be split by newlines or just a block */}
                                 {t('about_text').split('\n').map((paragraph, index) => (
                                     <p key={index} style={{ marginBottom: '1rem' }}>
                                         {paragraph}
@@ -84,7 +82,7 @@ const About = () => {
                         </motion.div>
                     </div>
 
-                    {/* Skills cards */}
+                    {/* Cards de Habilidades */}
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
                         animate={inView ? { opacity: 1, y: 0 } : {}}

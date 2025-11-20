@@ -31,12 +31,11 @@
 
 .hero-welcome {
     color: #9ca3af;
-    /* text-gray-400 */
     font-size: 1.2rem;
 }
 
 .hero-name {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: bold;
     color: white;
     display: block;
@@ -45,7 +44,6 @@
 .hero-subtitle {
     font-size: 1.25rem;
     color: #d1d5db;
-    /* text-gray-300 */
     margin-bottom: 3rem;
 }
 

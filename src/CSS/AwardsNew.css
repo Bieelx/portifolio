@@ -4,7 +4,6 @@
     position: relative;
     overflow: hidden;
     background-color: #09090b;
-    /* zinc-950 */
 }
 
 .awards-bg {
@@ -34,7 +33,6 @@
 .awards-subtitle {
     text-align: center;
     color: #9ca3af;
-    /* gray-400 */
     max-width: 42rem;
     margin: 0 auto 4rem;
     font-size: 1rem;
@@ -44,7 +42,6 @@
     display: grid;
     gap: 2rem;
     max-width: 64rem;
-    /* max-w-5xl */
     margin: 0 auto;
 }
 
@@ -110,7 +107,6 @@
 
 .award-desc {
     color: #9ca3af;
-    /* gray-400 */
     font-size: 0.875rem;
 }
 

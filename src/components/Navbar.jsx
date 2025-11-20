@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import '../CSS/NavbarNew.css';
 
 const Navbar = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeSection, setActiveSection] = useState('home');
+
+  const toggleLanguage = () => {
+    const newLang = i18n.language === 'pt' ? 'en' : 'pt';
+    i18n.changeLanguage(newLang);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,12 +79,12 @@ const Navbar = () => {
         transition={{ duration: 0.5 }}
         className="navbar-fixed"
       >
-        {/* Ultra-minimal blur background */}
+        {/* Fundo com desfoque ultra-minimalista */}
         <div className="navbar-backdrop" />
 
         <div className="navbar-container">
           <div className="navbar-content">
-            {/* Minimal logo/dot */}
+            {/* Logo/Ponto minimalista */}
             <motion.button
               onClick={() => scrollToSection('home')}
               className="navbar-logo-btn group"
@@ -91,7 +96,7 @@ const Navbar = () => {
               <div className="logo-dot-fade-2" />
             </motion.button>
 
-            {/* Desktop Navigation - Centered */}
+            {/* Navegação Desktop - Centralizada */}
             <ul className="navbar-desktop-menu">
               {navItems.map((item) => (
                 <li key={item.id}>
@@ -121,27 +126,55 @@ const Navbar = () => {
               ))}
             </ul>
 
-            {/* Contact CTA */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="navbar-cta"
-              onClick={() => window.open('https://www.linkedin.com/in/gabriel-deoliveira-araujo/', '_blank')}
-            >
-              {t('navbar.contact')}
-            </motion.button>
+            {/* Lado direito - CTA de Contato e Alternância de Idioma */}
+            <div className="navbar-actions">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="navbar-cta"
+                onClick={() => window.open('https://www.linkedin.com/in/gabriel-deoliveira-araujo/', '_blank')}
+              >
+                {t('navbar.contact')}
+              </motion.button>
 
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="mobile-menu-btn"
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
+              <motion.button
+                onClick={toggleLanguage}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="navbar-lang-btn"
+                aria-label="Toggle language"
+              >
+                <Globe size={14} />
+                <span className="lang-text">{i18n.language}</span>
+              </motion.button>
+            </div>
+
+            {/* Lado direito Mobile - Alternância de Idioma + Menu */}
+            <div className="mobile-actions">
+              {/* Alternância de Idioma Mobile - Sempre Visível */}
+              <motion.button
+                onClick={toggleLanguage}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="mobile-lang-btn"
+                aria-label="Toggle language"
+              >
+                <Globe size={16} />
+                <span className="lang-text" style={{ fontSize: '0.75rem' }}>{i18n.language}</span>
+              </motion.button>
+
+              {/* Botão do Menu Mobile */}
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="mobile-menu-btn"
+                aria-label="Toggle menu"
+              >
+                {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              </button>
+            </div>
           </div>
 
-          {/* Mobile Navigation */}
+          {/* Navegação Mobile */}
           <motion.div
             initial={false}
             animate={{
@@ -178,7 +211,7 @@ const Navbar = () => {
         </div>
       </motion.nav>
 
-      {/* Scroll Progress Bar */}
+      {/* Barra de Progresso de Rolagem */}
       <div className="scroll-progress-container">
         <motion.div
           className="scroll-progress-bar"

@@ -42,7 +42,6 @@
     border-radius: 1rem;
     overflow: hidden;
     background-color: #18181b;
-    /* zinc-900 */
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s;
     cursor: pointer;
@@ -119,7 +118,6 @@
 
 .project-card-desc {
     color: #9ca3af;
-    /* gray-400 */
     font-size: 0.875rem;
     margin-bottom: 1rem;
 }
@@ -139,36 +137,52 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Modal Styles */
+/* Estilos do Modal */
 .modal-overlay {
     position: fixed;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(4px);
     z-index: 50;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+    /* Mobile: Folha inferior */
     justify-content: center;
-    padding: 1rem;
-    overflow-y: auto;
+    overflow: hidden;
 }
 
 .modal-content {
     background-color: #18181b;
-    /* zinc-900 */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 1rem;
     width: 100%;
-    max-width: 56rem;
-    /* max-w-4xl */
-    margin: 2rem 0;
-    overflow: hidden;
+    max-height: 90vh;
+    border-radius: 1.5rem 1.5rem 0 0;
+    /* Mobile: Arredondado apenas no topo */
+    display: flex;
+    flex-direction: column;
     position: relative;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.modal-drag-indicator {
+    width: 3rem;
+    height: 0.25rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 9999px;
+    margin: 0.75rem auto;
+    flex-shrink: 0;
 }
 
 .modal-header-image {
     position: relative;
-    height: 16rem;
+    height: 12rem;
+    /* Altura Mobile */
+    flex-shrink: 0;
+    width: 100%;
+    border-radius: 1.5rem 1.5rem 0 0;
+    overflow: hidden;
+    /* Garantir que a imagem respeite o raio */
 }
 
 .modal-img {
@@ -177,46 +191,60 @@
     object-fit: cover;
 }
 
+.modal-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, #18181b, rgba(24, 24, 27, 0.5), transparent);
+}
+
 .modal-close-btn {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 0.75rem;
+    right: 0.75rem;
     padding: 0.5rem;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(4px);
     color: white;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10;
 }
 
 .modal-close-btn:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-.modal-body {
-    padding: 1.5rem;
+.modal-scroll-content {
+    flex: 1;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .modal-title {
-    font-size: 1.875rem;
-    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
     color: white;
     font-weight: bold;
+    line-height: 1.2;
 }
 
 .modal-desc {
     color: #9ca3af;
-    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
     line-height: 1.6;
 }
 
 .modal-section-title {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     margin-bottom: 0.75rem;
     color: white;
     font-weight: 600;
@@ -225,7 +253,9 @@
 .modal-list {
     list-style: none;
     padding: 0;
-    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .modal-list-item {
@@ -233,24 +263,24 @@
     align-items: flex-start;
     gap: 0.5rem;
     color: #9ca3af;
-    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
 }
 
 .modal-bullet {
     color: white;
     margin-top: 0.25rem;
+    flex-shrink: 0;
 }
 
 .modal-tech-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-bottom: 1.5rem;
 }
 
 .modal-tech-tag {
-    padding: 0.25rem 0.75rem;
-    font-size: 0.875rem;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
     border-radius: 9999px;
     background-color: rgba(255, 255, 255, 0.05);
     color: #d1d5db;
@@ -259,19 +289,24 @@
 
 .modal-actions {
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: auto;
+    padding-top: 1rem;
 }
 
 .modal-btn {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
+    padding: 0.875rem;
+    border-radius: 0.75rem;
     font-weight: 500;
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition: background-color 0.2s;
+    font-size: 0.875rem;
+    width: 100%;
 }
 
 .modal-btn-github {
@@ -294,6 +329,7 @@
     background-color: #e5e7eb;
 }
 
+/* Estilos Desktop */
 @media (min-width: 768px) {
     .projects-title {
         font-size: 3rem;
@@ -303,11 +339,70 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .modal-header-image {
-        height: 20rem;
+    .modal-overlay {
+        align-items: center;
+        /* Centralizar no desktop */
+        padding: 1rem;
     }
 
-    .modal-body {
+    .modal-content {
+        max-width: 56rem;
+        max-height: 85vh;
+        border-radius: 1rem;
+        /* Cantos totalmente arredondados */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .modal-drag-indicator {
+        display: none;
+        /* Ocultar no desktop */
+    }
+
+    .modal-header-image {
+        height: 20rem;
+        border-radius: 0;
+    }
+
+    .modal-close-btn {
+        top: 1rem;
+        right: 1rem;
+        padding: 0.625rem;
+    }
+
+    .modal-scroll-content {
         padding: 2rem;
+        gap: 1.5rem;
+    }
+
+    .modal-title {
+        font-size: 1.875rem;
+        margin-bottom: 1rem;
+    }
+
+    .modal-desc {
+        font-size: 1rem;
+    }
+
+    .modal-section-title {
+        font-size: 1.25rem;
+    }
+
+    .modal-list-item {
+        font-size: 1rem;
+    }
+
+    .modal-tech-tag {
+        font-size: 0.875rem;
+    }
+
+    .modal-actions {
+        flex-direction: row;
+        gap: 0.75rem;
+    }
+
+    .modal-btn {
+        flex: 1;
+        font-size: 1rem;
     }
 }

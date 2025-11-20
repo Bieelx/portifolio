@@ -63,17 +63,17 @@ const Awards = () => {
                                 className="award-card-wrapper"
                             >
                                 <div className="award-card">
-                                    {/* Icon */}
+                                    {/* Ícone */}
                                     <div className="award-icon-wrapper">
                                         <item.icon className="award-icon" />
                                     </div>
 
-                                    {/* Highlight badge */}
+                                    {/* Distintivo de Destaque */}
                                     <span className="award-highlight">
                                         {item.highlight}
                                     </span>
 
-                                    {/* Content */}
+                                    {/* Conteúdo */}
                                     <h3 className="award-title">{item.title}</h3>
                                     <p className="award-desc">{item.description}</p>
                                 </div>
@@ -81,7 +81,7 @@ const Awards = () => {
                         ))}
                     </div>
 
-                    {/* Footer CTA */}
+                    {/* CTA do Rodapé */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={inView ? { opacity: 1 } : {}}

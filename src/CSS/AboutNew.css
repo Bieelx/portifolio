@@ -4,14 +4,12 @@
     position: relative;
     overflow: hidden;
     background-color: #111111;
-    /* Fallback/Base color */
 }
 
 .about-bg {
     position: absolute;
     inset: 0;
     background-color: #09090b;
-    /* zinc-950 */
     z-index: 0;
 }
 
@@ -56,7 +54,6 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom right, #27272a, #18181b);
-    /* zinc-800 to zinc-900 */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -83,7 +80,6 @@
 
 .about-text {
     color: #d1d5db;
-    /* gray-300 */
     line-height: 1.625;
     font-size: 1rem;
 }
@@ -137,7 +133,6 @@
 
 .skill-desc {
     color: #9ca3af;
-    /* gray-400 */
     font-size: 0.875rem;
 }
 
