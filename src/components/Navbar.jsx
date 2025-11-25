@@ -8,7 +8,7 @@ const Navbar = () => {
   const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState('bem_vindo');
 
   const toggleLanguage = () => {
     const newLang = i18n.language === 'pt' ? 'en' : 'pt';
@@ -27,11 +27,11 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    const sections = ['home', 'sobre-mim', 'projetos', 'curriculo', 'reconhecimentos'];
+    const sections = ['bem_vindo', 'sobre_mim', 'projetos', 'curriculo', 'reconhecimentos'];
 
     const observerOptions = {
       root: null,
-      rootMargin: '-50% 0px -50% 0px',
+      rootMargin: '-40% 0px -40% 0px',
       threshold: 0
     };
 
@@ -64,8 +64,8 @@ const Navbar = () => {
   };
 
   const navItems = [
-    { id: 'home', label: t('navbar.home'), number: '01' },
-    { id: 'sobre-mim', label: t('navbar.about'), number: '02' },
+    { id: 'bem_vindo', label: t('navbar.home'), number: '01' },
+    { id: 'sobre_mim', label: t('navbar.about'), number: '02' },
     { id: 'projetos', label: t('navbar.projects'), number: '03' },
     { id: 'curriculo', label: t('navbar.resume'), number: '04' },
     { id: 'reconhecimentos', label: t('navbar.awards'), number: '05' },
@@ -86,7 +86,7 @@ const Navbar = () => {
           <div className="navbar-content">
             {/* Logo/Ponto minimalista */}
             <motion.button
-              onClick={() => scrollToSection('home')}
+              onClick={() => scrollToSection('bem_vindo')}
               className="navbar-logo-btn group"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

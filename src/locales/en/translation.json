@@ -2,7 +2,7 @@
   "home_title": "Welcome to my portfolio",
   "home_subtitle": "Front-End | UI/UX Designer | Data Analytics",
   "about_title": "Who am I",
-  "about_text": "I'm Gabriel: a future systems analyst from FIAP, an enthusiast of beautiful interfaces, and currently immersed in the world of data at Claro.\n\nMy journey began with code and automation (React, Python, UiPath), but today my professional focus is on Digital Analytics and AWS. I like to think I bridge the best of both worlds: the precision of data analysis with the aesthetic eye of someone who loves Front-end and Design.\n\nLifestyle: I'm that \"chill nerd\" who doesn't give up on an active life. If I'm not coding or analyzing metrics, I'm definitely holding a cup of coffee, training hard at the gym, or on the Muay Thai mats. I value balance, whether it's binge-watching something interesting, reading, or enjoying time with my girlfriend.\n\nMy goal? To create innovative solutions without losing lightness and commitment to constant evolution.",
+  "about_text": "I'm Gabriel, an Information Systems student at FIAP driven by technology. Currently, I'm interning at Claro, diving into the universe of Digital Analytics using Google Analytics and AWS.\n\nMy journey is marked by versatility: although my focus today is data intelligence, I have a solid background and a genuine passion for Design and Front-end. I like to combine analytical precision with visual creativity, using technologies like React, Python, and SQL to create complete solutions.\n\nOutside of work, my routine is fueled by lots of coffee and sports. In my free time, I swap the keyboard for Muay Thai gloves, train at the gym, or catch up on reading. I believe that the discipline of sports directly reflects my desire to evolve and solve problems creatively.",
   "projects": {
     "1": {
       "title": "Furia Bot",
@@ -181,7 +181,7 @@
     },
     "3": {
       "title": "Nexus Project",
-      "description": "Top 3 at FIAP Next 2025",
+      "description": "I placed third in FIAP Next 2025, being recognized as one of the best projects in the competition. My group stood out with the development of Nexus, a learning ecosystem and gamified community for technology students, focused on unifying tools and engagement through artificial intelligence.",
       "highlight": "Top 3"
     }
   },

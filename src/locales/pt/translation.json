@@ -2,7 +2,7 @@
   "home_title": "Bem-Vindo ao meu portfólio",
   "home_subtitle": "Front-End | UI/UX Designer | Data Analytics",
   "about_title": "Quem sou eu",
-  "about_text": "Sou o Gabriel: futuro analista de sistemas pela FIAP, entusiasta de interfaces bonitas e, atualmente, mergulhado no mundo dos dados na Claro.\n\nMinha jornada começou com códigos e automações (React, Python, UiPath), mas hoje meu foco profissional está em Digital Analytics e AWS. Gosto de pensar que uno o melhor dos dois mundos: a precisão da análise de dados com o olhar estético de quem ama Front-end e Design.\n\nLifestyle: Sou aquele \"nerd tranquilo\" que não abre mão de uma vida ativa. Se não estou codando ou analisando métricas, com certeza estou com uma xícara de café na mão, treinando pesado na academia ou no tatame de Muay Thai. Valorizo o equilíbrio, seja maratonando algo interessante, lendo ou curtindo o tempo com a minha namorada.\n\nMeu objetivo? Criar soluções inovadoras sem perder a leveza e o compromisso com a evolução constante.",
+  "about_text": "Sou o Gabriel, estudante de Sistemas de Informação na FIAP e movido por tecnologia. Atualmente, estou estagiando na Claro, onde mergulho no universo de Digital Analytics utilizando Google Analytics e AWS.\n\nMinha trajetória é marcada pela versatilidade: embora meu foco hoje seja inteligência de dados, tenho um background sólido e uma paixão genuína por Design e Front-end. Gosto de unir a precisão analítica com a criatividade visual, usando tecnologias como React, Python e SQL para criar soluções completas.\n\nFora do trabalho, minha rotina é movida a muito café e esporte. No tempo livre, troco o teclado pelas luvas de Muay Thai, treino na academia ou coloco a leitura em dia. Acredito que a disciplina do esporte reflete diretamente na minha vontade de evoluir e resolver problemas com criatividade.",
   "projects": {
     "1": {
       "title": "Furia Bot",
@@ -181,7 +181,7 @@
     },
     "3": {
       "title": "Nexus Project",
-      "description": "Top 3 do FIAP Next 2025",
+      "description": "Fiquei em terceiro lugar no FIAP Next 2025, sendo reconhecido como um dos melhores projetos da competição. Meu grupo se destacou com o desenvolvimento do Nexus, um ecossistema de aprendizado e comunidade gamificada para estudantes de tecnologia, focado na unificação de ferramentas e no engajamento através de inteligência artificial.",
       "highlight": "Top 3"
     }
   },

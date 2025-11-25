@@ -15,9 +15,9 @@ const Awards = () => {
     const recognitions = [
         {
             icon: Trophy,
-            title: t('awards.3.title', 'Nexus Project'),
-            description: t('awards.3.description', 'Top 3 do FIAP Next 2025'),
-            highlight: t('awards.3.highlight', 'Top 3'),
+            title: t("awards.2.title", "GTX"),
+            description: t("awards.2.description", "Sistema de gestão sustentável"),
+            highlight: t("awards.2.highlight", 'Top 1'),
         },
         {
             icon: Trophy,
@@ -27,9 +27,9 @@ const Awards = () => {
         },
         {
             icon: Trophy,
-            title: t("awards.2.title", "GTX"),
-            description: t("awards.2.description", "Sistema de gestão sustentável"),
-            highlight: t("awards.2.highlight", 'Top 1'),
+            title: t('awards.3.title', 'Nexus Project'),
+            description: t('awards.3.description', 'Top 3 do FIAP Next 2025'),
+            highlight: t('awards.3.highlight', 'Top 3'),
         },
     ];
 
