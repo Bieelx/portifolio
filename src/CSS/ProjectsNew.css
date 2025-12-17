@@ -56,6 +56,15 @@
     position: relative;
     height: 16rem;
     overflow: hidden;
+    background-color: #18181b;
+    /* Match card background to hide gaps */
+    /* Fix for Safari/Chrome sub-pixel rendering */
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .project-img {
@@ -63,6 +72,12 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s;
+    vertical-align: bottom;
+    /* Removes bottom spacing/gaps */
+    display: block;
+    /* Force GPU acceleration to prevent jitter */
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .project-card:hover .project-img {
@@ -103,6 +118,43 @@
 
 .project-link-icon:hover {
     background-color: rgba(0, 0, 0, 0.7);
+}
+
+@keyframes goldPulse {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
+    }
+}
+
+.project-award-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(255, 215, 0, 0.15);
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    border-radius: 9999px;
+    color: #FFD700;
+    font-weight: 600;
+    font-size: 0.875rem;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    animation: goldPulse 3s infinite ease-in-out;
 }
 
 .project-info {

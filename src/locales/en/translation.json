@@ -71,6 +71,18 @@
         "Simulated integration with wearables (Apple Watch/Garmin)"
       ]
     },
+    "7": {
+      "title": "BlackTrunk",
+      "description": "Oldschool aesthetic fitness fashion e-commerce. 100% custom store with user ranking and complex logic.",
+      "fullDescription": "Complete online store for the BlackTrunk brand, focused on oldschool gym wear. I was responsible for 100% of the logic (Front-end and Back-end) using JS/Velo. The project features an exclusive ranking system where users compete based on weight lifted, as well as fully customized store functionalities, identity verification, and fluid animations.",
+      "features": [
+        "User ranking by weight lifted",
+        "100% custom store (Cart, Checkout, Showcase)",
+        "Secure user verification",
+        "Fluid animations and responsive design",
+        "Complex Front and Back-end logic (Velo)"
+      ]
+    },
     "button": "Close",
     "link": "Access our GitHub repository!!",
     "view_project": "View project"
@@ -183,6 +195,11 @@
       "title": "Nexus Project",
       "description": "I placed third in FIAP Next 2025, being recognized as one of the best projects in the competition. My group stood out with the development of Nexus, a learning ecosystem and gamified community for technology students, focused on unifying tools and engagement through artificial intelligence.",
       "highlight": "Top 3"
+    },
+    "4": {
+      "title": "GlobalSolution 2025/2",
+      "description": "Awarded for the NeuroBalance project, a B2B app fighting burnout using AI and sensors. Technical innovation (accelerometer), humanized AI (Gemini), and anonymous privacy.",
+      "highlight": "Winner"
     }
   },
   "navbar": {

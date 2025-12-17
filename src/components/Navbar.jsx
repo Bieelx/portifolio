@@ -91,9 +91,24 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="logo-dot" />
-              <div className="logo-dot-fade-1" />
-              <div className="logo-dot-fade-2" />
+              <div
+                className="logo-dot"
+                style={{ opacity: 1 }}
+              />
+              <div
+                className="logo-dot-fade-1"
+                style={{
+                  opacity: scrollProgress > 33 ? 1 : 0.4,
+                  backgroundColor: scrollProgress > 33 ? 'white' : 'rgba(255, 255, 255, 0.4)'
+                }}
+              />
+              <div
+                className="logo-dot-fade-2"
+                style={{
+                  opacity: scrollProgress > 66 ? 1 : 0.2,
+                  backgroundColor: scrollProgress > 66 ? 'white' : 'rgba(255, 255, 255, 0.2)'
+                }}
+              />
             </motion.button>
 
             {/* Navegação Desktop - Centralizada */}
