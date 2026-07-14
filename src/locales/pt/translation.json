@@ -1,151 +1,121 @@
 {
-  "home_title": "Bem-Vindo ao meu portfólio",
-  "home_subtitle": "Front-End | UI/UX Designer | Data Analytics",
-  "about_title": "Quem sou eu",
-  "about_text": "Sou o Gabriel, estudante de Sistemas de Informação na FIAP e movido por tecnologia. Atualmente, estou estagiando na Claro, onde mergulho no universo de Digital Analytics utilizando Google Analytics e AWS.\n\nMinha trajetória é marcada pela versatilidade: embora meu foco hoje seja inteligência de dados, tenho um background sólido e uma paixão genuína por Design e Front-end. Gosto de unir a precisão analítica com a criatividade visual, usando tecnologias como React, Python e SQL para criar soluções completas.\n\nFora do trabalho, minha rotina é movida a muito café e esporte. No tempo livre, troco o teclado pelas luvas de Muay Thai, treino na academia ou coloco a leitura em dia. Acredito que a disciplina do esporte reflete diretamente na minha vontade de evoluir e resolver problemas com criatividade.",
+  "navLinks": [
+    { "label": "Home", "href": "#home" },
+    { "label": "Sobre mim", "href": "#sobre" },
+    { "label": "Projetos", "href": "#projetos" },
+    { "label": "Currículo", "href": "#curriculo" },
+    { "label": "Reconhecimentos", "href": "#reconhecimentos" },
+    { "label": "Contato", "href": "#contato" }
+  ],
+  "heroWelcome": "Bem-vindo ao meu portfólio",
+  "heroRoles": ["Fullstack Developer", "Data & AI", "Analytics"],
+  "heroExplore": "Explore mais",
+  "aboutTitle": "Quem sou eu",
+  "aboutText": "Sou o Gabriel, estudante de Sistemas de Informação na FIAP e movido por tecnologia. Atualmente estagio na Claro, dentro do Digital CoE, trabalhando com Digital Analytics: GA4, BigQuery, Looker Studio e testes A/B com VWO.\n\nMinha trajetória é marcada pela versatilidade. Hoje meu foco é dados e inteligência artificial, mas tenho uma base sólida em desenvolvimento fullstack, transitando entre front-end e back-end com React, Python e SQL. Gosto de unir a precisão analítica com a criatividade na construção de produtos, criando soluções completas, do design aos dados.\n\nFora do trabalho, minha rotina é movida a muito café e esporte. Treino musculação quatro vezes por semana e pratico jiu-jitsu e Muay Thai. Acredito que a disciplina do esporte reflete diretamente na minha vontade de evoluir e resolver problemas com criatividade.",
+  "aboutSkills": [
+    { "num": "01", "title": "Dados e IA", "desc": "GA4, BigQuery, Looker Studio, testes A/B e automações inteligentes" },
+    { "num": "02", "title": "Desenvolvimento Fullstack", "desc": "React, Python, JavaScript, SQL e automações com UiPath" },
+    { "num": "03", "title": "Análise e Governança", "desc": "Modelagem de dados, CRO e governança de aplicativos" }
+  ],
+  "projectsTitle": "Projetos",
+  "premiadoLabel": "Premiado",
+  "wipLabel": "V2 em andamento",
+  "resumeTitle": "Currículo",
+  "awardsTitle": "Reconhecimentos",
+  "closeLabel": "Fechar",
+  "featuresLabel": "Principais funcionalidades",
+  "viewProjectLabel": "Ver projeto",
   "projects": {
-    "1": {
-      "title": "Furia Bot",
-      "description": "Bot interativo desenvolvido com tecnologia de ponta para experiências imersivas. O projeto utiliza processamento de linguagem natural e automação avançada para interagir com usuários de forma inteligente e contextual.",
-      "features": [
-        "Processamento de linguagem natural",
-        "Respostas contextuais inteligentes",
-        "Integração com APIs de esports",
-        "Interface de chat interativa"
-      ]
+    "blacktrunk": {
+      "title": "BlackTrunk (v1)",
+      "description": "E-commerce de moda fitness com estética oldschool, construído em Wix. Loja 100% customizada com ranking de usuários e lógica complexa.",
+      "fullDescription": "Loja virtual completa para a marca BlackTrunk, focada em roupas de academia com estilo oldschool. Fui responsável por 100% da lógica (Front-end e Back-end) utilizando JS/Velo, na plataforma Wix. O projeto conta com um sistema exclusivo de ranking onde usuários competem baseados no peso levantado, além de funcionalidades de loja totalmente customizadas, verificação de identidade e animações fluidas.",
+      "features": ["Ranking de usuários por carga levantada", "Loja 100% customizada (Carrinho, Checkout, Vitrine)", "Verificação segura de usuários", "Animações fluidas e design responsivo", "Lógica complexa de Front e Back-end (Velo)"],
+      "tags": ["Wix", "JS/Velo", "E-commerce"]
     },
-    "2": {
-      "title": "OceanSense",
-      "description": "Plataforma de monitoramento oceânico com análise de dados em tempo real. Utilizando sensores IoT e análise de dados avançada, o sistema coleta e processa informações sobre temperatura, salinidade e poluição dos oceanos.",
-      "features": [
-        "Monitoramento em tempo real",
-        "Dashboards interativos com gráficos",
-        "Sistema de alertas automatizados",
-        "Histórico de dados e tendências",
-        "Integração com sensores IoT"
-      ]
+    "blacktrunk-v2": {
+      "title": "BlackTrunk (v2)",
+      "description": "Loja de roupas fitness e powerlifting, migrada de Wix para Shopify Hydrogen, buscando melhor performance e uma identidade visual alinhada à marca.",
+      "fullDescription": "Loja de roupas fitness e powerlifting, migrada de Wix para Shopify Hydrogen, buscando melhor performance e uma identidade visual alinhada à marca.\n\nA homepage tem carrossel no hero, mais vendidos e uma área \"exclusives\", onde camisetas são desbloqueadas quando o cliente bate recordes pessoais em supino ou agachamento. A página de produto conta com galeria, seleção de variantes e carrinho lateral com recomendações e cupom. Um dos principais desafios foi construir um leaderboard das maiores cargas levantadas pelos clientes, reforçando o aspecto de comunidade da marca.\n\nTambém assumi o design system, conectei o Supabase como banco de dados e realizei testes de segurança antes do lançamento.",
+      "features": ["Homepage com carrossel, mais vendidos e \"exclusives\" desbloqueados por recordes pessoais", "Página de produto com galeria, variantes e carrinho lateral com recomendações e cupom", "Leaderboard das maiores cargas levantadas pelos clientes", "Design system e identidade visual da marca", "Supabase como banco de dados", "Testes de segurança antes do lançamento"],
+      "tags": ["Shopify Hydrogen", "Remix", "Supabase"]
     },
-    "3": {
-      "title": "Innovate IT",
-      "description": "Sistema completo de gestão com foco em sustentabilidade e energia renovável. A plataforma oferece controle de recursos, acompanhamento de métricas de sustentabilidade, gestão de equipes e relatórios automatizados.",
-      "features": [
-        "Gestão de projetos de energia renovável",
-        "Controle de recursos e custos",
-        "Métricas de sustentabilidade",
-        "Relatórios automatizados",
-        "Gestão de equipes e tarefas"
-      ]
-    },
-    "4": {
-      "title": "MentalAid",
-      "description": "Aplicação de suporte à saúde mental com recursos de acompanhamento e bem-estar. O sistema utiliza UI/UX cuidadosamente projetado para criar uma experiência acolhedora e terapêutica.",
-      "features": [
-        "Acompanhamento de humor diário",
-        "Meditações guiadas e exercícios de respiração",
-        "Diário pessoal com análise de sentimentos",
-        "Recursos de emergência e contatos de apoio",
-        "Estatísticas de progresso e bem-estar"
-      ]
-    },
-    "5": {
+    "nexus": {
       "title": "Nexus",
       "description": "Ecossistema móvel unificado para ensino de tecnologia, combinando cursos, comunidade em tempo real e IA.",
       "fullDescription": "O Nexus resolve a fragmentação das ferramentas de ensino técnico ao unificar aprendizado, colaboração e competição em um único aplicativo móvel. A plataforma integra um sistema de cursos dinâmicos (LMS), um fórum de Q&A em tempo real ideal para eventos como CTFs, e uma camada de gamificação competitiva. Além disso, conta com uma assistente de IA integrada para análise prática de cibersegurança, redefinindo a experiência do estudante.",
-      "features": [
-        "Plataforma de cursos com conteúdo dinâmico em Markdown",
-        "Fórum e chat em tempo real com múltiplos canais",
-        "Gamificação com Quiz inteligente e Ranking global competitivo",
-        "Acompanhamento visual de progresso na linha do tempo",
-        "Assistente de IA integrada (Gemini) para análise de cibersegurança"
-      ]
+      "features": ["Plataforma de cursos com conteúdo dinâmico em Markdown", "Fórum e chat em tempo real com múltiplos canais", "Gamificação com Quiz inteligente e Ranking global competitivo", "Acompanhamento visual de progresso na linha do tempo", "Assistente de IA integrada (Gemini) para análise de cibersegurança"],
+      "tags": ["Flutter", "Firebase", "Educação"]
     },
-    "6": {
-      "title": "MentalBalance",
+    "mentalbalance": {
+      "title": "NeuroBalance",
       "description": "App mobile B2B para monitoramento de saúde mental e prevenção de burnout",
       "fullDescription": "Aplicativo mobile (React Native) focado em bem-estar corporativo e prevenção de burnout. Utiliza inteligência artificial e sensores do dispositivo para monitorar sinais de estresse, oferecendo check-ins multimodais (voz e texto), análises de sentimento via IA (Gemini), e exercícios de respiração guiada. Inclui dashboards anônimos para gestão de equipes, promovendo um ambiente de trabalho mais saudável.",
-      "features": [
-        "Check-in diário com análise de sentimento via IA (Gemini)",
-        "Sensor de agitação física em tempo real (Acelerômetro)",
-        "Exercícios de respiração guiada (Técnica 4-7-8)",
-        "Dashboard de equipe com dados anonimizados para gestores",
-        "Integração simulada com wearables (Apple Watch/Garmin)"
-      ]
+      "features": ["Check-in diário com análise de sentimento via IA (Gemini)", "Sensor de agitação física em tempo real (Acelerômetro)", "Exercícios de respiração guiada (Técnica 4-7-8)", "Dashboard de equipe com dados anonimizados para gestores", "Integração simulada com wearables (Apple Watch/Garmin)"],
+      "tags": ["React Native", "AI", "Healthcare"]
     },
-    "7": {
-      "title": "BlackTrunk",
-      "description": "E-commerce de moda fitness com estética oldschool. Loja 100% customizada com ranking de usuários e lógica complexa.",
-      "fullDescription": "Loja virtual completa para a marca BlackTrunk, focada em roupas de academia com estilo oldschool. Fui responsável por 100% da lógica (Front-end e Back-end) utilizando JS/Velo. O projeto conta com um sistema exclusivo de ranking onde usuários competem baseados no peso levantado, além de funcionalidades de loja totalmente customizadas, verificação de identidade e animações fluidas.",
-      "features": [
-        "Ranking de usuários por carga levantada",
-        "Loja 100% customizada (Carrinho, Checkout, Vitrine)",
-        "Verificação segura de usuários",
-        "Animações fluidas e design responsivo",
-        "Lógica complexa de Front e Back-end (Velo)"
-      ]
+    "oceansense": {
+      "title": "OceanSense",
+      "description": "Plataforma de monitoramento oceânico com análise de dados em tempo real, sensores IoT e análise de dados avançada.",
+      "fullDescription": "Plataforma de monitoramento oceânico com análise de dados em tempo real. Utilizando sensores IoT e análise de dados avançada, o sistema coleta e processa informações sobre temperatura, salinidade e poluição dos oceanos.",
+      "features": ["Monitoramento em tempo real", "Dashboards interativos com gráficos", "Sistema de alertas automatizados", "Histórico de dados e tendências", "Integração com sensores IoT"],
+      "tags": ["React", "Data Analytics", "IoT"]
     },
-    "button": "Fechar",
-    "link": "Acesse nosso repositório no GitHub!!",
-    "view_project": "Ver projeto"
+    "innovateit": {
+      "title": "Innovate IT",
+      "description": "Sistema completo de gestão com foco em sustentabilidade e energia renovável.",
+      "fullDescription": "Sistema completo de gestão com foco em sustentabilidade e energia renovável. A plataforma oferece controle de recursos, acompanhamento de métricas de sustentabilidade, gestão de equipes e relatórios automatizados.",
+      "features": ["Gestão de projetos de energia renovável", "Controle de recursos e custos", "Métricas de sustentabilidade", "Relatórios automatizados", "Gestão de equipes e tarefas"],
+      "tags": ["React", "Node.js", "Database"]
+    },
+    "furiabot": {
+      "title": "Furia Bot",
+      "description": "Bot interativo com processamento de linguagem natural e automação avançada para interações inteligentes e contextuais.",
+      "fullDescription": "Bot interativo desenvolvido com tecnologia de ponta para experiências imersivas. O projeto utiliza processamento de linguagem natural e automação avançada para interagir com usuários de forma inteligente e contextual.",
+      "features": ["Processamento de linguagem natural", "Respostas contextuais inteligentes", "Integração com APIs de esports", "Interface de chat interativa"],
+      "tags": ["React", "AI", "ChatBot"]
+    },
+    "mentalaid": {
+      "title": "MentalAid",
+      "description": "Aplicação de suporte à saúde mental com recursos de acompanhamento e bem-estar.",
+      "fullDescription": "Aplicação de suporte à saúde mental com recursos de acompanhamento e bem-estar. O sistema utiliza UI/UX cuidadosamente projetado para criar uma experiência acolhedora e terapêutica.",
+      "features": ["Acompanhamento de humor diário", "Meditações guiadas e exercícios de respiração", "Diário pessoal com análise de sentimentos", "Recursos de emergência e contatos de apoio", "Estatísticas de progresso e bem-estar"],
+      "tags": ["HTML", "UI/UX", "Healthcare"]
+    },
+    "spotlite": {
+      "title": "Spotlite",
+      "description": "Cliente nativo do Spotify para macOS, criado para substituir o app oficial em Electron, que é pesado e não parece nativo do sistema.",
+      "fullDescription": "Cliente nativo do Spotify para macOS, criado para substituir o app oficial em Electron, que é pesado e não parece nativo do sistema.\n\nInterface em Swift e SwiftUI, seguindo o Liquid Glass do macOS 26. O streaming de áudio roda como um processo externo em Rust, usando o librespot (implementação open source do protocolo Spotify Connect), gerenciado pelo Swift. A autenticação usa OAuth 2.0 com PKCE, implementado manualmente contra a Web API do Spotify.\n\nResultado: cerca de 70MB de RAM, contra 700MB do app oficial, sem Chromium embarcado.\n\nProjeto pessoal, sem distribuição pública, feito para estudo e portfólio.",
+      "features": ["Interface nativa em Swift e SwiftUI com Liquid Glass (macOS 26)", "Streaming de áudio em Rust via librespot, como processo externo gerenciado pelo Swift", "Autenticação OAuth 2.0 com PKCE implementada manualmente contra a Web API do Spotify", "~70MB de RAM em uso, contra ~700MB do app oficial, sem Chromium embarcado"],
+      "tags": ["Swift", "SwiftUI", "Rust"]
+    },
+    "monitor-lojas": {
+      "title": "Monitor de Lojas",
+      "description": "Solução em Python desenvolvida na Claro Brasil para automatizar o monitoramento de aplicativos não autorizados nas lojas digitais (App Store e Google Play).",
+      "fullDescription": "Solução em Python desenvolvida na Claro Brasil para automatizar o monitoramento de aplicativos não autorizados nas lojas digitais (App Store e Google Play). O processo, antes feito manualmente, reduziu de 5 horas para 15 minutos, e a taxa de detecção de apps indevidos triplicou já no primeiro mês de uso, gerando impacto direto na governança de aplicativos da companhia.\n\nO projeto foi reconhecido com o prêmio Destaque em Inovação Claro 2026.1, concedido pela empresa em parceria com uma colega de equipe.",
+      "features": ["Automação em Python do monitoramento de apps não autorizados", "Cobertura de App Store e Google Play", "Redução do tempo de execução de 5h para 15min", "Taxa de detecção de apps indevidos triplicada no 1º mês", "Prêmio Destaque em Inovação Claro 2026.1"],
+      "tags": ["Python", "Automação", "Claro"]
+    }
   },
   "resume": {
     "education_title": "Formação",
-    "education": [
-      {
-        "institution": "FIAP",
-        "degree": "Sistemas de Informação",
-        "period": "Cursando",
-        "description": "Graduação focada em desenvolvimento de sistemas e tecnologia"
-      }
-    ],
+    "education": [{ "institution": "FIAP", "degree": "Sistemas de Informação", "period": "Cursando", "description": "Graduação focada em desenvolvimento de sistemas e tecnologia" }],
     "experience_title": "Experiências",
     "experiences": [
-      {
-        "company": "Claro",
-        "role": "Estagiário em Digital Analytics",
-        "period": "Ago 2025 - Atualmente",
-        "description": "Atualmente trabalho com AWS, Google Analytics e Tag Manager, mas durante esse meu estágio irei me aprofundar em diversas áreas como agilidade, CRO e design."
-      },
-      {
-        "company": "CSN",
-        "role": "Estagiário em Desenvolvimento RPA",
-        "period": "Fev 2025 - Jul 2025",
-        "description": "Trabalhei com automações via UiPath, tive muito contato com SAP e Excel no geral."
-      }
+      { "company": "Claro", "role": "Estagiário em Digital Analytics", "period": "Ago 2025 — Atualmente", "description": "Atuação generalista e multidisciplinar no ecossistema digital, com rotação estratégica pelas áreas de Dados, CRO e Design/UX. Desenvolvo pipelines de coleta e processamento de dados utilizando Google Analytics 4, Tag Manager, BigQuery (GCP) e serviços AWS, além de automações em Python e dashboards estratégicos. Em CRO, atuei diretamente no desenvolvimento de testes A/B e na modificação de páginas existentes para otimização de conversão. Em Design e UX, colaborei na criação de interfaces e na atualização de sites e aplicativos, transformando dados em insights reais e entregas orientadas ao negócio." },
+      { "company": "CSN", "role": "Estagiário em Desenvolvimento RPA", "period": "Fev 2025 — Jul 2025", "description": "Trabalhei com automações via UiPath, tive muito contato com SAP e Excel no geral." }
     ],
-    "courses_title": "Cursos",
+    "courses_title": "Certificações",
     "courses": [
-      {
-        "title": "Python - FIAP Nano",
-        "description": "Sintaxe, estruturas de controle e dados"
-      },
-      {
-        "title": "JavaScript",
-        "description": "Programação web moderna e frameworks"
-      },
-      {
-        "title": "HTML & CSS",
-        "description": "Desenvolvimento front-end e design responsivo"
-      },
-      {
-        "title": "SQL",
-        "description": "Banco de dados e consultas"
-      },
-      {
-        "title": "Power BI",
-        "description": "Análise e visualização de dados"
-      },
-      {
-        "title": "UiPath",
-        "description": "Automação de processos robóticos (RPA)"
-      },
-      {
-        "title": "Google Analytics",
-        "description": "Análise de dados e métricas"
-      },
-      {
-        "title": "Amazon AWS",
-        "description": "Conceitos básicos da AWS, computação em nuvem e Lambda"
-      }
+      { "title": "Claude 101 — Anthropic", "description": "Projects, Artifacts, Skills, Connectors e Research Mode" },
+      { "title": "Claude Code 101 — Anthropic", "description": "Instalação, configuração e o fluxo Explore-Plan-Code-Commit" },
+      { "title": "Building with the Claude API — Anthropic", "description": "Prompt engineering, tool use, RAG, streaming e arquiteturas em produção" },
+      { "title": "Python — FIAP Nano", "description": "Sintaxe, estruturas de controle, POO e web com Flask e Django" },
+      { "title": "AWS Cloud Practitioner Essentials", "description": "Fundamentos de cloud com foco em dados: S3, Athena, Glue, redes e custos" },
+      { "title": "UX Design — FIAP Nano", "description": "Usabilidade, arquitetura da informação e design thinking" },
+      { "title": "Python com Orientação a Objetos — Alura", "description": "Classes, objetos, herança e polimorfismo" },
+      { "title": "UiPath Avançado — Practia", "description": "Automações de RPA com foco em valor de negócio" },
+      { "title": "Excel (básico ao intermediário)", "description": "PROCV, PROCH, PROCX e análise de dados" }
     ],
     "hardskills_title": "Hard Skills",
     "hardskills": [
@@ -156,80 +126,20 @@
       "Desenvolvimento: React, Spring Boot, .NET (aprendizado ativo)"
     ],
     "softskills_title": "Soft Skills",
-    "softskills": [
-      "Trabalho em equipe",
-      "Comunicação eficaz",
-      "Resolução de problemas",
-      "Organização",
-      "Planejamento",
-      "Adaptabilidade",
-      "Proatividade",
-      "Pensamento crítico",
-      "Liderança",
-      "Criatividade",
-      "Gestão de tempo",
-      "Atenção aos detalhes",
-      "Foco em resultados",
-      "Colaboração"
-    ],
+    "softskills": ["Trabalho em equipe", "Comunicação eficaz", "Resolução de problemas", "Organização", "Planejamento", "Adaptabilidade", "Proatividade", "Pensamento crítico", "Liderança", "Criatividade", "Gestão de tempo", "Atenção aos detalhes", "Foco em resultados", "Colaboração"],
     "languages_title": "Idiomas",
-    "languages": [
-      "Inglês - Avançado"
-    ]
+    "languages": ["Inglês — Avançado"]
   },
   "awards": {
     "subtitle": "Conquistas e reconhecimentos ao longo da minha jornada na tecnologia",
     "footer_text": "Interessado em trabalhar juntos?",
     "cta_btn": "Entre em contato",
-    "1": {
-      "title": "GlobalSolution 2024/1",
-      "description": "Ganhei o prêmio GlobalSolution 2024/1 com o projeto Ocean Sense, que foca na criação de soluções inovadoras para o monitoramento e proteção dos oceanos. Esse prêmio reconheceu minha contribuição para a preservação ambiental, aplicando tecnologia para resolver problemas globais relacionados ao meio ambiente.",
-      "highlight": "Vencedor"
-    },
-    "2": {
-      "title": "FIAP Next 2024",
-      "description": "Fiquei em primeiro lugar no FIAP Next 2024, com o prêmio de melhor trabalho. Meu grupo foi reconhecido pelo desenvolvimento do projeto Innovate IT, uma solução de gestão para micro e pequenas empresas, focada em usabilidade e eficiência.",
-      "highlight": "Top 1"
-    },
-    "3": {
-      "title": "Nexus Project",
-      "description": "Fiquei em terceiro lugar no FIAP Next 2025, sendo reconhecido como um dos melhores projetos da competição. Meu grupo se destacou com o desenvolvimento do Nexus, um ecossistema de aprendizado e comunidade gamificada para estudantes de tecnologia, focado na unificação de ferramentas e no engajamento através de inteligência artificial.",
-      "highlight": "Top 3"
-    },
-    "4": {
-      "title": "GlobalSolution 2025/2",
-      "description": "Premiado com o projeto NeuroBalance, um app B2B que combate o burnout usando IA e sensores. Inovação técnica (acelerômetro), IA humanizada (Gemini) e privacidade anônima.",
-      "highlight": "Vencedor"
-    }
-  },
-  "navbar": {
-    "home": "Home",
-    "about": "Sobre mim",
-    "projects": "Projetos",
-    "resume": "Currículo",
-    "awards": "Reconhecimentos",
-    "contact": "Contato"
-  },
-  "hero": {
-    "explore": "Explore mais"
-  },
-  "sections": {
-    "projects": "Projetos",
-    "resume": "Currículo",
-    "awards": "Reconhecimentos"
-  },
-  "about_skills": {
-    "frontend": {
-      "title": "Desenvolvimento Front-End",
-      "desc": "React, Python, JavaScript, SQL e automações com UiPath"
-    },
-    "uiux": {
-      "title": "UI/UX Design",
-      "desc": "Criação de interfaces intuitivas e experiências memoráveis"
-    },
-    "data": {
-      "title": "Análise de Dados",
-      "desc": "Automações inteligentes e análise de dados"
-    }
+    "items": [
+      { "num": "01", "title": "FIAP Next 2024", "highlight": "Top 1", "description": "Fiquei em primeiro lugar no FIAP Next 2024, com o prêmio de melhor trabalho. Meu grupo foi reconhecido pelo desenvolvimento do projeto Innovate IT, uma solução de gestão para micro e pequenas empresas, focada em usabilidade e eficiência." },
+      { "num": "02", "title": "GlobalSolution 2024/1", "highlight": "Vencedor", "description": "Ganhei o prêmio GlobalSolution 2024/1 com o projeto Ocean Sense, que foca na criação de soluções inovadoras para o monitoramento e proteção dos oceanos. Esse prêmio reconheceu minha contribuição para a preservação ambiental, aplicando tecnologia para resolver problemas globais relacionados ao meio ambiente." },
+      { "num": "03", "title": "FIAP Next 2025", "highlight": "Top 3", "description": "Fiquei em terceiro lugar no FIAP Next 2025, sendo reconhecido como um dos melhores projetos da competição. Meu grupo se destacou com o desenvolvimento do Nexus, um ecossistema de aprendizado e comunidade gamificada para estudantes de tecnologia, focado na unificação de ferramentas e no engajamento através de inteligência artificial." },
+      { "num": "04", "title": "GlobalSolution 2025/2", "highlight": "Vencedor", "description": "Premiado com o projeto NeuroBalance, um app B2B que combate o burnout usando IA e sensores. Inovação técnica (acelerômetro), IA humanizada (Gemini) e privacidade anônima." },
+      { "num": "05", "title": "Prêmio Destaque em Inovação Claro 2026.1", "highlight": "Vencedor", "description": "Reconhecimento interno concedido pela Claro Brasil pelo desenvolvimento do Monitor de Lojas, solução em Python que automatizou o monitoramento de aplicativos não autorizados nas lojas digitais. O projeto reduziu o tempo do processo de 5 horas para 15 minutos e triplicou a taxa de detecção de apps indevidos no primeiro mês de uso, gerando impacto direto na governança de aplicativos da companhia." }
+    ]
   }
 }

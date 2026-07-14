@@ -1,131 +1,99 @@
-import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, Github, ExternalLink } from 'lucide-react';
+import React, { useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { ImageWithFallback } from './ImageWithFallback';
-import '../CSS/ProjectsNew.css';
+import { C, MONO, SORA } from './ui';
 
-export const ProjectModal = ({ project, onClose }) => {
-    const { t } = useTranslation();
+export const ProjectModal = ({ project, onClose, premiadoLabel, wipLabel }) => {
+  const { t } = useTranslation();
 
-    React.useEffect(() => {
-        if (project) {
-            document.body.style.overflow = 'hidden';
-        }
-        return () => {
-            document.body.style.overflow = 'unset';
-        };
-    }, [project]);
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    const onKey = (e) => e.key === 'Escape' && onClose();
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [onClose]);
 
-    if (!project) return null;
+  if (!project) return null;
+  const m = project;
 
-    return (
-        <AnimatePresence>
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="modal-overlay"
-                onClick={onClose}
-            >
-                <motion.div
-                    initial={{ y: '100%', opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: '100%', opacity: 0 }}
-                    transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-                    className="modal-content"
-                    onClick={(e) => e.stopPropagation()}
-                >
-                    {/* Indicador de arrasto Mobile */}
-                    <div className="modal-drag-indicator" />
+  return (
+    <div onClick={onClose} style={{ position: 'fixed', inset: 0, zIndex: 3000, background: 'rgba(8,8,9,0.78)', backdropFilter: 'blur(10px)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 28 }}>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.97, y: 12 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.3, ease: [0.22, 0.61, 0.36, 1] }}
+        onClick={(e) => e.stopPropagation()}
+        style={{ position: 'relative', maxWidth: 840, width: '100%', maxHeight: '88vh', overflowY: 'auto', background: C.card, border: '1px solid rgba(251,247,245,0.12)', borderRadius: 22 }}
+      >
+        <button onClick={onClose} aria-label={t('closeLabel')} className="hov-close" style={{ position: 'absolute', top: 18, right: 18, zIndex: 5, width: 38, height: 38, borderRadius: '50%', border: '1px solid rgba(251,247,245,0.2)', background: 'rgba(15,15,16,0.7)', color: C.text, fontSize: 16, cursor: 'pointer', backdropFilter: 'blur(6px)' }}>✕</button>
 
-                    {/* Cabeçalho com imagem */}
-                    <div className="modal-header-image">
-                        <ImageWithFallback
-                            src={project.image}
-                            alt={project.title}
-                            className="modal-img"
-                        />
-                        <div className="modal-image-overlay" />
+        <div style={{ position: 'relative', height: 300, overflow: 'hidden' }}>
+          <img src={m.image} alt={m.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(22,22,24,0) 40%, rgba(22,22,24,0.92) 100%)' }} />
+          <div style={{ position: 'absolute', bottom: 22, left: 30, right: 30, display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap' }}>
+            <h3 style={{ margin: 0, fontFamily: SORA, fontWeight: 700, fontSize: 27 }}>{m.title}</h3>
+            {m.premiado && <TagBadge accent icon="◆" label={premiadoLabel} />}
+            {m.wip && <TagBadge icon="⟲" label={wipLabel} />}
+          </div>
+        </div>
 
-                        <button className="modal-close-btn" onClick={onClose}>
-                            <X size={24} />
-                        </button>
-                    </div>
+        <div style={{ padding: '30px 32px 34px', display: 'flex', flexDirection: 'column', gap: 26 }}>
+          <p style={{ margin: 0, fontSize: 14.5, fontWeight: 300, lineHeight: 1.75, color: 'rgba(251,247,245,0.72)', whiteSpace: 'pre-line' }}>{m.fullDescription}</p>
 
-                    {/* Conteúdo Rolável */}
-                    <div className="modal-scroll-content">
-                        <div>
-                            <h2 className="modal-title">{project.title}</h2>
-                            <p className="modal-desc">
-                                {project.fullDescription || project.description}
-                            </p>
-                        </div>
+          {m.features.length > 0 && (
+            <div>
+              <span style={{ display: 'block', fontFamily: MONO, fontSize: 11.5, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(251,247,245,0.4)', marginBottom: 14 }}>{t('featuresLabel')}</span>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                {m.features.map((f, i) => (
+                  <div key={i} style={{ display: 'flex', gap: 13, alignItems: 'baseline' }}>
+                    <span style={{ fontFamily: MONO, fontSize: 12, color: C.accent, flexShrink: 0 }}>▸</span>
+                    <span style={{ fontSize: 13.5, fontWeight: 300, lineHeight: 1.6, color: 'rgba(251,247,245,0.7)' }}>{f}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
-                        {/* Recursos */}
-                        {project.features && project.features.length > 0 && (
-                            <div>
-                                <h3 className="modal-section-title">Recursos</h3>
-                                <ul className="modal-list">
-                                    {project.features.map((feature, index) => (
-                                        <li key={index} className="modal-list-item">
-                                            <span className="modal-bullet">•</span>
-                                            <span>{feature}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
+          <div>
+            <span style={{ display: 'block', fontFamily: MONO, fontSize: 11.5, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(251,247,245,0.4)', marginBottom: 14 }}>Stack</span>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+              {m.allTags.map((tag) => (
+                <span key={tag} style={{ fontFamily: MONO, fontSize: 11, color: 'rgba(251,247,245,0.6)', border: '1px solid rgba(251,247,245,0.12)', borderRadius: 99, padding: '5px 13px' }}>{tag}</span>
+              ))}
+            </div>
+          </div>
 
-                        {/* Tecnologias */}
-                        {project.technologies && project.technologies.length > 0 && (
-                            <div>
-                                <h3 className="modal-section-title">Tecnologias</h3>
-                                <div className="modal-tech-tags">
-                                    {project.technologies.map((tech) => (
-                                        <span key={tech} className="modal-tech-tag">
-                                            {tech}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-                        )}
-
-                        {/* Tags */}
-                        <div>
-                            <div className="modal-tech-tags">
-                                {project.tags.map((tag) => (
-                                    <span key={tag} className="modal-tech-tag">
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* Ações */}
-                        <div className="modal-actions">
-                            <a
-                                href={project.github}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="modal-btn modal-btn-github"
-                            >
-                                <Github size={20} />
-                                <span>GitHub</span>
-                            </a>
-                            <a
-                                href={project.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="modal-btn modal-btn-external"
-                            >
-                                <ExternalLink size={20} />
-                                <span>{t('projects.view_project')}</span>
-                            </a>
-                        </div>
-                    </div>
-                </motion.div>
-            </motion.div>
-        </AnimatePresence>
-    );
+          {(m.hasLink || m.hasGithub) && (
+            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', borderTop: '1px solid rgba(251,247,245,0.08)', paddingTop: 24 }}>
+              {m.hasLink && (
+                <a href={m.link} target="_blank" rel="noopener noreferrer" className="hov-btn-light" style={{ display: 'inline-flex', alignItems: 'center', gap: 9, background: C.text, color: C.bg, fontWeight: 600, fontSize: 13.5, textDecoration: 'none', borderRadius: 99, padding: '12px 24px' }}>
+                  <span>{t('viewProjectLabel')}</span><span>↗</span>
+                </a>
+              )}
+              {m.hasGithub && (
+                <a href={m.github} target="_blank" rel="noopener noreferrer" className="hov-btn-ghost" style={{ display: 'inline-flex', alignItems: 'center', gap: 9, color: C.text, fontWeight: 500, fontSize: 13.5, textDecoration: 'none', border: '1px solid rgba(251,247,245,0.2)', borderRadius: 99, padding: '12px 24px' }}>
+                  <span>GitHub</span><span style={{ color: 'rgba(251,247,245,0.5)' }}>↗</span>
+                </a>
+              )}
+            </div>
+          )}
+        </div>
+      </motion.div>
+    </div>
+  );
 };
+
+const TagBadge = ({ accent, icon, label }) => (
+  <span style={{
+    display: 'flex', alignItems: 'center', gap: 7, fontFamily: MONO, fontSize: 11,
+    color: accent ? C.accent : C.text,
+    background: accent ? 'rgba(18,16,36,0.75)' : 'rgba(22,22,26,0.75)',
+    border: accent ? '1px solid rgba(140,124,250,0.45)' : '1px solid rgba(251,247,245,0.28)',
+    borderRadius: 99, padding: '6px 13px',
+  }}>
+    <span>{icon}</span><span>{label}</span>
+  </span>
+);

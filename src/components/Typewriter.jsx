@@ -1,48 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import '../CSS/App.css';
 
-const Typewriter = ({ text = '', speed = 100, pause = 2000 }) => {
-  const [displayedText, setDisplayedText] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [index, setIndex] = useState(0);
+// Types the text once, then leaves a blinking block cursor.
+const Typewriter = ({ text = '', speed = 95 }) => {
+  const [typed, setTyped] = useState('');
 
   useEffect(() => {
-    setDisplayedText('');
-    setIndex(0);
-    setIsDeleting(false);
-  }, [text]);
-
-  useEffect(() => {
-    let interval;
-    if (!isDeleting && index <= text.length) {
-      interval = setInterval(() => {
-        setDisplayedText((prev) => prev + text.charAt(index));
-        setIndex((prev) => prev + 1);
-
-        if (index === text.length) {
-          clearInterval(interval);
-          setTimeout(() => setIsDeleting(true), pause);
-        }
-      }, speed);
-    } else if (isDeleting && index >= 0) {
-      interval = setInterval(() => {
-        setDisplayedText((prev) => prev.slice(0, -1));
-        setIndex((prev) => prev - 1);
-
-        if (index === 0) {
-          clearInterval(interval);
-          setIsDeleting(false);
-        }
-      }, speed);
-    }
-
-    return () => clearInterval(interval);
-  }, [index, isDeleting, text, speed, pause]);
+    setTyped('');
+    let i = 0;
+    const id = setInterval(() => {
+      i++;
+      setTyped(text.slice(0, i));
+      if (i >= text.length) clearInterval(id);
+    }, speed);
+    return () => clearInterval(id);
+  }, [text, speed]);
 
   return (
-    <span className="typewriter">
-      {displayedText}
-      <span className="cursor">_</span>
+    <span>
+      {typed}
+      <span style={{ display: 'inline-block', width: 5, height: '0.85em', background: '#FBF7F5', marginLeft: 10, verticalAlign: '-0.06em', animation: 'blink 1.1s step-end infinite' }} />
     </span>
   );
 };

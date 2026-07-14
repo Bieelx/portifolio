@@ -1,115 +1,45 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { Trophy } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import '../CSS/AwardsNew.css';
+import { C, MONO, SORA, Reveal, SectionHeader } from './ui';
+
+const CTA_HREF = 'https://www.linkedin.com/in/gabriel-deoliveira-araujo/';
 
 const Awards = () => {
-    const { t } = useTranslation();
-    const [ref, inView] = useInView({
-        triggerOnce: true,
-        threshold: 0.1,
-    });
+  const { t } = useTranslation();
+  const a = t('awards', { returnObjects: true });
 
-    const recognitions = [
-        {
-            icon: Trophy,
-            title: t("awards.2.title", "GTX"),
-            description: t("awards.2.description", "Sistema de gestão sustentável"),
-            highlight: t("awards.2.highlight", 'Vencedor'),
-        },
-        {
-            icon: Trophy,
-            title: t("awards.1.title", "OceanSense"),
-            description: t("awards.1.description", "Plataforma de monitoramento oceânico"),
-            highlight: t("awards.1.highlight", 'Vencedor'),
-        },
-        {
-            icon: Trophy,
-            title: t('awards.3.title', 'Nexus Project'),
-            description: t('awards.3.description', 'Top 3 do FIAP Next 2025'),
-            highlight: t('awards.3.highlight', 'Top 3'),
-        },
-        {
-            icon: Trophy,
-            title: t('awards.4.title', 'GlobalSolution 2025/2'),
-            description: t('awards.4.description', 'Premiado com o projeto NeuroBalance'),
-            highlight: t('awards.4.highlight', 'Vencedor'),
-        },
-    ];
+  return (
+    <section id="reconhecimentos" style={{ padding: '110px 24px', background: '#131315', borderTop: '1px solid rgba(251,247,245,0.06)', borderBottom: '1px solid rgba(251,247,245,0.06)', scrollMarginTop: 90 }}>
+      <div style={{ maxWidth: 1140, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 18 }}>
+        <SectionHeader num="04" title={t('awardsTitle')} />
+        <Reveal>
+          <p style={{ margin: '0 0 38px', fontSize: 15, fontWeight: 300, color: 'rgba(251,247,245,0.55)', maxWidth: 560 }}>{a.subtitle}</p>
+        </Reveal>
 
-    return (
-        <section id="reconhecimentos" className="awards-section">
-            <div className="awards-bg" />
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(330px, 1fr))', gap: 24 }}>
+          {a.items.map((aw) => (
+            <Reveal key={aw.num} className="hov-award" style={{ border: '1px solid rgba(251,247,245,0.09)', background: C.card, borderRadius: 20, padding: 30, display: 'flex', flexDirection: 'column', gap: 16 }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <span style={{ fontFamily: MONO, fontSize: 12, color: 'rgba(251,247,245,0.35)' }}>{aw.num}</span>
+                <span style={{ display: 'flex', alignItems: 'center', gap: 7, fontFamily: MONO, fontSize: 11, letterSpacing: '0.08em', color: C.accent, background: 'rgba(140,124,250,0.1)', border: '1px solid rgba(140,124,250,0.35)', borderRadius: 99, padding: '6px 13px' }}>
+                  <span>◆</span><span>{aw.highlight}</span>
+                </span>
+              </div>
+              <h3 style={{ margin: 0, fontFamily: SORA, fontWeight: 600, fontSize: 19 }}>{aw.title}</h3>
+              <p style={{ margin: 0, fontSize: 13.5, fontWeight: 300, lineHeight: 1.7, color: 'rgba(251,247,245,0.6)' }}>{aw.description}</p>
+            </Reveal>
+          ))}
+        </div>
 
-            <div className="awards-container">
-                <motion.div
-                    ref={ref}
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.8 }}
-                >
-                    <h2 className="awards-title">
-                        {t('sections.awards', 'Reconhecimentos')}
-                    </h2>
-
-                    <p className="awards-subtitle">
-                        {t('awards.subtitle')}
-                    </p>
-
-                    <div className="awards-grid">
-                        {recognitions.map((item, index) => (
-                            <motion.div
-                                key={item.title}
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={inView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ delay: index * 0.2 }}
-                                whileHover={{ y: -10 }}
-                                className="award-card-wrapper"
-                            >
-                                <div className="award-card">
-                                    {/* Ícone */}
-                                    <div className="award-icon-wrapper">
-                                        <item.icon className="award-icon" />
-                                    </div>
-
-                                    {/* Distintivo de Destaque */}
-                                    <span className="award-highlight">
-                                        {item.highlight}
-                                    </span>
-
-                                    {/* Conteúdo */}
-                                    <h3 className="award-title">{item.title}</h3>
-                                    <p className="award-desc">{item.description}</p>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-
-                    {/* CTA do Rodapé */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={inView ? { opacity: 1 } : {}}
-                        transition={{ delay: 0.8 }}
-                        className="awards-footer"
-                    >
-                        <p className="awards-footer-text">
-                            {t('awards.footer_text')}
-                        </p>
-                        <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="awards-cta-btn"
-                            onClick={() => window.open('https://www.linkedin.com/in/gabriel-deoliveira-araujo/', '_blank')}
-                        >
-                            {t('awards.cta_btn')}
-                        </motion.button>
-                    </motion.div>
-                </motion.div>
-            </div>
-        </section>
-    );
+        <Reveal id="contato" style={{ marginTop: 70, textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 24, scrollMarginTop: 120 }}>
+          <p style={{ margin: 0, fontFamily: SORA, fontWeight: 700, fontSize: 'clamp(1.5rem, 3.4vw, 2.2rem)', letterSpacing: '-0.02em' }}>{a.footer_text}</p>
+          <a href={CTA_HREF} target="_blank" rel="noopener noreferrer" className="hov-cta" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: C.text, color: C.bg, fontFamily: 'Poppins, sans-serif', fontWeight: 600, fontSize: 14.5, textDecoration: 'none', borderRadius: 99, padding: '15px 32px' }}>
+            <span>{a.cta_btn}</span><span>↗</span>
+          </a>
+        </Reveal>
+      </div>
+    </section>
+  );
 };
 
 export default Awards;

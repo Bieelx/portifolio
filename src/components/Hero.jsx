@@ -1,139 +1,70 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import { Github, Linkedin, Instagram, ArrowDown } from 'lucide-react';
-import {
-    SiReact,
-    SiJavascript,
-    SiPython,
-    SiTailwindcss,
-    SiSpringboot,
-    SiMysql,
-    SiUipath,
-    SiAwslambda,
-    SiGoogleanalytics,
-} from 'react-icons/si';
 import Typewriter from './Typewriter';
-import '../CSS/HeroNew.css';
+import { C, MONO, SORA } from './ui';
+
+const TECH = ['Python', 'SQL', 'React', 'JavaScript', 'BigQuery', 'GA4', 'AWS'];
+const SOCIALS = [
+  { label: 'GitHub', href: 'https://github.com/Bieelx' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/gabriel-deoliveira-araujo/' },
+  { label: 'Instagram', href: 'https://www.instagram.com/ibieelx/' },
+];
 
 const Hero = () => {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
+  const roles = t('heroRoles', { returnObjects: true });
 
-    const techIcons = [
-        { Icon: SiReact, name: 'React' },
-        { Icon: SiJavascript, name: 'JavaScript' },
-        { Icon: SiTailwindcss, name: 'Tailwind' },
-        { Icon: SiSpringboot, name: 'Spring Boot' },
-        { Icon: SiMysql, name: 'SQL' },
-        { Icon: SiPython, name: 'Python' },
-        { Icon: SiUipath, name: 'UiPath' },
-        { Icon: SiAwslambda, name: 'AWS Lambda' },
-        { Icon: SiGoogleanalytics, name: 'Google Analytics' },
-    ];
+  return (
+    <section id="home" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', padding: '140px 24px 80px', scrollMarginTop: 90 }}>
+      {/* ambient decor */}
+      {/* ponytail: mix-blend-mode dropped — it forced a full recomposite on every scroll repaint. Direct low opacity looks the same, composites cheaply. */}
+      <div style={{ position: 'absolute', inset: 0, opacity: 0.18, pointerEvents: 'none', transform: 'translateZ(0)', backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E\")" }} />
+      <div style={{ position: 'absolute', top: -260, left: '30%', width: 820, height: 820, borderRadius: '50%', background: 'radial-gradient(circle, rgba(140,124,250,0.17) 0%, rgba(140,124,250,0) 68%)', pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', top: 130, right: '7%', width: 300, height: 300, border: '1px solid rgba(140,124,250,0.16)', borderRadius: '50%', pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', top: '40%', left: '4%', width: 2, height: 180, background: 'linear-gradient(180deg, rgba(140,124,250,0), rgba(140,124,250,0.35), rgba(140,124,250,0))', pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 200, background: 'linear-gradient(180deg, rgba(14,13,19,0) 0%, #0E0D13 100%)', pointerEvents: 'none' }} />
 
-    const socialLinks = [
-        { Icon: Github, href: 'https://github.com/Bieelx', label: 'GitHub' },
-        { Icon: Linkedin, href: 'https://www.linkedin.com/in/gabriel-deoliveira-araujo/', label: 'LinkedIn' },
-        { Icon: Instagram, href: 'https://www.instagram.com/ibieelx/', label: 'Instagram' },
-    ];
+      <div style={{ position: 'relative', zIndex: 10, maxWidth: 980, width: '100%', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 34 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12, fontFamily: MONO, fontSize: 12, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(251,247,245,0.45)' }}>
+          <span style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: C.accent, animation: 'pulse 2.4s ease-in-out infinite' }} />
+          <span>{t('heroWelcome')}</span>
+        </div>
 
-    const scrollToNext = () => {
-        document.getElementById('sobre_mim')?.scrollIntoView({ behavior: 'smooth' });
-    };
+        <h1 style={{ margin: 0, fontFamily: SORA, fontWeight: 800, fontSize: 'clamp(2.4rem, 10vw, 5.6rem)', lineHeight: 1.04, letterSpacing: '-0.03em', color: C.text }}>
+          <Typewriter text="Gabriel Araujo" speed={95} />
+        </h1>
 
-    return (
-        <section className='bem_vindo hero-section' id='bem_vindo'>
-            <div className="hero-overlay" />
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '10px 18px', fontSize: 16, fontWeight: 300, color: 'rgba(251,247,245,0.7)' }}>
+          {roles.map((r, i) => (
+            <span key={r} style={{ display: 'flex', alignItems: 'center', gap: 18 }}>
+              <span>{r}</span>
+              {i < roles.length - 1 && <span style={{ color: 'rgba(251,247,245,0.22)', fontWeight: 400 }}>/</span>}
+            </span>
+          ))}
+        </div>
 
-            <div className="hero-container">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                >
-                    <motion.h1
-                        className="hero-title"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                    >
-                        <span className="hero-welcome">{t('home_title')}</span>
-                        <br />
-                        <span className="hero-name">
-                            <Typewriter text="Gabriel Araujo " speed={100} />
-                        </span>
-                    </motion.h1>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 10, maxWidth: 640 }}>
+          {TECH.map((tech) => (
+            <span key={tech} className="hov-tag" style={{ fontFamily: MONO, fontSize: 11.5, color: 'rgba(251,247,245,0.5)', border: '1px solid rgba(251,247,245,0.1)', borderRadius: 99, padding: '6px 13px' }}>{tech}</span>
+          ))}
+        </div>
 
-                    <motion.h2
-                        className="hero-subtitle"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.4 }}
-                    >
-                        {t('home_subtitle')}
-                    </motion.h2>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 12, marginTop: 6 }}>
+          {SOCIALS.map((soc) => (
+            <a key={soc.label} href={soc.href} target="_blank" rel="noopener noreferrer" className="hov-social" style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13.5, fontWeight: 500, color: C.text, textDecoration: 'none', background: 'rgba(251,247,245,0.06)', border: '1px solid rgba(251,247,245,0.12)', borderRadius: 99, padding: '10px 20px', backdropFilter: 'blur(4px)' }}>
+              <span>{soc.label}</span>
+              <span style={{ fontSize: 12, color: 'rgba(251,247,245,0.5)' }}>↗</span>
+            </a>
+          ))}
+        </div>
 
-                    {/* Pilha de Tecnologias */}
-                    <motion.div
-                        className="tech-stack"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.6 }}
-                    >
-                        {techIcons.map(({ Icon, name }, index) => (
-                            <motion.div
-                                key={name}
-                                initial={{ opacity: 0, scale: 0 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ delay: 0.7 + index * 0.1 }}
-                                whileHover={{ scale: 1.2, rotate: 5 }}
-                                className="tech-icon-wrapper"
-                            >
-                                <Icon className="tech-icon" />
-                                <span className="tech-name">
-                                    {name}
-                                </span>
-                            </motion.div>
-                        ))}
-                    </motion.div>
-
-                    {/* Links Sociais */}
-                    <motion.div
-                        className="social-links-hero"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1 }}
-                    >
-                        {socialLinks.map(({ Icon, href, label }) => (
-                            <motion.a
-                                key={label}
-                                href={href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                whileHover={{ scale: 1.1, y: -5 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="social-btn"
-                                aria-label={label}
-                            >
-                                <Icon size={20} />
-                            </motion.a>
-                        ))}
-                    </motion.div>
-
-                    {/* Indicador de Rolagem */}
-                    <motion.button
-                        onClick={scrollToNext}
-                        animate={{ y: [0, 10, 0] }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                        className="scroll-indicator"
-                    >
-                        <span style={{ fontSize: '0.875rem' }}>{t('hero.explore')}</span>
-                        <ArrowDown size={20} />
-                    </motion.button>
-                </motion.div>
-            </div>
-        </section>
-    );
+        <a href="#sobre" className="hov-link" style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: 6, marginTop: 18, color: 'rgba(251,247,245,0.45)', textDecoration: 'none', fontSize: 13 }}>
+          <span>{t('heroExplore')}</span>
+          <span style={{ display: 'inline-block', animation: 'floaty 2s ease-in-out infinite' }}>↓</span>
+        </a>
+      </div>
+    </section>
+  );
 };
 
 export default Hero;

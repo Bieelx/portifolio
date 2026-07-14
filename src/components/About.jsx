@@ -1,113 +1,42 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { Code2, Palette, BarChart3 } from 'lucide-react';
+import { C, MONO, SORA, Reveal, SectionHeader } from './ui';
 import eu from '../img/eu.jpg';
-import '../CSS/AboutNew.css';
 
 const About = () => {
-    const { t } = useTranslation();
-    const [ref, inView] = useInView({
-        triggerOnce: true,
-        threshold: 0.1,
-    });
+  const { t } = useTranslation();
+  const paras = t('aboutText').split('\n\n');
+  const skills = t('aboutSkills', { returnObjects: true });
 
-    const skills = [
-        {
-            icon: Code2,
-            title: t('about_skills.frontend.title', 'Desenvolvimento Front-End'),
-            description: t('about_skills.frontend.desc', 'React, Python, JavaScript, SQL e automações com UiPath'),
-        },
-        {
-            icon: Palette,
-            title: t('about_skills.uiux.title', 'UI/UX Design'),
-            description: t('about_skills.uiux.desc', 'Criação de interfaces intuitivas e experiências memoráveis'),
-        },
-        {
-            icon: BarChart3,
-            title: t('about_skills.data.title', 'Análise de Dados'),
-            description: t('about_skills.data.desc', 'Automações inteligentes e análise de dados'),
-        },
-    ];
+  return (
+    <section id="sobre" style={{ padding: '110px 24px', scrollMarginTop: 90 }}>
+      <div style={{ maxWidth: 1140, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 64 }}>
+        <SectionHeader num="01" title={t('aboutTitle')} />
 
-    return (
-        <section id="sobre_mim" className="about-section">
-            <div className="about-bg" />
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 56, alignItems: 'flex-start' }}>
+          <Reveal style={{ flex: '0 1 320px', minWidth: 260, position: 'relative' }}>
+            <div style={{ position: 'absolute', top: 18, left: 18, right: -18, bottom: -18, border: '1px solid rgba(251,247,245,0.12)', borderRadius: 20 }} />
+            <img src={eu} alt="Gabriel Araujo" className="about-photo" style={{ position: 'relative', width: '100%', display: 'block', borderRadius: 20 }} />
+          </Reveal>
+          <Reveal style={{ flex: '1 1 460px', display: 'flex', flexDirection: 'column', gap: 20 }}>
+            {paras.map((p, i) => (
+              <p key={i} style={{ margin: 0, fontSize: 15.5, fontWeight: 300, lineHeight: 1.75, color: 'rgba(251,247,245,0.72)' }}>{p}</p>
+            ))}
+          </Reveal>
+        </div>
 
-            <div className="about-container">
-                <motion.div
-                    ref={ref}
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.8 }}
-                >
-                    <h2 className="about-title">
-                        {t('about_title')}
-                    </h2>
-
-                    <div className="about-content">
-                        {/* Imagem de Perfil */}
-                        <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            animate={inView ? { opacity: 1, x: 0 } : {}}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                            className="profile-image-wrapper"
-                        >
-                            <div className="profile-image-container">
-                                <div className="profile-image-bg">
-                                    {eu ? (
-                                        <img src={eu} alt="Gabriel Araujo" className="profile-img-real" />
-                                    ) : (
-                                        <div className="profile-placeholder" />
-                                    )}
-                                </div>
-                            </div>
-                        </motion.div>
-
-                        {/* Texto Sobre Mim */}
-                        <motion.div
-                            initial={{ opacity: 0, x: 50 }}
-                            animate={inView ? { opacity: 1, x: 0 } : {}}
-                            transition={{ duration: 0.8, delay: 0.4 }}
-                            className="about-text-container"
-                        >
-                            <div className="about-text">
-                                {t('about_text').split('\n').map((paragraph, index) => (
-                                    <p key={index} style={{ marginBottom: '1rem' }}>
-                                        {paragraph}
-                                    </p>
-                                ))}
-                            </div>
-                        </motion.div>
-                    </div>
-
-                    {/* Cards de Habilidades */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={inView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.8, delay: 0.6 }}
-                        className="skills-grid"
-                    >
-                        {skills.map((skill, index) => (
-                            <motion.div
-                                key={skill.title}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={inView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ delay: 0.8 + index * 0.1 }}
-                                whileHover={{ y: -5 }}
-                                className="skill-card"
-                            >
-                                <skill.icon className="skill-icon" />
-                                <h3 className="skill-title">{skill.title}</h3>
-                                <p className="skill-desc">{skill.description}</p>
-                            </motion.div>
-                        ))}
-                    </motion.div>
-                </motion.div>
+        <Reveal style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20 }}>
+          {skills.map((sk) => (
+            <div key={sk.num} className="hov-skill" style={{ border: '1px solid rgba(251,247,245,0.09)', background: C.card, borderRadius: 18, padding: '28px 26px', display: 'flex', flexDirection: 'column', gap: 14 }}>
+              <span style={{ fontFamily: MONO, fontSize: 12, color: 'rgba(251,247,245,0.35)' }}>{sk.num}</span>
+              <h3 style={{ margin: 0, fontFamily: SORA, fontWeight: 600, fontSize: 17 }}>{sk.title}</h3>
+              <p style={{ margin: 0, fontSize: 13.5, fontWeight: 300, lineHeight: 1.6, color: 'rgba(251,247,245,0.6)' }}>{sk.desc}</p>
             </div>
-        </section>
-    );
+          ))}
+        </Reveal>
+      </div>
+    </section>
+  );
 };
 
 export default About;
