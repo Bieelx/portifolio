@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { MdArrowOutward, MdEmojiEvents, MdAutorenew } from 'react-icons/md';
 import { C, MONO, SORA, Reveal, SectionHeader } from './ui';
 import { ProjectModal } from './ProjectModal';
 
@@ -59,13 +60,13 @@ const Projects = () => {
               <div style={{ position: 'relative', height: p.featured ? 380 : 220, overflow: 'hidden' }}>
                 <img src={p.image} alt={p.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(15,15,16,0) 55%, rgba(15,15,16,0.65) 100%)' }} />
-                {p.premiado && <Badge accent icon="◆" label={premiadoLabel} />}
-                {p.wip && <Badge icon="⟲" label={wipLabel} />}
+                {p.premiado && <Badge accent icon={<MdEmojiEvents size={13} />} label={premiadoLabel} />}
+                {p.wip && <Badge icon={<MdAutorenew size={13} />} label={wipLabel} />}
               </div>
               <div style={{ padding: '24px 26px 26px', display: 'flex', flexDirection: 'column', gap: 12 }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
                   <h3 style={{ margin: 0, fontFamily: SORA, fontWeight: 600, fontSize: 19 }}>{p.title}</h3>
-                  <span style={{ fontSize: 15, color: 'rgba(251,247,245,0.35)' }}>↗</span>
+                  <MdArrowOutward size={17} style={{ color: 'rgba(251,247,245,0.35)', flexShrink: 0 }} />
                 </div>
                 <p style={{ margin: 0, fontSize: 13.5, fontWeight: 300, lineHeight: 1.65, color: 'rgba(251,247,245,0.62)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{p.description}</p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 4 }}>
@@ -93,7 +94,7 @@ const Badge = ({ accent, icon, label }) => (
     border: accent ? '1px solid rgba(140,124,250,0.45)' : '1px solid rgba(251,247,245,0.28)',
     borderRadius: 99, padding: '6px 13px', backdropFilter: 'blur(6px)',
   }}>
-    <span>{icon}</span><span>{label}</span>
+    {icon}<span>{label}</span>
   </div>
 );
 

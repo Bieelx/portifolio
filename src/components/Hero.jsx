@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { MdArrowOutward, MdKeyboardArrowDown } from 'react-icons/md';
 import Typewriter from './Typewriter';
 import { C, MONO, SORA } from './ui';
 
@@ -53,14 +54,14 @@ const Hero = () => {
           {SOCIALS.map((soc) => (
             <a key={soc.label} href={soc.href} target="_blank" rel="noopener noreferrer" className="hov-social" style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13.5, fontWeight: 500, color: C.text, textDecoration: 'none', background: 'rgba(251,247,245,0.06)', border: '1px solid rgba(251,247,245,0.12)', borderRadius: 99, padding: '10px 20px', backdropFilter: 'blur(4px)' }}>
               <span>{soc.label}</span>
-              <span style={{ fontSize: 12, color: 'rgba(251,247,245,0.5)' }}>↗</span>
+              <MdArrowOutward size={14} style={{ color: 'rgba(251,247,245,0.5)' }} />
             </a>
           ))}
         </div>
 
         <a href="#sobre" className="hov-link" style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: 6, marginTop: 18, color: 'rgba(251,247,245,0.45)', textDecoration: 'none', fontSize: 13 }}>
           <span>{t('heroExplore')}</span>
-          <span style={{ display: 'inline-block', animation: 'floaty 2s ease-in-out infinite' }}>↓</span>
+          <MdKeyboardArrowDown size={20} style={{ display: 'inline-block', animation: 'floaty 2s ease-in-out infinite' }} />
         </a>
       </div>
     </section>

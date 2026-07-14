@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { MdArrowOutward, MdEmojiEvents } from 'react-icons/md';
 import { C, MONO, SORA, Reveal, SectionHeader } from './ui';
 
 const CTA_HREF = 'https://www.linkedin.com/in/gabriel-deoliveira-araujo/';
@@ -22,7 +23,7 @@ const Awards = () => {
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <span style={{ fontFamily: MONO, fontSize: 12, color: 'rgba(251,247,245,0.35)' }}>{aw.num}</span>
                 <span style={{ display: 'flex', alignItems: 'center', gap: 7, fontFamily: MONO, fontSize: 11, letterSpacing: '0.08em', color: C.accent, background: 'rgba(140,124,250,0.1)', border: '1px solid rgba(140,124,250,0.35)', borderRadius: 99, padding: '6px 13px' }}>
-                  <span>◆</span><span>{aw.highlight}</span>
+                  <MdEmojiEvents size={13} /><span>{aw.highlight}</span>
                 </span>
               </div>
               <h3 style={{ margin: 0, fontFamily: SORA, fontWeight: 600, fontSize: 19 }}>{aw.title}</h3>
@@ -34,7 +35,7 @@ const Awards = () => {
         <Reveal id="contato" style={{ marginTop: 70, textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 24, scrollMarginTop: 120 }}>
           <p style={{ margin: 0, fontFamily: SORA, fontWeight: 700, fontSize: 'clamp(1.5rem, 3.4vw, 2.2rem)', letterSpacing: '-0.02em' }}>{a.footer_text}</p>
           <a href={CTA_HREF} target="_blank" rel="noopener noreferrer" className="hov-cta" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: C.text, color: C.bg, fontFamily: 'Poppins, sans-serif', fontWeight: 600, fontSize: 14.5, textDecoration: 'none', borderRadius: 99, padding: '15px 32px' }}>
-            <span>{a.cta_btn}</span><span>↗</span>
+            <span>{a.cta_btn}</span><MdArrowOutward size={17} />
           </a>
         </Reveal>
       </div>
