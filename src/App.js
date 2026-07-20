@@ -13,7 +13,6 @@ import { C, MONO } from './components/ui';
 const SOCIALS = [
   { label: 'GitHub', href: 'https://github.com/Bieelx' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/gabriel-deoliveira-araujo/' },
-  { label: 'Instagram', href: 'https://www.instagram.com/ibieelx/' },
 ];
 
 function App() {
