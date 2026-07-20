@@ -298,11 +298,11 @@
     ],
     "hardskills_title": "Hard Skills",
     "hardskills": [
-      "Linguagens: Python, SQL, VBA, JavaScript, C# (aprendizado ativo)",
+      "Linguagens: Python, SQL, VBA, JavaScript",
       "Ferramentas e Visualização: Excel (avançado), Power BI, Looker Studio",
       "Automação e RPA: UiPath, scripts em Python para tarefas operacionais",
       "Banco de Dados: MySQL, PostgreSQL",
-      "Desenvolvimento: React, Spring Boot, .NET (aprendizado ativo)"
+      "Desenvolvimento: React, Spring Boot"
     ],
     "softskills_title": "Soft Skills",
     "softskills": [
