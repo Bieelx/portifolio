@@ -1,121 +1,301 @@
 {
   "navLinks": [
-    { "label": "Home", "href": "#home" },
-    { "label": "About me", "href": "#sobre" },
-    { "label": "Projects", "href": "#projetos" },
-    { "label": "Resume", "href": "#curriculo" },
-    { "label": "Awards", "href": "#reconhecimentos" },
-    { "label": "Contact", "href": "#contato" }
+    {
+      "label": "Home",
+      "href": "#home"
+    },
+    {
+      "label": "About me",
+      "href": "#sobre"
+    },
+    {
+      "label": "Projects",
+      "href": "#projetos"
+    },
+    {
+      "label": "Resume",
+      "href": "#curriculo"
+    },
+    {
+      "label": "Awards",
+      "href": "#reconhecimentos"
+    },
+    {
+      "label": "Contact",
+      "href": "#contato"
+    }
   ],
   "heroWelcome": "Welcome to my portfolio",
-  "heroRoles": ["Fullstack Developer", "Data & AI", "Analytics"],
+  "heroRoles": [
+    "Fullstack Developer",
+    "Data & AI",
+    "Analytics"
+  ],
   "heroExplore": "Explore more",
   "aboutTitle": "Who am I",
   "aboutText": "I'm Gabriel, an Information Systems student at FIAP driven by technology. I'm currently interning at Claro, within the Digital CoE, working with Digital Analytics: GA4, BigQuery, Looker Studio, and A/B testing with VWO.\n\nMy journey is marked by versatility. Today my focus is data and artificial intelligence, but I have a solid fullstack development background, moving between front-end and back-end with React, Python, and SQL. I like combining analytical precision with creativity in product building, creating complete solutions from design to data.\n\nOutside of work, my routine is fueled by lots of coffee and sports. I lift weights four times a week and practice jiu-jitsu and Muay Thai. I believe the discipline of sports directly reflects my drive to evolve and solve problems creatively.",
   "aboutSkills": [
-    { "num": "01", "title": "Data & AI", "desc": "GA4, BigQuery, Looker Studio, A/B testing, and smart automations" },
-    { "num": "02", "title": "Fullstack Development", "desc": "React, Python, JavaScript, SQL, and UiPath automations" },
-    { "num": "03", "title": "Analytics & Governance", "desc": "Data modeling, CRO, and app governance" }
+    {
+      "num": "01",
+      "title": "Data & AI",
+      "desc": "GA4, BigQuery, Looker Studio, A/B testing, and smart automations"
+    },
+    {
+      "num": "02",
+      "title": "Fullstack Development",
+      "desc": "React, Python, JavaScript, SQL, and UiPath automations"
+    },
+    {
+      "num": "03",
+      "title": "Analytics & Governance",
+      "desc": "Data modeling, CRO, and app governance"
+    }
   ],
   "projectsTitle": "Projects",
   "premiadoLabel": "Awarded",
   "wipLabel": "V2 in progress",
+  "wipLabelDev": "In development",
   "resumeTitle": "Resume",
   "awardsTitle": "Awards",
   "closeLabel": "Close",
   "featuresLabel": "Key features",
   "viewProjectLabel": "View project",
+  "galleryLabel": "Gallery",
   "projects": {
-    "blacktrunk": {
-      "title": "BlackTrunk (v1)",
-      "description": "Oldschool aesthetic fitness fashion e-commerce, built on Wix. 100% custom store with user ranking and complex logic.",
-      "fullDescription": "Complete online store for the BlackTrunk brand, focused on oldschool gym wear. I was responsible for 100% of the logic (Front-end and Back-end) using JS/Velo, on the Wix platform. The project features an exclusive ranking system where users compete based on weight lifted, as well as fully customized store functionalities, identity verification, and fluid animations.",
-      "features": ["User ranking by weight lifted", "100% custom store (Cart, Checkout, Showcase)", "Secure user verification", "Fluid animations and responsive design", "Complex Front and Back-end logic (Velo)"],
-      "tags": ["Wix", "JS/Velo", "E-commerce"]
-    },
     "blacktrunk-v2": {
-      "title": "BlackTrunk (v2)",
+      "title": "BlackTrunk",
       "description": "Full migration of a fitness and powerlifting apparel store from Wix to Shopify Hydrogen, with a new visual identity, leaderboard, and gamified rewards.",
       "fullDescription": "Blacktrunk is a fitness and powerlifting apparel store. The project involved migrating the entire store from Wix to Shopify Hydrogen, aiming for better performance, a faster shopping experience, and a visual identity that matched the brand's positioning.\n\nI built the homepage with a hero carousel, a bestsellers section, and an \"exclusives\" area, where t-shirts are unlocked when customers hit personal records in bench press or squat, validated through video submissions. I also developed the product page with an image gallery, variant selection, and trust badges, along with a side cart featuring product recommendations, a free shipping progress bar, and a coupon field. For the collections page, I implemented dynamic filtering.\n\nOne of the main challenges was building a leaderboard system to track the highest weights lifted by customers in bench press and squat, reinforcing the community aspect of the brand. I also handled account registration, integrating it with Shopify's hosted authentication flow.\n\nBeyond the storefront, I took ownership of the design system and overall visual identity, and connected the project to Supabase as the database layer. As the project moved into its final testing phase, I also ran security tests, actively trying to breach the system and admin pages to catch vulnerabilities before launch.",
-      "features": ["Homepage with hero carousel, bestsellers, and PR-gated \"exclusives\"", "Product page with gallery, variant selection, and trust badges", "Side cart with recommendations, free-shipping progress bar, and coupon field", "Dynamic filtering on the collections page", "Leaderboard tracking bench press and squat records", "Account auth via Shopify's hosted flow", "Design system, visual identity, and Supabase as the database layer", "Security testing and breach attempts before launch"],
-      "tags": ["Shopify Hydrogen", "Remix", "Supabase"]
+      "features": [
+        "Homepage with hero carousel, bestsellers, and PR-gated \"exclusives\"",
+        "Product page with gallery, variant selection, and trust badges",
+        "Side cart with recommendations, free-shipping progress bar, and coupon field",
+        "Dynamic filtering on the collections page",
+        "Leaderboard tracking bench press and squat records",
+        "Account auth via Shopify's hosted flow",
+        "Design system, visual identity, and Supabase as the database layer",
+        "Security testing and breach attempts before launch"
+      ],
+      "tags": [
+        "Shopify Hydrogen",
+        "Remix",
+        "Supabase"
+      ]
+    },
+    "SusPredict": {
+      "title": "SUS Predict",
+      "description": "Web platform that turns public DATASUS data into operational decisions for healthcare managers: pick the dataset, city and period, and get a dashboard that answers \"what needs action today\".",
+      "fullDescription": "Web platform that turns public DATASUS data into operational decisions for healthcare managers. The user picks the dataset (SIM, SIH, SINASC, SINAN, SIA), the city and the period; the system downloads the data, processes it and delivers a dashboard that answers \"what needs action today\" — not just descriptive BI.\n\nMy role was the bridge between design and data. On design, I shaped the product UX and design system (tokens, typography, components), the wireframes and the screen-by-screen redesign: Overview, Supply Rupture, Alert Center, ETP Generator and the level-2 analyses. On frontend, I built the screens in React, including data handling and modeling on the client (formatting, aggregation and prep for charts and KPIs). And I built the DATASUS scrapper in Python with PySUS, which downloads the microdata, filters by city (IBGE code) and exports it to the pipeline.\n\nCapstone 2026 · FIAP — startup project, team of 5.",
+      "features": [
+        "Product UX and a custom design system (tokens, typography, components)",
+        "Screen-by-screen redesign: Overview, Supply Rupture, Alert Center, ETP Generator and level-2 analyses",
+        "React frontend with client-side data handling and modeling for charts and KPIs",
+        "DATASUS scrapper in Python with PySUS: downloads microdata, filters by city (IBGE) and exports to the pipeline",
+        "Actionable product — answers \"what needs action today\", not just descriptive BI"
+      ],
+      "tags": [
+        "React",
+        "Python",
+        "DATASUS"
+      ]
     },
     "nexus": {
       "title": "Nexus",
       "description": "Unified mobile ecosystem for tech education, combining courses, real-time community, and AI.",
       "fullDescription": "Nexus solves the fragmentation of technical education tools by unifying learning, collaboration, and competition in a single mobile app. The platform integrates a dynamic course system (LMS), a real-time Q&A forum ideal for events like CTFs, and a competitive gamification layer. Additionally, it features an integrated AI assistant for practical cybersecurity analysis, redefining the student experience.",
-      "features": ["Course platform with dynamic Markdown content", "Real-time forum and chat with multiple channels", "Gamification with smart Quiz and competitive global Ranking", "Visual progress tracking on timeline", "Integrated AI assistant (Gemini) for cybersecurity analysis"],
-      "tags": ["Flutter", "Firebase", "Education"]
+      "features": [
+        "Course platform with dynamic Markdown content",
+        "Real-time forum and chat with multiple channels",
+        "Gamification with smart Quiz and competitive global Ranking",
+        "Visual progress tracking on timeline",
+        "Integrated AI assistant (Gemini) for cybersecurity analysis"
+      ],
+      "tags": [
+        "Flutter",
+        "Firebase",
+        "Education"
+      ]
     },
     "mentalbalance": {
       "title": "NeuroBalance",
       "description": "B2B mobile app for mental health monitoring and burnout prevention",
       "fullDescription": "Mobile app (React Native) focused on corporate well-being and burnout prevention. Uses artificial intelligence and device sensors to monitor stress signals, offering multimodal check-ins (voice and text), sentiment analysis via AI (Gemini), and guided breathing exercises. Includes anonymous dashboards for team management, promoting a healthier work environment.",
-      "features": ["Daily check-in with sentiment analysis via AI (Gemini)", "Real-time physical agitation sensor (Accelerometer)", "Guided breathing exercises (4-7-8 Technique)", "Team dashboard with anonymized data for managers", "Simulated integration with wearables (Apple Watch/Garmin)"],
-      "tags": ["React Native", "AI", "Healthcare"]
+      "features": [
+        "Daily check-in with sentiment analysis via AI (Gemini)",
+        "Real-time physical agitation sensor (Accelerometer)",
+        "Guided breathing exercises (4-7-8 Technique)",
+        "Team dashboard with anonymized data for managers",
+        "Simulated integration with wearables (Apple Watch/Garmin)"
+      ],
+      "tags": [
+        "React Native",
+        "AI",
+        "Healthcare"
+      ]
     },
     "oceansense": {
       "title": "OceanSense",
       "description": "Ocean monitoring platform with real-time data analysis, IoT sensors, and advanced data analytics.",
       "fullDescription": "Ocean monitoring platform with real-time data analysis. Using IoT sensors and advanced data analysis, the system collects and processes information on ocean temperature, salinity, and pollution.",
-      "features": ["Real-time monitoring", "Interactive dashboards with charts", "Automated alert system", "Data history and trends", "IoT sensor integration"],
-      "tags": ["React", "Data Analytics", "IoT"]
+      "features": [
+        "Real-time monitoring",
+        "Interactive dashboards with charts",
+        "Automated alert system",
+        "Data history and trends",
+        "IoT sensor integration"
+      ],
+      "tags": [
+        "React",
+        "Data Analytics",
+        "IoT"
+      ]
     },
     "innovateit": {
       "title": "Innovate IT",
       "description": "Complete management system focused on sustainability and renewable energy.",
       "fullDescription": "Complete management system focused on sustainability and renewable energy. The platform offers resource control, sustainability metrics tracking, team management, and automated reports.",
-      "features": ["Renewable energy project management", "Resource and cost control", "Sustainability metrics", "Automated reports", "Team and task management"],
-      "tags": ["React", "Node.js", "Database"]
+      "features": [
+        "Renewable energy project management",
+        "Resource and cost control",
+        "Sustainability metrics",
+        "Automated reports",
+        "Team and task management"
+      ],
+      "tags": [
+        "React",
+        "Node.js",
+        "Database"
+      ]
     },
     "furiabot": {
       "title": "Furia Bot",
       "description": "Interactive bot with natural language processing and advanced automation for intelligent, contextual interactions.",
       "fullDescription": "Interactive bot developed with cutting-edge technology for immersive experiences. The project uses natural language processing and advanced automation to interact with users intelligently and contextually.",
-      "features": ["Natural language processing", "Intelligent contextual responses", "Esports API integration", "Interactive chat interface"],
-      "tags": ["React", "AI", "ChatBot"]
+      "features": [
+        "Natural language processing",
+        "Intelligent contextual responses",
+        "Esports API integration",
+        "Interactive chat interface"
+      ],
+      "tags": [
+        "React",
+        "AI",
+        "ChatBot"
+      ]
     },
     "mentalaid": {
       "title": "MentalAid",
       "description": "Mental health support application with tracking and well-being features.",
       "fullDescription": "Mental health support application with tracking and well-being features. The system uses carefully designed UI/UX to create a welcoming and therapeutic experience.",
-      "features": ["Daily mood tracking", "Guided meditations and breathing exercises", "Personal diary with sentiment analysis", "Emergency resources and support contacts", "Progress and well-being statistics"],
-      "tags": ["HTML", "UI/UX", "Healthcare"]
+      "features": [
+        "Daily mood tracking",
+        "Guided meditations and breathing exercises",
+        "Personal diary with sentiment analysis",
+        "Emergency resources and support contacts",
+        "Progress and well-being statistics"
+      ],
+      "tags": [
+        "HTML",
+        "UI/UX",
+        "Healthcare"
+      ]
     },
     "spotlite": {
       "title": "Spotlite",
       "description": "Native Spotify client for macOS, built to replace the official Electron app, which is heavy and doesn't feel native to the system.",
       "fullDescription": "Native Spotify client for macOS, built to replace the official Electron app, which is heavy and doesn't feel native to the system.\n\nInterface in Swift and SwiftUI, following macOS 26's Liquid Glass. Audio streaming runs as an external process in Rust, using librespot (an open-source implementation of the Spotify Connect protocol), managed by Swift. Authentication uses OAuth 2.0 with PKCE, implemented by hand against the Spotify Web API.\n\nResult: about 70MB of RAM, versus 700MB for the official app, with no embedded Chromium.\n\nPersonal project, not publicly distributed, built for learning and portfolio.",
-      "features": ["Native interface in Swift and SwiftUI with Liquid Glass (macOS 26)", "Audio streaming in Rust via librespot, as an external process managed by Swift", "OAuth 2.0 with PKCE authentication, hand-implemented against the Spotify Web API", "~70MB of RAM in use, versus ~700MB for the official app, with no embedded Chromium"],
-      "tags": ["Swift", "SwiftUI", "Rust"]
+      "features": [
+        "Native interface in Swift and SwiftUI with Liquid Glass (macOS 26)",
+        "Audio streaming in Rust via librespot, as an external process managed by Swift",
+        "OAuth 2.0 with PKCE authentication, hand-implemented against the Spotify Web API",
+        "~70MB of RAM in use, versus ~700MB for the official app, with no embedded Chromium"
+      ],
+      "tags": [
+        "Swift",
+        "SwiftUI",
+        "Rust"
+      ]
     },
     "monitor-lojas": {
       "title": "Store Monitor",
       "description": "Python solution that automated monitoring of unauthorized apps on digital stores at Claro, cutting the process from 5h to 15min.",
       "fullDescription": "Internal project built during my internship at Claro Brasil, recognized internally by the company. As a corporate solution, I can't share implementation details — but the Store Monitor automated the monitoring of unauthorized apps on digital stores, cutting the process time from 5 hours to 15 minutes and tripling the detection rate of improper apps within the first month of use, directly impacting the company's app governance.",
-      "features": ["Python automation of the monitoring process", "Runtime reduced from 5h to 15min", "Detection rate of improper apps tripled in month 1", "Direct impact on Claro's app governance"],
-      "tags": ["Python", "Automation", "Claro"]
+      "features": [
+        "Python automation of the monitoring process",
+        "Runtime reduced from 5h to 15min",
+        "Detection rate of improper apps tripled in month 1",
+        "Direct impact on Claro's app governance"
+      ],
+      "tags": [
+        "Python",
+        "Automation",
+        "Claro"
+      ]
     }
   },
   "resume": {
     "education_title": "Education",
-    "education": [{ "institution": "FIAP", "degree": "Information Systems", "period": "In Progress", "description": "Degree focused on systems development and technology" }],
+    "education": [
+      {
+        "institution": "FIAP",
+        "degree": "Information Systems",
+        "period": "In Progress",
+        "description": "Degree focused on systems development and technology"
+      }
+    ],
     "experience_title": "Experience",
     "experiences": [
-      { "company": "Claro", "role": "Digital Analytics Intern", "period": "Aug 2025 — Present", "description": "Generalist, multidisciplinary role in the digital ecosystem, with strategic rotation across Data, CRO, and Design/UX. I build data collection and processing pipelines using Google Analytics 4, Tag Manager, BigQuery (GCP), and AWS services, plus Python automations and strategic dashboards. In CRO, I worked directly on A/B testing and modifying existing pages for conversion optimization. In Design and UX, I collaborated on interface creation and updates to sites and apps, turning data into real insights and business-driven deliverables." },
-      { "company": "CSN", "role": "RPA Development Intern", "period": "Feb 2025 — Jul 2025", "description": "Worked with UiPath automations, had extensive contact with SAP and Excel in general." }
+      {
+        "company": "Claro",
+        "role": "Digital Analytics Intern",
+        "period": "Aug 2025 — Present",
+        "description": "Generalist, multidisciplinary role in the digital ecosystem, with strategic rotation across Data, CRO, and Design/UX. I build data collection and processing pipelines using Google Analytics 4, Tag Manager, BigQuery (GCP), and AWS services, plus Python automations and strategic dashboards. In CRO, I worked directly on A/B testing and modifying existing pages for conversion optimization. In Design and UX, I collaborated on interface creation and updates to sites and apps, turning data into real insights and business-driven deliverables."
+      },
+      {
+        "company": "CSN",
+        "role": "RPA Development Intern",
+        "period": "Feb 2025 — Jul 2025",
+        "description": "Worked with UiPath automations, had extensive contact with SAP and Excel in general."
+      }
     ],
     "courses_title": "Certifications",
     "courses": [
-      { "title": "Claude 101 — Anthropic", "description": "Projects, Artifacts, Skills, Connectors, and Research Mode" },
-      { "title": "Claude Code 101 — Anthropic", "description": "Setup and the Explore-Plan-Code-Commit flow" },
-      { "title": "Building with the Claude API — Anthropic", "description": "Prompt engineering, tool use, RAG, streaming, production architectures" },
-      { "title": "Python — FIAP Nano", "description": "Syntax, control structures, OOP, and web with Flask and Django" },
-      { "title": "AWS Cloud Practitioner Essentials", "description": "Cloud fundamentals for data: S3, Athena, Glue, networking, and cost" },
-      { "title": "UX Design — FIAP Nano", "description": "Usability, information architecture, and design thinking" },
-      { "title": "Python with OOP — Alura", "description": "Classes, objects, inheritance, and polymorphism" },
-      { "title": "Advanced UiPath — Practia", "description": "RPA automations focused on business value" },
-      { "title": "Excel (basic to intermediate)", "description": "VLOOKUP, HLOOKUP, XLOOKUP, and data analysis" }
+      {
+        "title": "Claude 101 — Anthropic",
+        "description": "Projects, Artifacts, Skills, Connectors, and Research Mode"
+      },
+      {
+        "title": "Claude Code 101 — Anthropic",
+        "description": "Setup and the Explore-Plan-Code-Commit flow"
+      },
+      {
+        "title": "Building with the Claude API — Anthropic",
+        "description": "Prompt engineering, tool use, RAG, streaming, production architectures"
+      },
+      {
+        "title": "Python — FIAP Nano",
+        "description": "Syntax, control structures, OOP, and web with Flask and Django"
+      },
+      {
+        "title": "AWS Cloud Practitioner Essentials",
+        "description": "Cloud fundamentals for data: S3, Athena, Glue, networking, and cost"
+      },
+      {
+        "title": "UX Design — FIAP Nano",
+        "description": "Usability, information architecture, and design thinking"
+      },
+      {
+        "title": "Python with OOP — Alura",
+        "description": "Classes, objects, inheritance, and polymorphism"
+      },
+      {
+        "title": "Advanced UiPath — Practia",
+        "description": "RPA automations focused on business value"
+      },
+      {
+        "title": "Excel (basic to intermediate)",
+        "description": "VLOOKUP, HLOOKUP, XLOOKUP, and data analysis"
+      }
     ],
     "hardskills_title": "Hard Skills",
     "hardskills": [
@@ -126,20 +306,62 @@
       "Development: React, Spring Boot, .NET (actively learning)"
     ],
     "softskills_title": "Soft Skills",
-    "softskills": ["Teamwork", "Effective communication", "Problem-solving", "Organization", "Planning", "Adaptability", "Proactivity", "Critical thinking", "Leadership", "Creativity", "Time management", "Attention to detail", "Results-oriented", "Collaboration"],
+    "softskills": [
+      "Teamwork",
+      "Effective communication",
+      "Problem-solving",
+      "Organization",
+      "Planning",
+      "Adaptability",
+      "Proactivity",
+      "Critical thinking",
+      "Leadership",
+      "Creativity",
+      "Time management",
+      "Attention to detail",
+      "Results-oriented",
+      "Collaboration"
+    ],
     "languages_title": "Languages",
-    "languages": ["English — Advanced"]
+    "languages": [
+      "English — Advanced"
+    ]
   },
   "awards": {
     "subtitle": "Achievements and recognitions throughout my journey in technology",
     "footer_text": "Interested in working together?",
     "cta_btn": "Get in touch",
     "items": [
-      { "num": "01", "title": "FIAP Next 2024", "highlight": "Top 1", "description": "I achieved first place at FIAP Next 2024, receiving the Best Project award. My group was recognized for developing the Innovate IT project, a management solution for small businesses focused on usability and efficiency." },
-      { "num": "02", "title": "GlobalSolution 2024/1", "highlight": "Winner", "description": "I won the GlobalSolution 2024/1 award with the Ocean Sense project, which focuses on creating innovative solutions for monitoring and protecting the oceans. This award recognized my contribution to environmental preservation by applying technology to solve global environmental challenges." },
-      { "num": "03", "title": "FIAP Next 2025", "highlight": "Top 3", "description": "I placed third in FIAP Next 2025, being recognized as one of the best projects in the competition. My group stood out with the development of Nexus, a learning ecosystem and gamified community for technology students, focused on unifying tools and engagement through artificial intelligence." },
-      { "num": "04", "title": "GlobalSolution 2025/2", "highlight": "Winner", "description": "Awarded for the NeuroBalance project, a B2B app fighting burnout using AI and sensors. Technical innovation (accelerometer), humanized AI (Gemini), and anonymous privacy." },
-      { "num": "05", "title": "Claro Innovation Highlight Award 2026.1", "highlight": "Winner", "description": "Internal recognition awarded by Claro Brasil for developing the Store Monitor, a Python solution that automated monitoring of unauthorized apps on digital stores. The project reduced the process time from 5 hours to 15 minutes and tripled the detection rate of improper apps in the first month of use, directly impacting the company's app governance." }
+      {
+        "num": "01",
+        "title": "FIAP Next 2024",
+        "highlight": "Top 1",
+        "description": "I achieved first place at FIAP Next 2024, receiving the Best Project award. My group was recognized for developing the Innovate IT project, a management solution for small businesses focused on usability and efficiency."
+      },
+      {
+        "num": "02",
+        "title": "GlobalSolution 2024/1",
+        "highlight": "Winner",
+        "description": "I won the GlobalSolution 2024/1 award with the Ocean Sense project, which focuses on creating innovative solutions for monitoring and protecting the oceans. This award recognized my contribution to environmental preservation by applying technology to solve global environmental challenges."
+      },
+      {
+        "num": "03",
+        "title": "FIAP Next 2025",
+        "highlight": "Top 3",
+        "description": "I placed third in FIAP Next 2025, being recognized as one of the best projects in the competition. My group stood out with the development of Nexus, a learning ecosystem and gamified community for technology students, focused on unifying tools and engagement through artificial intelligence."
+      },
+      {
+        "num": "04",
+        "title": "GlobalSolution 2025/2",
+        "highlight": "Winner",
+        "description": "Awarded for the NeuroBalance project, a B2B app fighting burnout using AI and sensors. Technical innovation (accelerometer), humanized AI (Gemini), and anonymous privacy."
+      },
+      {
+        "num": "05",
+        "title": "Claro Innovation Highlight Award 2026.1",
+        "highlight": "Winner",
+        "description": "Internal recognition awarded by Claro Brasil for developing the Store Monitor, a Python solution that automated monitoring of unauthorized apps on digital stores. The project reduced the process time from 5 hours to 15 minutes and tripled the detection rate of improper apps in the first month of use, directly impacting the company's app governance."
+      }
     ]
   }
 }

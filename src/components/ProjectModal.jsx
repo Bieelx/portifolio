@@ -1,21 +1,27 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { MdArrowOutward, MdEmojiEvents, MdAutorenew, MdChevronRight, MdClose } from 'react-icons/md';
+import { MdArrowOutward, MdEmojiEvents, MdAutorenew, MdChevronRight, MdChevronLeft, MdClose, MdCollections } from 'react-icons/md';
 import { C, MONO, SORA } from './ui';
 
 export const ProjectModal = ({ project, onClose, premiadoLabel, wipLabel }) => {
   const { t } = useTranslation();
+  const [lightbox, setLightbox] = useState(-1); // index of open gallery image, -1 = closed
+  const gallery = project?.gallery || [];
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
-    const onKey = (e) => e.key === 'Escape' && onClose();
+    const onKey = (e) => {
+      if (e.key === 'Escape') setLightbox((i) => (i >= 0 ? -1 : (onClose(), -1)));
+      else if (e.key === 'ArrowRight') setLightbox((i) => (i >= 0 ? (i + 1) % gallery.length : i));
+      else if (e.key === 'ArrowLeft') setLightbox((i) => (i >= 0 ? (i - 1 + gallery.length) % gallery.length : i));
+    };
     window.addEventListener('keydown', onKey);
     return () => {
       document.body.style.overflow = '';
       window.removeEventListener('keydown', onKey);
     };
-  }, [onClose]);
+  }, [onClose, gallery.length]);
 
   if (!project) return null;
   const m = project;
@@ -36,6 +42,7 @@ export const ProjectModal = ({ project, onClose, premiadoLabel, wipLabel }) => {
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(22,22,24,0) 40%, rgba(22,22,24,0.92) 100%)' }} />
           <div style={{ position: 'absolute', bottom: 22, left: 30, right: 30, display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap' }}>
             <h3 style={{ margin: 0, fontFamily: SORA, fontWeight: 700, fontSize: 27 }}>{m.title}</h3>
+            {m.year && <span style={{ fontFamily: MONO, fontSize: 13, color: 'rgba(251,247,245,0.5)' }}>{m.year}</span>}
             {m.premiado && <TagBadge accent icon={<MdEmojiEvents size={13} />} label={premiadoLabel} />}
             {m.wip && <TagBadge icon={<MdAutorenew size={13} />} label={wipLabel} />}
           </div>
@@ -67,8 +74,13 @@ export const ProjectModal = ({ project, onClose, premiadoLabel, wipLabel }) => {
             </div>
           </div>
 
-          {(m.hasLink || m.hasGithub) && (
+          {(m.hasLink || m.hasGithub || gallery.length > 0) && (
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', borderTop: '1px solid rgba(251,247,245,0.08)', paddingTop: 24 }}>
+              {gallery.length > 0 && (
+                <button onClick={() => setLightbox(0)} className="hov-btn-ghost" style={{ display: 'inline-flex', alignItems: 'center', gap: 9, color: C.text, fontWeight: 500, fontSize: 13.5, cursor: 'pointer', background: 'transparent', border: '1px solid rgba(251,247,245,0.2)', borderRadius: 99, padding: '12px 24px' }}>
+                  <MdCollections size={16} style={{ color: 'rgba(251,247,245,0.5)' }} /><span>{t('galleryLabel')}</span>
+                </button>
+              )}
               {m.hasLink && (
                 <a href={m.link} target="_blank" rel="noopener noreferrer" className="hov-btn-light" style={{ display: 'inline-flex', alignItems: 'center', gap: 9, background: C.text, color: C.bg, fontWeight: 600, fontSize: 13.5, textDecoration: 'none', borderRadius: 99, padding: '12px 24px' }}>
                   <span>{t('viewProjectLabel')}</span><MdArrowOutward size={16} />
@@ -83,6 +95,22 @@ export const ProjectModal = ({ project, onClose, premiadoLabel, wipLabel }) => {
           )}
         </div>
       </motion.div>
+
+      {lightbox >= 0 && (
+        <div onClick={(e) => { e.stopPropagation(); setLightbox(-1); }} style={{ position: 'fixed', inset: 0, zIndex: 3500, background: 'rgba(6,6,7,0.92)', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 40 }}>
+          <button onClick={(e) => { e.stopPropagation(); setLightbox(-1); }} aria-label={t('closeLabel')} className="hov-close" style={{ position: 'absolute', top: 22, right: 22, width: 42, height: 42, borderRadius: '50%', border: '1px solid rgba(251,247,245,0.2)', background: 'rgba(15,15,16,0.7)', color: C.text, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><MdClose size={20} /></button>
+          {gallery.length > 1 && (
+            <button onClick={(e) => { e.stopPropagation(); setLightbox((i) => (i - 1 + gallery.length) % gallery.length); }} aria-label="Previous" className="hov-close" style={{ position: 'absolute', left: 22, width: 46, height: 46, borderRadius: '50%', border: '1px solid rgba(251,247,245,0.2)', background: 'rgba(15,15,16,0.7)', color: C.text, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><MdChevronLeft size={26} /></button>
+          )}
+          <img src={gallery[lightbox]} alt={`${m.title} ${lightbox + 1}`} onClick={(e) => e.stopPropagation()} style={{ maxWidth: '90%', maxHeight: '86vh', objectFit: 'contain', borderRadius: 12, boxShadow: '0 20px 60px rgba(0,0,0,0.6)' }} />
+          {gallery.length > 1 && (
+            <button onClick={(e) => { e.stopPropagation(); setLightbox((i) => (i + 1) % gallery.length); }} aria-label="Next" className="hov-close" style={{ position: 'absolute', right: 22, width: 46, height: 46, borderRadius: '50%', border: '1px solid rgba(251,247,245,0.2)', background: 'rgba(15,15,16,0.7)', color: C.text, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><MdChevronRight size={26} /></button>
+          )}
+          {gallery.length > 1 && (
+            <span style={{ position: 'absolute', bottom: 26, fontFamily: MONO, fontSize: 12, color: 'rgba(251,247,245,0.6)' }}>{lightbox + 1} / {gallery.length}</span>
+          )}
+        </div>
+      )}
     </div>
   );
 };

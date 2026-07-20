@@ -4,18 +4,28 @@ import { MdArrowOutward, MdEmojiEvents, MdAutorenew } from 'react-icons/md';
 import { C, MONO, SORA, Reveal, SectionHeader } from './ui';
 import { ProjectModal } from './ProjectModal';
 
+// Per-project images live in src/img/projects/<id>/. Files sort by name; first = cover.
+// Drop extra files in a folder and the "Galeria" button appears automatically (>1 file).
+const ctx = require.context('../img/projects', true, /\.(png|jpe?g|svg)$/);
+const IMAGES = ctx.keys().reduce((acc, key) => {
+  const id = key.split('/')[1]; // './<id>/file.png'
+  (acc[id] = acc[id] || []).push({ key, src: ctx(key) });
+  return acc;
+}, {});
+const imagesFor = (id) => (IMAGES[id] || []).sort((a, b) => a.key.localeCompare(b.key)).map((x) => x.src);
+
 // Non-translated project metadata (order = display order before premiado sort).
 const META = [
-  { id: 'blacktrunk', image: require('../img/BlackTrunkV1.png'), link: 'https://www.blacktrunk.com.br/', github: '#', technologies: ['JavaScript', 'Velo', 'Wix', 'CSS', 'Node.js'] },
-  { id: 'blacktrunk-v2', image: require('../img/BlackTrunkV2.png'), wip: true, link: '#', github: '#', technologies: ['Shopify Hydrogen', 'Remix', 'Supabase', 'React'] },
-  { id: 'spotlite', image: require('../img/Spotlite.png'), link: '#', github: '#', technologies: ['Swift', 'SwiftUI', 'Rust', 'librespot', 'OAuth 2.0'] },
-  { id: 'monitor-lojas', image: require('../img/MonitorLojas.png'), premiado: true, featured: true, link: '#', github: '#', technologies: ['Python'] },
-  { id: 'nexus', image: require('../img/nexus.jpg'), premiado: true, link: '#', github: 'https://github.com/Bieelx/MentalAid-FIAP', technologies: ['AI', 'ChatBot'] },
-  { id: 'mentalbalance', image: require('../img/NeuroBalance.png'), premiado: true, link: '#', github: 'https://github.com/Bieelx/MentalAid-FIAP', technologies: ['Firebase'] },
-  { id: 'oceansense', image: require('../img/oceasense.png'), premiado: true, link: 'https://github.com/Bieelx/oceansense', github: '#', technologies: ['TypeScript', 'Node.js', 'PostgreSQL'] },
-  { id: 'innovateit', image: require('../img/gtx.jpg'), premiado: true, link: '#', github: 'https://github.com/Mikael139/sistema_de_gestao', technologies: ['MySQL', 'Chart.js'] },
-  { id: 'furiabot', image: require('../img/FuriaBot.png'), link: 'https://bieelxfuria.netlify.app/', github: '#', technologies: ['Tailwind', 'ShadCN'] },
-  { id: 'mentalaid', image: require('../img/Felipao.png'), link: '#', github: 'https://github.com/Bieelx/MentalAid-FIAP', technologies: ['CSS', 'JavaScript'] },
+  { id: 'blacktrunk-v2', year: 2026, wip: true, link: '#', github: '#', technologies: ['Shopify Hydrogen', 'Remix', 'Supabase', 'React'] },
+  { id: 'SusPredict', year: 2026, wip: true, wipKey: 'wipLabelDev', link: '#', github: '#', technologies: ['React 18', 'Vite', 'Recharts', 'Python 3.12', 'PySUS', 'pandas'] },
+  { id: 'spotlite', link: '#', github: '#', technologies: ['Swift', 'SwiftUI', 'Rust', 'librespot', 'OAuth 2.0'] },
+  { id: 'monitor-lojas', year: 2026, premiado: true, featured: true, link: '#', github: '#', technologies: ['Python'] },
+  { id: 'nexus', year: 2025, premiado: true, link: '#', github: 'https://github.com/Bieelx/MentalAid-FIAP', technologies: ['AI', 'ChatBot'] },
+  { id: 'mentalbalance', year: 2025, premiado: true, link: '#', github: 'https://github.com/Bieelx/MentalAid-FIAP', technologies: ['Firebase'] },
+  { id: 'oceansense', year: 2024, premiado: true, link: 'https://github.com/Bieelx/oceansense', github: '#', technologies: ['TypeScript', 'Node.js', 'PostgreSQL'] },
+  { id: 'innovateit', year: 2024, premiado: true, link: '#', github: 'https://github.com/Mikael139/sistema_de_gestao', technologies: ['MySQL', 'Chart.js'] },
+  { id: 'furiabot', year: 2025, link: 'https://bieelxfuria.netlify.app/', github: '#', technologies: ['Tailwind', 'ShadCN'] },
+  { id: 'mentalaid', year: 2023, link: '#', github: 'https://github.com/Bieelx/MentalAid-FIAP', technologies: ['CSS', 'JavaScript'] },
 ];
 
 const Projects = () => {
@@ -27,14 +37,18 @@ const Projects = () => {
   const projects = META.map((p) => {
     const tx = t(`projects.${p.id}`, { returnObjects: true });
     const tags = tx.tags || [];
+    const imgs = imagesFor(p.id);
     return {
       ...p,
+      image: imgs[0],
+      gallery: imgs.length > 1 ? imgs : [],
       title: tx.title,
       description: tx.description,
       fullDescription: tx.fullDescription || tx.description,
       features: tx.features || [],
       tags,
       allTags: tags.concat(p.technologies.filter((x) => tags.indexOf(x) === -1)),
+      wipLabel: p.wipKey ? t(p.wipKey) : wipLabel,
       hasLink: p.link && p.link !== '#',
       hasGithub: p.github && p.github !== '#',
     };
@@ -61,12 +75,15 @@ const Projects = () => {
                 <img src={p.image} alt={p.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(15,15,16,0) 55%, rgba(15,15,16,0.65) 100%)' }} />
                 {p.premiado && <Badge accent icon={<MdEmojiEvents size={13} />} label={premiadoLabel} />}
-                {p.wip && <Badge icon={<MdAutorenew size={13} />} label={wipLabel} />}
+                {p.wip && <Badge icon={<MdAutorenew size={13} />} label={p.wipLabel} />}
               </div>
               <div style={{ padding: '24px 26px 26px', display: 'flex', flexDirection: 'column', gap: 12 }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
                   <h3 style={{ margin: 0, fontFamily: SORA, fontWeight: 600, fontSize: 19 }}>{p.title}</h3>
-                  <MdArrowOutward size={17} style={{ color: 'rgba(251,247,245,0.35)', flexShrink: 0 }} />
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
+                    {p.year && <span style={{ fontFamily: MONO, fontSize: 11.5, color: 'rgba(251,247,245,0.4)' }}>{p.year}</span>}
+                    <MdArrowOutward size={17} style={{ color: 'rgba(251,247,245,0.35)' }} />
+                  </div>
                 </div>
                 <p style={{ margin: 0, fontSize: 13.5, fontWeight: 300, lineHeight: 1.65, color: 'rgba(251,247,245,0.62)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{p.description}</p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 4 }}>
@@ -80,7 +97,7 @@ const Projects = () => {
         </div>
       </div>
 
-      {selected && <ProjectModal project={selected} onClose={() => setSelected(null)} premiadoLabel={premiadoLabel} wipLabel={wipLabel} />}
+      {selected && <ProjectModal project={selected} onClose={() => setSelected(null)} premiadoLabel={premiadoLabel} wipLabel={selected.wipLabel} />}
     </section>
   );
 };
